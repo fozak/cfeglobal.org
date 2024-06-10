@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /assets/
+Disallow: /a/
+Disallow: /components/
+Disallow: /test/1
+
