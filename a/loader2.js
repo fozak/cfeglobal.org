@@ -10,17 +10,27 @@ if (parentLink) {
 
     // Fetch the additional content
     fetch(additionalContentUrl)
-        .then(response => response.text())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
         .then(data => {
             // Append the fetched content to #additional-content
             var additionalContent = document.getElementById('additional-content');
             if (additionalContent) {
-                additionalContent.innerHTML = data; // Replace content if needed, or use appendChild to add to the existing content
+                additionalContent.innerHTML = data;
             } else {
                 console.error('#additional-content element not found.');
             }
         })
-        .catch(error => console.error('Error loading additional content:', error));
+        .catch(error => {
+            console.error('Error loading additional content:', error);
+            // Optionally handle error cases, e.g., display a message or fallback content
+        });
+} else {
+    console.error('No parentlink meta tag found.');
 }
 
 // Initialize variables for jQuery usage (if necessary)
