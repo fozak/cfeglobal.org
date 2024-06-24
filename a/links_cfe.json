@@ -2,109 +2,91 @@
     {
         "topic": "program",
         "insert_url": "/programs/startup-huddle",
-        "external_link": "https://www.genglobal.org/startup-huddle",
         "topic_name": "Startup Huddle"
     },
     {
         "topic": "program",
         "insert_url": "/programs/global-entrepreneurship-week",
-        "external_link": "https://www.genglobal.org/gew",
         "topic_name": "Global Entrepreneurship Week"
     },
     {
         "topic": "program",
         "insert_url": "/programs/young-entrepreneurs-alliance",
-        "external_link": "https://www.g20yea.com",
         "topic_name": "Young Entrepreneurs Alliance"
     },
     {
         "topic": "program",
         "insert_url": "/programs/dynamic-entrepreneurship-classroom",
-        "external_link": NaN,
         "topic_name": "Dynamic Entrepreneurship Classroom"
     },
     {
         "topic": "program",
         "insert_url": "/programs/scaleup-acceleration-program",
-        "external_link": NaN,
         "topic_name": "Scaleup Acceleration Program"
     },
     {
         "topic": "program",
         "insert_url": "/programs/scaleup-club",
-        "external_link": NaN,
         "topic_name": "Scaleup Club"
     },
     {
         "topic": "program",
         "insert_url": "/programs/startup-club",
-        "external_link": NaN,
         "topic_name": "Startup Club"
     },
     {
         "topic": "program",
         "insert_url": "/programs/fasttrac",
-        "external_link": "https://www.fasttrac.org",
         "topic_name": "Fasttrac"
     },
     {
         "topic": "program_category",
         "insert_url": "/categories/acceleration-programs",
-        "external_link": NaN,
         "topic_name": "Acceleration Programs"
     },
     {
         "topic": "program_category",
         "insert_url": "/categories/startup-programs",
-        "external_link": NaN,
         "topic_name": "Startup Programs"
     },
     {
         "topic": "program_category",
         "insert_url": "/categories/educational-programs",
-        "external_link": NaN,
         "topic_name": "Educational Programs"
     },
     {
         "topic": "program_category",
         "insert_url": "/categories/ecosystem-programs",
-        "external_link": NaN,
         "topic_name": "Ecosystem Programs"
     },
     {
         "topic": "goals",
         "insert_url": "/goals/launch-startup",
-        "external_link": NaN,
         "topic_name": "Launch Startup"
     },
     {
         "topic": "goals",
         "insert_url": "/goals/grow-existing-business",
-        "external_link": NaN,
         "topic_name": "Grow Existing Business"
     },
     {
         "topic": "goals",
         "insert_url": "/goals/support-entrepreneurship",
-        "external_link": NaN,
         "topic_name": "Support Entrepreneurship"
     },
     {
         "topic": "goals",
         "insert_url": "/goals/launch-startup",
-        "external_link": NaN,
         "topic_name": "Launch Startup"
     },
     {
         "topic": "goals",
         "insert_url": "/goals/mentoring-business",
-        "external_link": NaN,
         "topic_name": "Mentoring Business"
     },
     {
         "topic": "partner",
         "insert_url": NaN,
-        "external_link": NaN,
         "topic_name": null
     }
 ]
