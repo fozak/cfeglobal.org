@@ -1,92 +1,170 @@
 [
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/startup-huddle",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Startup Huddle"
     },
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/global-entrepreneurship-week",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/programs/global-entrepreneurship-week-source.txt",
         "topic_name": "Global Entrepreneurship Week"
     },
     {
-        "topic": "program",
-        "insert_url": "/programs/young-entrepreneurs-alliance",
-        "topic_name": "Young Entrepreneurs Alliance"
+        "topic": "programs",
+        "insert_url": "/programs/g20-young-entrepreneurs-alliance",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "G20 Young Entrepreneurs Alliance"
     },
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/dynamic-entrepreneurship-classroom",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Dynamic Entrepreneurship Classroom"
     },
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/scaleup-acceleration-program",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Scaleup Acceleration Program"
     },
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/scaleup-club",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Scaleup Club"
     },
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/startup-club",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Startup Club"
     },
     {
-        "topic": "program",
+        "topic": "programs",
         "insert_url": "/programs/fasttrac",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Fasttrac"
     },
     {
-        "topic": "program_category",
-        "insert_url": "/categories/acceleration-programs",
+        "topic": "programs",
+        "insert_url": "/programs/acceleration-programs",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Acceleration Programs"
     },
     {
-        "topic": "program_category",
-        "insert_url": "/categories/startup-programs",
+        "topic": "programs",
+        "insert_url": "/programs/startup-programs",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Startup Programs"
     },
     {
-        "topic": "program_category",
-        "insert_url": "/categories/educational-programs",
+        "topic": "programs",
+        "insert_url": "/programs/educational-programs",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Educational Programs"
     },
     {
-        "topic": "program_category",
-        "insert_url": "/categories/ecosystem-programs",
+        "topic": "programs",
+        "insert_url": "/programs/ecosystem-programs",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Ecosystem Programs"
     },
     {
-        "topic": "goals",
-        "insert_url": "/goals/launch-startup",
+        "topic": "programs",
+        "insert_url": "/programs/launch-startup",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Launch Startup"
     },
     {
-        "topic": "goals",
-        "insert_url": "/goals/grow-existing-business",
+        "topic": "programs",
+        "insert_url": "/programs/grow-existing-business",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Grow Existing Business"
     },
     {
-        "topic": "goals",
-        "insert_url": "/goals/support-entrepreneurship",
+        "topic": "programs",
+        "insert_url": "/programs/support-entrepreneurship",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Support Entrepreneurship"
     },
     {
-        "topic": "goals",
-        "insert_url": "/goals/launch-startup",
+        "topic": "programs",
+        "insert_url": "/programs/launch-startup",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Launch Startup"
     },
     {
-        "topic": "goals",
-        "insert_url": "/goals/mentoring-business",
+        "topic": "programs",
+        "insert_url": "/programs/mentoring-business",
+        "needs_update": NaN,
+        "source_url": NaN,
         "topic_name": "Mentoring Business"
     },
     {
-        "topic": "partner",
-        "insert_url": NaN,
-        "topic_name": null
+        "topic": "programs",
+        "insert_url": "/programs/mentoring-programs",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "Mentoring Programs"
+    },
+    {
+        "topic": "programs",
+        "insert_url": "/programs/scale-up-programs",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "Scale Up Programs"
+    },
+    {
+        "topic": "programs",
+        "insert_url": "/programs/best-practices",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "Best Practices"
+    },
+    {
+        "topic": "programs",
+        "insert_url": "/programs/learn-entrepreneurship",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "Learn Entrepreneurship"
+    },
+    {
+        "topic": "partners",
+        "insert_url": "/partners/global-entrepreneurship-network",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "Global Entrepreneurship Network"
+    },
+    {
+        "topic": "partners",
+        "insert_url": "/partners/ewing-marion-kauffman-foundation",
+        "needs_update": NaN,
+        "source_url": NaN,
+        "topic_name": "Ewing Marion Kauffman Foundation"
+    },
+    {
+        "topic": "partners",
+        "insert_url": "/partners/us-department-of-state",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/partners/us-department-of-state-source.txt",
+        "topic_name": "Us Department Of State"
     }
 ]
