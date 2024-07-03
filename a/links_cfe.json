@@ -16,14 +16,14 @@
     {
         "topic": "programs",
         "insert_url": "/programs/g20-young-entrepreneurs-alliance",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/g20-young-entrepreneurs-alliance-source.txt",
         "topic_name": "G20 Young Entrepreneurs Alliance"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/dynamic-entrepreneurship-classroom",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/dynamic-entrepreneurship-classroom-source.txt",
         "topic_name": "Dynamic Entrepreneurship Classroom"
     },
@@ -51,7 +51,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/fasttrac",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/fasttrac-source.txt",
         "topic_name": "Fasttrac"
     },
