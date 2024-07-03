@@ -16,7 +16,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/g20-young-entrepreneurs-alliance",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/g20-young-entrepreneurs-alliance-source.txt",
         "topic_name": "G20 Young Entrepreneurs Alliance"
     },
@@ -51,14 +51,14 @@
     {
         "topic": "programs",
         "insert_url": "/programs/fasttrac",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/fasttrac-source.txt",
         "topic_name": "Fasttrac"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/acceleration-programs",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/acceleration-programs-source.txt",
         "topic_name": "Acceleration Programs"
     },
@@ -79,7 +79,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/ecosystem-programs",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/ecosystem-programs-source.txt",
         "topic_name": "Ecosystem Programs"
     },
