@@ -86,37 +86,23 @@
     {
         "topic": "programs",
         "insert_url": "/programs/launch-startup",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/launch-startup-source.txt",
         "topic_name": "Launch Startup"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/grow-existing-business",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/grow-existing-business-source.txt",
         "topic_name": "Grow Existing Business"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/support-entrepreneurship",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/support-entrepreneurship-source.txt",
         "topic_name": "Support Entrepreneurship"
-    },
-    {
-        "topic": "programs",
-        "insert_url": "/programs/launch-startup",
-        "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/launch-startup-source.txt",
-        "topic_name": "Launch Startup"
-    },
-    {
-        "topic": "programs",
-        "insert_url": "/programs/mentoring-business",
-        "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/mentoring-business-source.txt",
-        "topic_name": "Mentoring Business"
     },
     {
         "topic": "programs",
@@ -142,7 +128,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/learn-entrepreneurship",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/learn-entrepreneurship-source.txt",
         "topic_name": "Learn Entrepreneurship"
     },
