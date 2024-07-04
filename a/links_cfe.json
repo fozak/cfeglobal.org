@@ -2,7 +2,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/startup-huddle",
-        "needs_update": NaN,
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/startup-huddle-source.txt",
         "topic_name": "Startup Huddle"
     },
@@ -30,16 +30,9 @@
     {
         "topic": "programs",
         "insert_url": "/programs/scaleup-acceleration-program",
-        "needs_update": NaN,
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/scaleup-acceleration-program-source.txt",
         "topic_name": "Scaleup Acceleration Program"
-    },
-    {
-        "topic": "programs",
-        "insert_url": "/programs/scaleup-club",
-        "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/scaleup-club-source.txt",
-        "topic_name": "Scaleup Club"
     },
     {
         "topic": "programs",
@@ -65,14 +58,14 @@
     {
         "topic": "programs",
         "insert_url": "/programs/startup-programs",
-        "needs_update": NaN,
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/startup-programs-source.txt",
         "topic_name": "Startup Programs"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/educational-programs",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/educational-programs-source.txt",
         "topic_name": "Educational Programs"
     },
@@ -86,7 +79,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/launch-startup",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/launch-startup-source.txt",
         "topic_name": "Launch Startup"
     },
@@ -128,9 +121,16 @@
     {
         "topic": "programs",
         "insert_url": "/programs/learn-entrepreneurship",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/learn-entrepreneurship-source.txt",
         "topic_name": "Learn Entrepreneurship"
+    },
+    {
+        "topic": "programs",
+        "insert_url": "/programs/volunteer",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/programs/volunteer-source.txt",
+        "topic_name": "Volunteer"
     },
     {
         "topic": "partners",
