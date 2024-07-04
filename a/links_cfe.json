@@ -58,7 +58,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/acceleration-programs",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/acceleration-programs-source.txt",
         "topic_name": "Acceleration Programs"
     },
@@ -79,7 +79,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/ecosystem-programs",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/ecosystem-programs-source.txt",
         "topic_name": "Ecosystem Programs"
     },
@@ -93,14 +93,14 @@
     {
         "topic": "programs",
         "insert_url": "/programs/grow-existing-business",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/grow-existing-business-source.txt",
         "topic_name": "Grow Existing Business"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/support-entrepreneurship",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/support-entrepreneurship-source.txt",
         "topic_name": "Support Entrepreneurship"
     },
