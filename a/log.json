@@ -5970,5 +5970,14 @@
             "model": "gpt-4o",
             "script_cooked": "9.0"
         }
+    },
+    {
+        "topic": "partners",
+        "insert_url": "/partners/ewing-marion-kauffman-foundation",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/partners/ewing-marion-kauffman-foundation-source.txt",
+        "parsed_text": null,
+        "topic_name": "Ewing Marion Kauffman Foundation",
+        "recorded_datetime": "2024-07-05T12:37:59.277670"
     }
 ]

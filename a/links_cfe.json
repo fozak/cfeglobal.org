@@ -142,7 +142,7 @@
     {
         "topic": "partners",
         "insert_url": "/partners/ewing-marion-kauffman-foundation",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/partners/ewing-marion-kauffman-foundation-source.txt",
         "topic_name": "Ewing Marion Kauffman Foundation"
     },
@@ -170,7 +170,7 @@
     {
         "topic": "blog",
         "insert_url": NaN,
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://dochub.sk.ru/foundation/itc/b/news/archive/2020/12/18/kompanii-skolkovo-rasskazali-o-svoih-resheniyah-v-oblasti-ai-na-startup-klube-delovoy-rossii.aspx",
         "topic_name": null
     }
