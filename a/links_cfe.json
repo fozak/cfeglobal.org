@@ -100,22 +100,22 @@
     {
         "topic": "programs",
         "insert_url": "/programs/mentoring-programs",
-        "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/mentoring-programs-source.txt",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/programs/mentoring-programs.txt",
         "topic_name": "Mentoring Programs"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/scale-up-programs",
         "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/scale-up-programs-source.txt",
+        "source_url": "https://cfeglobal.org/programs/scale-up-programs.txt",
         "topic_name": "Scale Up Programs"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/best-practices",
-        "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/best-practices-source.txt",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/programs/best-practices.txt",
         "topic_name": "Best Practices"
     },
     {
@@ -135,7 +135,7 @@
     {
         "topic": "partners",
         "insert_url": "/partners/global-entrepreneurship-network",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/partners/global-entrepreneurship-network-source.txt",
         "topic_name": "Global Entrepreneurship Network"
     },
@@ -177,22 +177,29 @@
     {
         "topic": "partners",
         "insert_url": "/partners/young-entrepreneurs-organization",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/partners/young-entrepreneurs-organization.txt",
         "topic_name": "Young Entrepreneurs Organization"
     },
     {
         "topic": "partners",
         "insert_url": "/partners/american-chamber-of-commerce",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/partners/american-chamber-of-commerce.txt",
         "topic_name": "American Chamber Of Commerce"
     },
     {
         "topic": "partners",
         "insert_url": "/partners/junior-achievement",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/partners/junior-achievement.txt",
         "topic_name": "Junior Achievement"
+    },
+    {
+        "topic": "programs",
+        "insert_url": "/programs/dedicated-team",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/programs/dedicated-team.txt",
+        "topic_name": "Dedicated Team"
     }
 ]
