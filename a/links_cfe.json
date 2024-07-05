@@ -37,8 +37,8 @@
     {
         "topic": "programs",
         "insert_url": "/programs/startup-club",
-        "needs_update": NaN,
-        "source_url": "https://cfeglobal.org/programs/startup-club-source.txt",
+        "needs_update": "yes",
+        "source_url": "https://cfeglobal.org/programs/startup-club.txt",
         "topic_name": "Startup Club"
     },
     {
@@ -100,21 +100,21 @@
     {
         "topic": "programs",
         "insert_url": "/programs/mentoring-programs",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/mentoring-programs.txt",
         "topic_name": "Mentoring Programs"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/scale-up-programs",
-        "needs_update": NaN,
+        "needs_update": "yes",
         "source_url": "https://cfeglobal.org/programs/scale-up-programs.txt",
         "topic_name": "Scale Up Programs"
     },
     {
         "topic": "programs",
         "insert_url": "/programs/best-practices",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/best-practices.txt",
         "topic_name": "Best Practices"
     },
@@ -198,7 +198,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/dedicated-team",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/dedicated-team.txt",
         "topic_name": "Dedicated Team"
     }
