@@ -65,7 +65,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/educational-programs",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/educational-programs-source.txt",
         "topic_name": "Educational Programs"
     },
@@ -128,7 +128,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/volunteer",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/volunteer-source.txt",
         "topic_name": "Volunteer"
     },
@@ -152,5 +152,26 @@
         "needs_update": "no",
         "source_url": "https://cfeglobal.org/partners/us-department-of-state-source.txt",
         "topic_name": "Us Department Of State"
+    },
+    {
+        "topic": "blog",
+        "insert_url": NaN,
+        "needs_update": "no",
+        "source_url": "https://cfeglobal.org/blog/gew-dates-faqs-source.txt",
+        "topic_name": null
+    },
+    {
+        "topic": "blog",
+        "insert_url": NaN,
+        "needs_update": "no",
+        "source_url": "https://old.deloros.ru/v-startup-klube-predstavili-proekty-v-sfere-iskusstvennogo-intellekta.html",
+        "topic_name": null
+    },
+    {
+        "topic": "blog",
+        "insert_url": NaN,
+        "needs_update": "yes",
+        "source_url": "https://dochub.sk.ru/foundation/itc/b/news/archive/2020/12/18/kompanii-skolkovo-rasskazali-o-svoih-resheniyah-v-oblasti-ai-na-startup-klube-delovoy-rossii.aspx",
+        "topic_name": null
     }
 ]
