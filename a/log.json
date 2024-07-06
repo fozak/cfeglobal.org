@@ -5783,7 +5783,8 @@
             "source_url": "https://cfeglobal.org/programs/grow-existing-business-source.txt",
             "time_cooked": "2024-07-04T10:46:29.845805",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5805,7 +5806,8 @@
             "source_url": "https://cfeglobal.org/programs/support-entrepreneurship-source.txt",
             "time_cooked": "2024-07-04T10:46:42.333991",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5827,7 +5829,8 @@
             "source_url": "https://cfeglobal.org/programs/launch-startup-source.txt",
             "time_cooked": "2024-07-04T12:09:37.393706",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5849,7 +5852,8 @@
             "source_url": "https://cfeglobal.org/programs/learn-entrepreneurship-source.txt",
             "time_cooked": "2024-07-04T12:09:48.472898",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5871,7 +5875,8 @@
             "source_url": "https://cfeglobal.org/programs/educational-programs-source.txt",
             "time_cooked": "2024-07-04T13:09:59.308817",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5893,7 +5898,8 @@
             "source_url": "https://cfeglobal.org/programs/volunteer-source.txt",
             "time_cooked": "2024-07-04T13:10:08.934801",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5915,7 +5921,8 @@
             "source_url": "https://cfeglobal.org/blog/gew-dates-faqs-source.txt",
             "time_cooked": "2024-07-04T17:50:15.333797",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5937,7 +5944,8 @@
             "source_url": "https://cfeglobal.org/blog/gew-dates-faqs-source.txt",
             "time_cooked": "2024-07-04T17:50:25.143028",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5968,7 +5976,8 @@
             "source_url": "https://dochub.sk.ru/foundation/itc/b/news/archive/2020/12/18/kompanii-skolkovo-rasskazali-o-svoih-resheniyah-v-oblasti-ai-na-startup-klube-delovoy-rossii.aspx",
             "time_cooked": "2024-07-05T11:45:39.266052",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -5990,7 +5999,8 @@
             "source_url": "https://cfeglobal.org/partners/ewing-marion-kauffman-foundation-source.txt",
             "time_cooked": "2024-07-05T12:40:06.576458",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6012,7 +6022,8 @@
             "source_url": "https://cfeglobal.org/partners/global-entrepreneurship-network-source.txt",
             "time_cooked": "2024-07-05T15:39:15.418130",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6034,7 +6045,8 @@
             "source_url": "https://cfeglobal.org/partners/young-entrepreneurs-organization.txt",
             "time_cooked": "2024-07-05T15:39:24.265825",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6056,7 +6068,8 @@
             "source_url": "https://cfeglobal.org/partners/american-chamber-of-commerce.txt",
             "time_cooked": "2024-07-05T15:39:36.585416",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6078,7 +6091,8 @@
             "source_url": "https://cfeglobal.org/partners/junior-achievement.txt",
             "time_cooked": "2024-07-05T15:39:45.887392",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6100,7 +6114,8 @@
             "source_url": "https://cfeglobal.org/programs/mentoring-programs.txt",
             "time_cooked": "2024-07-05T16:21:30.339501",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6122,7 +6137,8 @@
             "source_url": "https://cfeglobal.org/programs/best-practices.txt",
             "time_cooked": "2024-07-05T16:21:49.906674",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6144,7 +6160,8 @@
             "source_url": "https://cfeglobal.org/programs/dedicated-team.txt",
             "time_cooked": "2024-07-05T16:21:59.518206",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6166,7 +6183,8 @@
             "source_url": "https://cfeglobal.org/programs/startup-club.txt",
             "time_cooked": "2024-07-05T19:00:22.003180",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     },
     {
@@ -6188,7 +6206,8 @@
             "source_url": "https://cfeglobal.org/programs/scale-up-programs.txt",
             "time_cooked": "2024-07-05T19:00:31.504323",
             "model": "gpt-4o",
-            "script_cooked": "9.0"
+            "script_cooked": "9.0",
+            "sitemap": "yes"
         }
     }
 ]
