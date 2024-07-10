@@ -37,7 +37,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/startup-club",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/startup-club.txt",
         "topic_name": "Startup Club"
     },
@@ -107,7 +107,7 @@
     {
         "topic": "programs",
         "insert_url": "/programs/scale-up-programs",
-        "needs_update": "yes",
+        "needs_update": "no",
         "source_url": "https://cfeglobal.org/programs/scale-up-programs.txt",
         "topic_name": "Scale Up Programs"
     },
