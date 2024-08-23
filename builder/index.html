@@ -1,2028 +1,2278 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-
-  <base href="">
-
-  <title>Vvveb Landing - Homepage</title>
-
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="">
-  <link rel="canonical" href="">
-
-  <link id="landing-css" href="css/style.bundle.css" rel="stylesheet" media="screen">
-  <link id="vvvebjs-css" href="css/custom.css" rel="stylesheet" media="screen">
-
-
-
-
-
-  <style>
-    :root {
-      /*--bs-font-headings:'Inter';*/
-    }
-
-    .hero-3 {
-      //height:80vh;		//background-position:bottom center;	}	.showcase-3 {		margin-top:-200px;		z-index:3;	}
-  </style>
-
-
-
-
-  <link rel="alternate" type="application/rss+xml" title="Feed" href="/feed/posts">
-  <link rel="alternate" type="application/rss+xml" title="Comments Feed" href="/feed/comments">
-
-  <link rel="icon" type="image/x-icon" href="../../media/favicon.ico" data-v-global-site.favicon="">
-
-  <link rel="manifest" href="/manifest.webmanifest">
-
-  <link rel="alternate" hreflang="" href="">
-<style id="vvvebjs-styles"></style></head>
-
-
-<body class="home" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-  <nav class="navigation-3 clearfix fixed-top transparent" title="navigation-3" data-v-save-global="index.html,.navigation-3">
-
-    <div id="top" class="top-nav clearfix" data-bs-theme="dark">
-      <div class="container">
-        <div class="d-flex justify-content-between  flex-md-row d-flex flex-column flex-md-row">
-          <div class="nav">
-            <ul class="list-inline" data-v-component-site="">
-              <li class="list-inline-item" data-v-if="site.description.phone-number">
-                <a href="tel:5511112377" class="p-2 p-md-0" title="Phone" data-v-site-description-phone-number="">
-                  <i class="la la-phone"></i>
-                  <span class=" text-muted" data-v-site-description-phone-number="">+55 (111) 123 777</span>
-                </a>
-              </li>
-              <li class="list-inline-item" data-v-if="site.contact-email">
-                <a href="mailto:contact@mysite.com" title="Email" data-v-site-contact-email="">
-                  <i class="la la-envelope"></i>
-                  <span class=" text-muted" data-v-site-contact-email="">contact@mysite.com</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="nav">
-            <ul class="list-inline">
-              <!--
-					<li class="list-inline-item"><a href="#" id="wishlist-total" title="Wish List (0)"><i class="la la-heart"></i> <span class="">Favorites</span></a></li>
-					<li class="list-inline-item"><a href="#" title="Checkout"><i class="la la-share"></i> <span class="">Checkout</span></a></li>
-					<li class="list-inline-item">
-						<div class="dropdown">
-							<a href="" class="dropdown-toggle" data-bs-toggle="dropdown" role="button"><i class="la la-user"></i> <span class="">My Account</span></i></a>
-							<ul class="dropdown-menu dropdown-menu-right">
-								<li><a href="#" class="dropdown-item">Register</a></li>
-								<li><a href="#" class="dropdown-item">Login</a></li>
-							</ul>
-						</div>
-					</li>
-					-->
-              <li class="list-inline-item">
-                <div data-v-component-currency="">
-                  <form method="post" enctype="multipart/form-data" id="form-currency">
-
-                    <a class="dropdown-toggle p-2 p-md-0" data-bs-toggle="dropdown" role="button" title="Currency" aria-expanded="false">
-                      <!-- <i class="la la-dollar-sign me-1"></i> -->
-                      <span class="" data-v-currency-info-name="">USD</span>
-                    </a>
-
-
-                    <div class="dropdown-menu dropdown-menu-end">
-
-                      <div data-v-currency="">
-                        <button class="dropdown-item" type="submit" value="EUR" name="currency" data-v-currency-code="">
-                          <span data-v-currency-sign_start="">€</span>
-                          <span data-v-currency-sign_end="">€</span>
-                          <span class="ms-1" data-v-currency-name="">Euro</span>
-                        </button>
-                      </div>
-
-                      <div data-v-currency="">
-                        <button class="dropdown-item" type="submit" value="GBP" name="currency" data-v-currency-code="">
-                          <span data-v-currency-sign_start="">£</span>
-                          <span data-v-currency-sign_end="">£</span>
-                          <span class="ms-1" data-v-currency-name="">Pound Sterling</span>
-                        </button>
-                      </div>
-
-                      <div data-v-currency="">
-                        <button class="dropdown-item" type="submit" value="USD" name="currency" data-v-currency-code="">
-                          <span data-v-currency-sign_start="">$</span>
-                          <span data-v-currency-sign_end="">$</span>
-                          <span class="ms-1" data-v-currency-name="">US Dollar</span>
-                        </button>
-                      </div>
-
-                    </div>
-                  </form>
-                </div>
-              </li>
-              <li class="list-inline-item">
-                <div data-v-component-language="">
-                  <form method="post" enctype="multipart/form-data" id="form-language">
-
-                    <a class="dropdown-toggle p-2 p-md-0" data-bs-toggle="dropdown" role="button" title="Language" aria-expanded="false">
-                      <!-- <i class="la la-flag me-1"></i> -->
-                      <!-- 
-									<img src="" data-v-language-info-img>
-									-->
-                      <span class="" data-v-language-info-name="">English</span>
-                    </a>
-
-
-                    <div class="dropdown-menu dropdown-menu-end">
-
-                      <div data-v-language="">
-                        <button class="dropdown-item" type="submit" value="eng" name="language" data-v-language-code="">
-                          <!-- <i class="la la-flag la-lg me-2"></i> -->
-                          <img src="" loading="lazy" class="me-1" data-v-language-img="">
-
-                          <!-- <a href="" data-v-language-url> -->
-                          <span data-v-language-name="">English</span>
-                          <!-- </a> -->
-                        </button>
-                      </div>
-
-                      <div data-v-language="">
-                        <button class="dropdown-item" type="submit" value="ro" name="language" data-v-language-code="">
-                          <!-- <i class="la la-flag la-lg me-2"></i> -->
-                          <img src="" loading="lazy" class="me-1" data-v-language-img="">
-                          <!-- <a href="" data-v-language-url>  -->
-                          <span data-v-language-name="">Romanian</span>
-                          <!-- </a>  -->
-                        </button>
-                      </div>
-
-                    </div>
-                  </form>
-                </div>
-              </li>
-              <li class="list-inline-item">
-
-                <a id="color-theme-switch" class="p-2 p-md-0" href="javascript:void(0);" role="button" title="Switch sidebar color theme">
-                  <i class="la la-sun la-lg"></i>
-                </a>
-
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="navbar navbar-expand-md navbar-dark">
-
-      <div class="container">
-
-        <div data-v-component-site="">
-          <a class="navbar-brand" href="/" data-v-url-params="{&quot;host&quot;:&quot;www.*.*&quot;}">
-            <span class="visually-hidden">Logo</span>
-            <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo="">
-            <img src="img/logo.png" alt="Site logo sticky" loading="lazy" class="logo-sticky" data-v-site-logo-sticky="">
-            <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark="">
-            <img src="img/logo-white.png" alt="Site logo dark sticky" loading="lazy" class="logo-default-dark-sticky" data-v-site-logo-dark-sticky="">
-          </a>
-        </div>
-
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbar" data-v-component-menu="header" data-v-slug="main-menu">
-          <ul class="navbar-nav ms-auto" data-v-menu-items="">
-            <li class="nav-item dropdown position-static" data-v-menu-item="" data-v-class-if-has-dropdown="category.children > 0" data-v-class-if-position-static="category.has-text">
-
-              <a class="nav-link dropdown-toggle" href="#" data-v-class-if-dropdown-toggle="category.children > 0" data-v-class-if-active="category.active" aria-expanded="false" data-v-menu-item-url="">
-                <span data-v-menu-item-name="" data-v-if-not="category.type = 'text'"></span>
-                <span data-v-menu-item-content="">
-                  <p>
-                    <img src="/media/vvveb.svg" height="24" alt="" class="me-2">Mega menu
-                  </p>
-                </span>
-              </a>
-
-              <div class="dropdown-menu" data-v-menu-item-recursive="">
-                <div data-v-menu-item="" class="nav-item" data-v-class-if-dropdown="category.children > 0">
-                  <a class="dropdown-item" data-v-class-if-active="category.active" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url="">
-                    <span data-v-menu-item-name="" data-v-if-not="category.type = 'text'"></span>
-                    <span data-v-if="category.content" data-v-menu-item-content="">
-                      <div class="row">
-                        <div class="col-6 align-self-center">
-                          <img src="img/demo/video-1.jpg" alt="Post" width="250" loading="lazy" class="rounded img-fluid">
-                        </div>
-                        <div class="col-6">
-                          <h4>Features</h4>
-                          <p class="text-muted">Just a few mentions, but there is more</p>
-                          <ul class="list-unstyled">
-                            <li class="text-primary">Page builder</li>
-                            <li class="text-primary">Mega menu</li>
-                            <li class="text-primary">Multi language</li>
-                            <li class="text-primary">Advanced SEO</li>
-                            <li class="text-primary">Ecommerce</li>
-                          </ul>
-                        </div>
-                      </div>
-                    </span>
-                  </a>
-                </div>
-                <div data-v-menu-item="" class="nav-item" data-v-class-if-dropdown="category.children > 0">
-                  <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-class-if-active="category.active" data-v-menu-item-url="">
-                    <span data-v-menu-item-name="" data-v-if-not="category.type = 'text'">Developer Documentation</span>
-                    <span data-v-menu-item-content=""></span>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown" data-v-menu-item="">
-              <a class="nav-link dropdown-toggle" href="https://blog.vvveb.com" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Blog</span>
-              </a>
-
-              <div class="dropdown-menu" data-v-menu-item-recursive="">
-                <div data-v-menu-item="" class="nav-item" data-v-class-if-dropdown="category.children > 0">
-                  <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url="">
-                    <span data-v-menu-item-name="" data-v-if-not="category.type = 'text'">User Documentation</span>
-                    <span data-v-menu-item-content=""></span>
-                  </a>
-                </div>
-                <div data-v-menu-item="" class="nav-item" data-v-class-if-dropdown="category.children > 0">
-                  <a class="dropdown-item" href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url="">
-                    <span data-v-menu-item-name="" data-v-if-not="category.type = 'text'">Developer Documentation</span>
-                    <span data-v-menu-item-content=""></span>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item" data-v-menu-item="">
-              <a class="nav-link" href="https://www.vvveb.com/page/contact" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Contact</span>
-              </a>
-            </li>
-            <li class="nav-item" data-v-menu-item="">
-              <a class="nav-link" href="https://www.vvveb.com" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">About us</span>
-              </a>
-            </li>
-            <li class="nav-toggle">
-              <!-- User Login Info -->
-              <div class="dropdown user-box nav-item">
-                <a class="dropdown-toggle nav-link " href="" role="button" id="user-dropdown" data-bs-toggle="dropdown" aria-expanded="false" data-v-url="user/index">
-                  <!-- <img src="img/user.svg" loading="lazy" width="20" alt> -->
-                  <i class="la la-lg la-user"></i>
-                  <span class="visually-hidden">User</span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-end login-box p-4" aria-labelledby="user-dropdown">
-
-                  <div data-v-component-user="">
-
-                    <div class="notifications" data-v-notifications="">
-
-                      <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error="" data-v-type="login">
-
-                        <div class="icon align-middle me-2">
-                          <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
-                        </div>
-
-                        <div class="flex-grow-1 align-self-center text-small">
-                          <div>
-                            <div data-v-notification-text="">
-                              This is a placeholder for a notification message.
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">
-                            <!-- <i class="la la-times"></i> -->
-                          </span>
-                        </button>
-                      </div>
-
-                      <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success="" data-v-type="login">
-
-                        <div class="icon align-middle me-2">
-                          <i class="align-middle la la-2x lh-1 la-check-circle"></i>
-                        </div>
-
-                        <div class="flex-grow-1 align-self-center align-middle" data-v-notification-text="">
-                          This is a placeholder for a success message.
-                        </div>
-
-                        <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">
-                            <!-- <i class="la la-times"></i> -->
-                          </span>
-                        </button>
-                      </div>
-
-                      <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info="" data-v-type="login">
-
-                        <div class="icon align-middle me-2">
-                          <i class="align-middle la la-2x lh-1  la-info-circle"></i>
-                        </div>
-
-                        <div class="flex-grow-1 align-self-center" data-v-notification-text="">
-                          This is a placeholder for a info message.
-                        </div>
-
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">
-                            <!-- <i class="la la-times"></i> -->
-                          </span>
-                        </button>
-                      </div>
-
-                    </div>
-
-                    <form action="" method="post" enctype="multipart/form-data" data-v-url="user/login" data-v-vvveb-action="login" data-v-vvveb-on="submit" class="login-form">
-
-                      <input type="hidden" name="csrf" data-v-csrf="">
-
-                      <div class="login-form" data-v-if-not="component.user_id">
-
-                        <div class="mb-3">
-                          <label class="form-label" for="input-email">E-Mail Address</label>
-                          <input type="email" name="email" value="" placeholder="E-Mail Address" id="input-email" class="form-control" required="">
-                        </div>
-
-                        <div class="mb-3">
-                          <label class="form-label" for="input-password">Password</label>
-                          <input type="password" minlength="4" autocorrect="off" autocomplete="current-password" name="password" value="" placeholder="Password" id="input-password" class="form-control" required="">
-                        </div>
-
-                        <button type="submit" value="Login" class="btn btn-primary btn-login w-100">
-
-                          <span class="loading d-none">
-                            <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-                            </span>
-                            <span>Authenticating</span>...
-                          </span>
-
-                          <span class="button-text">
-                            Login <i class="la la-arrow-right float-end ms-2"></i>
-                          </span>
-
-                        </button>
-                        <div class="my-2"></div>
-                        <a href="/user/reset" data-v-url="user/reset/index" class="my-2">Forgotten Password</a>
-
-                        <div class="my-2"></div>
-                        <!--
-		<a href="#">
-			<span class="btn btn-secondary btn-sm">
-				  <i class="lab la-google la-lg"></i>
-			</span>
-		</a>
-		<a href="#">
-			<span class="btn btn-secondary btn-sm">
-			  <i class="lab la-facebook la-lg"></i>
-			</span>
-		</a> -->
-                        <hr>
-                        <span>Don’t have an account?</span>
-                        <a href="/user/signup" data-v-url="user/signup/index">Register Account</a>
-
-                      </div>
-
-
-                      <div class="user-form" data-v-if="component.user_id">
-                        <div class="text-center">Welcome <b data-v-user-first_name="" data-filter-capitalize="">John</b>
-                          <b data-v-user-last_name="" data-filter-capitalize="">Doe</b>
-                        </div>
-
-                        <div class="dropdown-divider opacity-50 my-3"></div>
-
-                        <ul class="m-3 list-unstyled">
-                          <li>
-                            <a href="user" data-v-url="user/index">
-                              <i class="la la-user la-lg text-muted m-1"></i>
-                              <span>My account</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="user/comments" data-v-url="user/comments/index">
-                              <i class="la la-comment la-lg text-muted m-1"></i>
-                              <span>Comments</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="user/orders" data-v-url="user/orders/index">
-                              <i class="la la-shopping-bag la-lg text-muted m-1"></i>
-                              <span>Orders</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="user/downloads" data-v-url="user/downloads/index">
-                              <i class="la la-hand-holding-heart la-lg text-muted m-1"></i>
-                              <span>Downloads</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="user/wishlist" data-v-url="user/wishlist/index">
-                              <i class="la la-download la-lg text-muted m-1"></i>
-                              <span>Wishlist</span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="user/profile" data-v-url="user/profile/index">
-                              <i class="la la-cogs la-lg text-muted m-1"></i>
-                              <span>Profile</span>
-                            </a>
-                          </li>
-                        </ul>
-
-
-                        <input type="hidden" name="logout">
-
-                        <button type="submit" value="logout" class="btn btn-sm btn-primary w-100">
-
-                          <span class="loading d-none">
-                            <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-                            </span>
-                            <span>Loading ...</span>...
-                          </span>
-
-                          <span class="button-text">
-                            <i class="la la-sign-out-alt la-lg m-1"></i>
-                            <span>Log out</span>
-                            
-                          </span>
-
-                        </button>
-                      </div>
-                    </form>
-
-                  </div>
-                </div>
-              </div>
-
-            </li>
-            <li class="nav-toggle">
-              <!-- Cart Area -->
-              <div class="dropdown nav-item mini-cart" data-v-component-cart="">
-
-                <a class="dropdown-toggle cart-info nav-link " href="" role="button" id="cart-dropdown" data-bs-toggle="dropdown" aria-expanded="false" data-v-url="cart/cart/index">
-                  <!-- <img src="img/bag.svg" width="20" alt> -->
-                  <i class="la la-lg la-shopping-bag"></i>
-                  <span class="visually-hidden">Cart</span>
-                  <strong class="text-top text-bold" data-v-total_items="" data-v-if="cart.total_items > 0"></strong>
-                </a>
-
-
-                <div class="dropdown-menu dropdown-menu-end cart-box" aria-labelledby="cart-dropdown">
-
-                  <div>
-                    <div class="table-responsive">
-                      <table class="table cart-table align-middle mb-0">
-                        <tbody>
-
-
-                          <tr data-v-cart-product="">
-                            <td class="text-center">
-                              <a href="#40" data-v-cart-product-url="">
-                                <img src="img/demo/product.jpg" alt="Product name" class="img-rounded" loading="lazy" data-v-cart-product-image="" width="50">
-                              </a>
-                            </td>
-                            <td class="text-start">
-                              <a href="#40" class="d-block" data-v-cart-product-url="" data-v-cart-product-name="">
-                                Product name
-                              </a>
-
-                              <span data-v-cart-product-quantity="">1</span>
-                              <i class="la la-times text-muted"></i>
-                              <span data-v-cart-product-price_tax_formatted="">$123.20</span>
-
-                              <div class="option" data-v-if="product.option">
-                                <div class="" data-v-product-option="">
-                                  <span data-v-product-option-option="">Color</span>: <span data-v-product-option-name="">Red</span>
-                                  <span data-v-if="value.price">(<span data-v-product-option-price=""></span>)</span>
-                                </div>
-                                <div class="" data-v-product-option="">
-                                  <span data-v-product-option-option="">Size</span>: <span data-v-product-option-name="">XL</span>
-                                  <span data-v-if="value.price">(<span data-v-product-option-price=""></span>)</span>
-                                </div>
-                                <div class="" data-v-product-option="">
-                                  <span data-v-product-option-option="">Material</span>: <span data-v-product-option-name="">Wool</span>
-                                  <span data-v-if="value.price">(<span data-v-product-option-price=""></span>)</span>
-                                </div>
-                              </div>
-
-                              <div class="subscription" data-v-if="product.subscription">
-                                <span data-v-product-subscription-name="">Subscription plan</span>
-                              </div>
-                            </td>
-                            <td class="text-end">
-                              <a class="btn btn-outline-secondary btn-sm border-0" data-v-vvveb-action="removeFromCart" data-v-cart-product-remove-url="">
-                                <i class="la la-times"></i>
-                              </a>
-                            </td>
-                          </tr>
-                          <tr data-v-cart-product="">
-                            <td class="text-center">
-                              <a href="#40" data-v-cart-product-url="">
-                                <img src="img/demo/product.jpg" alt="Product name" class="img-rounded" loading="lazy" data-v-cart-product-image="" width="50">
-                              </a>
-                            </td>
-                            <td class="text-start">
-                              <a href="#40" class="d-block" data-v-cart-product-url="" data-v-cart-product-name="">
-                                Product name
-                              </a>
-
-                              <span data-v-cart-product-quantity="">1</span>
-                              <i class="la la-times text-muted"></i>
-                              <span data-v-cart-product-price_tax_formatted="">$123.20</span>
-
-
-                            </td>
-                            <td class="text-end">
-                              <a class="btn btn-outline-secondary btn-sm border-0" data-v-vvveb-action="removeFromCart" data-v-cart-product-remove-url="">
-                                <i class="la la-times"></i>
-                              </a>
-                            </td>
-                          </tr>
-                          <tr data-v-if-not="cart.total_items">
-                            <td colspan="100">
-                              <div class="d-flex  p-2">
-                                <div class="text-center p-2 opacity-75">
-                                  <!-- <img src="img/bag.svg" width="20" alt> -->
-                                  <i class="la la-2x la-shopping-bag"></i>
-                                </div>
-                                <div class="p-2">
-                                  <strong>Empty cart</strong>
-                                  <br>
-                                  <span class="text-muted">No products added yet!</span>
-                                </div>
-                              </div>
-                            </td>
-                          </tr>
-                        </tbody>
-
-                      </table>
-                    </div>
-
-                    <div class="p-3 pt-0 border-top" data-v-if="cart.total_items">
-                      <div class="table-responsive mb-2" data-v-cart-totals="">
-                        <table class="table mb-0 cart-table cart-total" cellspacing="0">
-                          <tfoot>
-                            <tr data-v-cart-total="">
-                              <td colspan="5" class="text-end">
-                                <small data-v-cart-total-title="">Sub-Total</small>:
-                              </td>
-                              <td class="text-end">
-                                <span data-v-cart-total-text="" data-v-if="total.text"> - </span>
-                                <span data-v-cart-total-value_formatted="" data-v-if="total.value > 0">$101.00</span>
-                              </td>
-                            </tr>
-                            <tr data-v-cart-total="">
-                              <td colspan="5" class="text-end">
-                                <small>Eco Tax (2.00):</small>
-                              </td>
-                              <td class="text-end">$2.00</td>
-                            </tr>
-                            <tr data-v-cart-total="">
-                              <td colspan="5" class="text-end">
-                                <small>VAT (19%):</small>
-                              </td>
-                              <td class="text-end">$20.20</td>
-                            </tr>
-                            <tr data-v-cart-total="">
-                              <td colspan="5" class="text-end">
-                                <small>Total:</small>
-                              </td>
-                              <td class="text-end">$123.20</td>
-                            </tr>
-                            <tr>
-                              <td colspan="5" class="text-end">Total:</td>
-                              <td class="text-end" data-v-grand-total_formatted="">$0</td>
-                            </tr>
-                          </tfoot>
-
-                        </table>
-                      </div>
-
-                    </div>
-
-                    <div class="row mt-2 g-2 px-3 pb-2" data-v-if="cart.total_items">
-                      <div class="col-6">
-                        <a href="" class="btn btn-light btn-sm border w-100" data-v-url="cart/cart/index">
-                          <i class="la la-shopping-cart la-lg"></i>
-                          <span>View cart</span>
-                        </a>
-                      </div>
-                      <div class="col-6">
-                        <a href="" class="btn btn-primary btn-sm w-100" data-v-url="checkout/checkout/index">
-                          <span>Checkout</span>
-                          <i class="la la-arrow-right la-lg"></i>
-                        </a>
-                      </div>
-                    </div>
-
-
-                  </div>
-                </div>
-
-              </div>
-
-            </li>
-          </ul>
-
-          <div class="search-area toggle-hover">
-            <form action="/search" method="get" data-v-action="/search">
-              <input type="hidden" name="route" value="search">
-              <div class="input-group">
-                <input type="search" name="search" class="form-control" id="headerSearch" placeholder="Type for search" data-v-vvveb-action="search" data-v-vvveb-on="keyup">
-                <button class="btn border-0" type="submit" title="Search">
-                  <div class="la-flip-horizontal">
-                    <i class="la la-search la-lg" aria-hidden="true"></i>
-                  </div>
-                </button>
-              </div>
-            </form>
-          </div>
-
-        </div>
-
-
-        <!--
-			  <div class="collapse navbar-collapse" id="navbar">
-				<ul class="navbar-nav ms-auto">
-				  <li class="nav-item">
-					<a class="nav-link" href="#features">Features <span class="sr-only">(current)</span></a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="https://themes.vvveb.com">Themes</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="https://plugins.vvveb.com">Plugins</a>
-				  </li>
-				  <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Resources</a>
-					<div class="dropdown-menu" aria-labelledby="dropdown01">
-					  <a class="dropdown-item" target="_blank"  href="https://github.com/givanz/VvvebJs/wiki">User Documentation</a>
-					  <a class="dropdown-item" target="_blank"  href="https://github.com/givanz/VvvebJs/wiki">Developer Documentation</a>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <base href="">
+    <title>VvvebJs</title>
+    
+    <link href="css/editor.css" rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+  </head>
+<body>
+
+<div id="vvveb-builder">
+				
+				<div id="top-panel">
+					<img src="img/logo.png" alt="Vvveb" class="float-start" id="logo">
+					
+					<div class="btn-group float-start" role="group">
+					  <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
+						  <img src="libs/builder/icons/file-manager-layout.svg" width="18" height="18" alt="" role="presentation">
+					  </button>
+
+					  <button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
+						  <img src="libs/builder/icons/left-column-layout.svg" width="18" height="18" alt="" role="presentation">
+					  </button>
+					  
+					  <button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
+						  <img src="libs/builder/icons/right-column-layout.svg" width="18" height="18" alt="" role="presentation">
+					  </button>
 					</div>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" target="_blank" href="https://github.com/givanz/VvvebJs">Github</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link" href="contact.html">Contact</a>
-				  </li>
-				  <li class="nav-item active">
-					<a class="nav-link" href="https://vvveb.com/download.php">Download for free</a>
-				  </li>			  
-				</ul>
-			  </div>
-			  -->
-      </div>
+					
+					<div class="btn-group me-3" role="group">
+					  <button class="btn btn-light" title="Undo (Ctrl/Cmd + Z)" id="undo-btn" data-vvveb-action="undo" data-vvveb-shortcut="ctrl+z">
+						  <i class="la la-undo"></i>
+					  </button>
 
-    </div>
+            <button class="btn btn-light" title="Redo (Ctrl/Cmd + Shift + Z)" id="redo-btn" data-vvveb-action="redo" data-vvveb-shortcut="ctrl+shift+z">
+              <i class="la la-undo la-flip-horizontal"></i>
+					  </button>
+					</div>
+										
+					
+					<div class="btn-group me-3" role="group">
+					  <button class="btn btn-light" title="Designer Mode (Free dragging)" id="designer-mode-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="setDesignerMode">
+						  <i class="la la-hand-rock"></i>
+					  </button>
 
-  </nav>
+					  <button class="btn btn-light" title="Preview" id="preview-btn" type="button" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="preview">
+                <i class="icon-eye-outline"></i>
+					  </button>
+
+					  <button class="btn btn-light" title="Fullscreen (F11)" id="fullscreen-btn" data-bs-toggle="button" aria-pressed="false" data-vvveb-action="fullscreen">
+						  <i class="icon-expand-outline"></i>
+					  </button>
+
+					  <button class="btn btn-light active" title="Toggle navigator" id="toggle-tree-list" data-bs-toggle="button" data-vvveb-action="toggleTreeList" aria-pressed="true">
+						  <i class="icon-layers-outline"></i>
+					  </button>
+
+					  <button class="btn btn-light" title="Download" id="download-btn" data-vvveb-action="download" data-v-download="index.html">
+						  <i class="la la-download"></i>
+					  </button>
+
+					</div>
+					
+								
+					<div class="btn-group me-2 float-end" role="group">
+					  <button class="btn btn-primary btn-sm btn-icon save-btn" title="Export (Ctrl + E)" id="save-btn" data-vvveb-action="saveAjax" data-vvveb-url="save.php" data-v-vvveb-shortcut="ctrl+e">
+
+						<span class="loading d-none">
+						<i class="icon-save-outline"></i>
+						  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+						  </span>
+						  <span>Saving </span> ... </span>
+
+						<span class="button-text">
+						  <i class="icon-save-outline"></i> <span>Save page</span>
+						</span>	
+
+					  </button>
+					</div>	
+
+					  <div class="float-end me-3">
+
+					    <button class="btn btn-light border-0 btn-sm btn-dark-mode" data-vvveb-action="darkMode">
+							<!-- i class="la la-adjust la-lg"></i -->
+							<i class="la la-sun"></i>
+						</button>
+						
+					    <a href="#" class="btn btn-light btn-sm btn-preview-url" target="blank" title="View page">
+							<i class="la la-external-link-alt"></i>
+						</a>
+
+					    <div class="btn-group responsive-btns" role="group">
 
 
-  <header class="hero-3" title="hero-3">
+		 			 <button id="mobile-view" data-view="mobile" class="btn btn-light"  title="Mobile view" data-vvveb-action="viewport">
+						  <i class="la la-mobile"></i>
+					  </button>
 
-    <div class="container">
-      <div>
-        <div class="row align-items-center justify-content-center text-center">
-          <div class="col-lg-12">
-            <h1 class="heading mb-3 display-4" data-aos="fade-up" data-aos-delay="100">The next generation website builder</h1>
-            <h2 class="h3 col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="100">Powerful and easy to use drag and drop website builder for blogs, presentation or ecommerce stores.</h2>
+					  <button id="tablet-view"  data-view="tablet" class="btn btn-light"  title="Tablet view" data-vvveb-action="viewport">
+						  <i class="la la-tablet"></i>
+					  </button>
+					  
+					  <button id="desktop-view"  data-view="" class="btn btn-light"  title="Desktop view" data-vvveb-action="viewport">
+						  <i class="la la-laptop"></i>
+					  </button>
 
-            <div class="buttons" data-aos="fade-up" data-aos-delay="300">
-              <a href="https://www.vvveb.com" class="btn btn-primary">
-                <span>⚡</span>
-                <span>Free Download</span>
-                <b>›</b>
-              </a>
-              <a href="https://demo.vvveb.com" class="btn btn-white">Live Demo</a>
-            </div>
+					<div class="percent">
+					   <input type="number" id="zoom" value="100" step="10" min="10" max="100" class="form-control" data-vvveb-action="zoomChange" data-vvveb-on="change">
 
+					</div>
+					</div>
+										
+				</div>	
+				
+     			 </div>
 
-          </div>
-        </div>
-      </div>
-    </div>
+				
+				<div id="left-panel">
+					  <div>
+					  <div id="filemanager"> 
+							<div class="header">
+								<span class="text-secondary"><i class="la la-file la-lg"></i> Pages</span>
 
-    <div class="separator bottom">
+									<div class="btn-group responsive-btns float-end" role="group">
+									  <button class="btn btn-outline-primary btn-sm  btn-add" title="New file" id="new-file-btn" data-vvveb-action="newPage" data-vvveb-shortcut="">
+									<!-- <span>Add new</span> -->
+									<i class="icon-add"></i>
+									  </button>
+									  
+									  <!--  &ensp;
+									  <button class="btn btn-link text-dark p-0"  title="Delete file" id="delete-file-btn" data-vvveb-action="deletePage" data-vvveb-shortcut="">
+										  <i class="la la-trash"></i> <small>Delete</small>
+									  </button> -->
+									</div>
 
-      <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 41" width="100%" height="100" fill="var(--bs-body-bg)" preserveAspectRatio="none">
-        <defs></defs>
-        <title>rough-edges-bottom</title>
-        <path d="M0,185l125-26,33,17,58-12s54,19,55,19,50-11,50-11l56,6,60-8,63,15v15H0Z" transform="translate(0 -159)"></path>
-      </svg>
+								</div>
 
-    </div>
-    <!--
-   <div class="separator top">
+								<div class="tree">
+									<ol>
+									</ol>
+								</div>
+					  </div>
+					  
+					  
+					 <div class="drag-elements">
+						
+						<div class="header">
+							<ul class="nav nav-tabs  nav-fill" id="elements-tabs" role="tablist">
+							  <li class="nav-item sections-tab">
+								<a class="nav-link active" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="true" title="Sections">
+									<i class="icon-layers-outline"></i>
+									<!-- img src="../../../js/vvvebjs/icons/list_group.svg" height="23" --> 
+									<!-- div><small>Sections</small></div -->
+								</a>
+							  </li>
+							  <li class="nav-item component-tab">
+								<a class="nav-link" id="components-tab" data-bs-toggle="tab" href="#components-tabs" role="tab" aria-controls="components" aria-selected="false" title="Components">
+									<i class="icon-cube-outline"></i>
+									<!-- img src="../../../js/vvvebjs/icons/product.svg" height="23" --> 
+									<!-- div><small>Components</small></div -->
+								</a>
+							  </li>
+							  <!-- li class="nav-item sections-tab">
+								<a class="nav-link" id="sections-tab" data-bs-toggle="tab" href="#sections" role="tab" aria-controls="sections" aria-selected="false" title="Sections"><img src="../../../js/vvvebjs/icons/list_group.svg" width="24" height="23"> <div><small>Sections</small></div></a>
+							  </li -->
+							  <li class="nav-item component-properties-tab d-none">
+								<a class="nav-link" id="properties-tab" data-bs-toggle="tab" href="#properties" role="tab" aria-controls="properties" aria-selected="false" title="Properties">
+									<i class="icon-settings-outline"></i>
+									<!-- img src="../../../js/vvvebjs/icons/filters.svg" height="23"--> 
+									<!-- div><small>Properties</small></div -->
+								</a>
+							  </li>
+							  <li class="nav-item component-configuration-tab">
+								<a class="nav-link" id="configuration-tab" data-bs-toggle="tab" href="#configuration" role="tab" aria-controls="configuration" aria-selected="false" title="Styles">
+									<i class="icon-color-wand-outline"></i>
+									<!-- img src="../../../js/vvvebjs/icons/filters.svg" height="23"--> 
+									<!-- div><small>Properties</small></div -->
+								</a>
+							  </li>
+							</ul>
+					
+							<div class="tab-content">
+							  
+							  
+							  <div class="tab-pane show active sections" id="sections" role="tabpanel" aria-labelledby="sections-tab">
+								  
+
+										<ul class="nav nav-tabs nav-fill nav-underline  sections-tabs" id="sections-tabs" role="tablist">
+										  <li class="nav-item content-tab">
+											<a class="nav-link active" data-bs-toggle="tab" href="#sections-new-tab" role="tab" aria-controls="components" aria-selected="false">
+												<i class="icon-albums-outline"></i> <div><span>Sections</span></div></a>
+										  </li>
+										  <li class="nav-item style-tab">
+											<a class="nav-link" data-bs-toggle="tab" href="#sections-list" role="tab" aria-controls="sections" aria-selected="true">
+												 <i class="icon-document-text-outline"></i><div><span>Page Sections</span></div></a>
+										  </li>
+										</ul>
+								
+										<div class="tab-content">
 		
-		<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 41" width="100%" height="200" preserveAspectRatio="none"><defs><style>.cls-1{fill:var(--bs-body-bg);}</style></defs><title>rough-edges-bottom</title><path class="cls-1" d="M0,185l125-26,33,17,58-12s54,19,55,19,50-11,50-11l56,6,60-8,63,15v15H0Z" transform="translate(0 -159)"/></svg>
+											 <div class="tab-pane" id="sections-list" data-section="style" role="tabpanel" aria-labelledby="style-tab">
+												<div class="drag-elements-sidepane sidepane">
+												  <div>
+													<div class="sections-container p-4">
+																													  
+															<div class="section-item" draggable="true">
+																<div class="controls">
+																	<div class="handle"></div>
+																	<div class="info">
+																		<div class="name">&nbsp;
+																			<div class="type">&nbsp;</div>
+																		</div>
+																	</div>
+																</div>
+															</div> 
+															<div class="section-item" draggable="true">
+																<div class="controls">
+																	<div class="handle"></div>
+																	<div class="info">
+																		<div class="name">&nbsp;
+																			<div class="type">&nbsp;</div>
+																		</div>
+																	</div>
+																</div>
+															</div> 
+															<div class="section-item" draggable="true">
+																<div class="controls">
+																	<div class="handle"></div>
+																	<div class="info">
+																		<div class="name">&nbsp;
+																			<div class="type">&nbsp;</div>
+																		</div>
+																	</div>
+																</div>
+															</div> 
+															<!-- div class="section-item" draggable="true">
+																<div class="controls">
+																	<div class="handle"></div>
+																	<div class="info">
+																		<div class="name">welcome area
+																			<div class="type">section</div>
+																		</div>
+																	</div>
+																	<div class="buttons"> <a class="delete-btn" href="" title="Remove section"><i class="la la-trash text-danger"></i></a>
+																		
+																		<a class="properties-btn" href="" title="Properties"><i class="icon-settings-outline"></i></a> </div>
+																</div>
+																<input class="header_check" type="checkbox" id="section-components-9338">
+																<label for="section-components-9338">
+																	<div class="header-arrow"></div>
+																</label>
+																<div class="tree">
+																	<ol></ol>
+																</div>
+															</div --> 
+																											
+															
+													  </div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="tab-pane show active" id="sections-new-tab" data-section="content" role="tabpanel" aria-labelledby="content-tab">
+
+
+													   <div class="search">
+															  <div class="expand">
+																  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button> 
+																  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+															  </div>	
+
+															  <input class="form-control section-search" placeholder="Search sections" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+															  <button class="clear-backspace"  data-vvveb-action="clearSearch" title="Clear search">
+																  <i class="la la-times"></i>
+															  </button>
+														</div>
+
+											  
+														<div class="drag-elements-sidepane sidepane">
+															  <div class="block-preview"><img src="" style="display:none"></div>
+															  <div>
+																  
+																<ul class="sections-list clearfix" data-type="leftpanel">
+																</ul>
+
+															  </div>
+														</div>
+
+											</div>
+											
+										</div>
+							
+							  </div>
+							
+								<div class="tab-pane show" id="components-tabs" role="tabpanel" aria-labelledby="components-tab">
+								  
+								  
+										<ul class="nav nav-tabs nav-fill nav-underline  sections-tabs" role="tablist">
+										  <li class="nav-item components-tab">
+											<a class="nav-link active" data-bs-toggle="tab" href="#components" role="tab" aria-controls="components" aria-selected="true">
+												<i class="icon-cube-outline"></i> <div><span>Components</span></div></a>
+										  </li>
+										  <li class="nav-item blocks-tab">
+											<a class="nav-link" data-bs-toggle="tab" href="#blocks" role="tab" aria-controls="components" aria-selected="false">
+												<i class="icon-copy-outline"></i> <div><span>Blocks</span></div></a>
+										  </li>
+										</ul>
+								
+										<div class="tab-content">
 		
-    </div>
--->
-    <div class="overlay">
-    </div>
-
-    <div class="background-container">
-
-      <img src="img/demo/hero-3.jpg" alt="Hero background">
-
-    </div>
-
-  </header>
-
-
-  <section class="showcase-3" title="showcase-3">
-    <div class="container">
-      <div class="row g-1 justify-content-center">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="feature" data-aos="fade-up" data-aos-delay="100">
-            <div class="font-container text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="72" height="72" color="#1064ea" fill="#1064ea">
-                <polyline points="336 176 225.2 304 176 255.8" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></polyline>
-                <path d="M463.1,112.37C373.68,96.33,336.71,84.45,256,48,175.29,84.45,138.32,96.33,48.9,112.37,32.7,369.13,240.58,457.79,256,464,271.42,457.79,479.3,369.13,463.1,112.37Z" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></path>
-              </svg>
-            </div>
-            <h3>
-              <a href="#">Better Security</a>
-            </h3>
-            <p class="text-center">Vvveb is 100% safe against sql injections, a vulerability that affects most CMS.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="feature" data-aos="fade-up" data-aos-delay="200">
-            <div class="font-container text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="icons" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="72" height="72" color="#1064ea" fill="#1064ea">
-                <path d="M419.1,337.45a3.94,3.94,0,0,0-6.1,0c-10.5,12.4-45,46.55-45,77.66,0,27,21.5,48.89,48,48.89h0c26.5,0,48-22,48-48.89C464,384,429.7,349.85,419.1,337.45Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:32px"></path>
-                <path d="M387,287.9,155.61,58.36a36,36,0,0,0-51,0l-5.15,5.15a36,36,0,0,0,0,51l52.89,52.89,57-57L56.33,263.2a28,28,0,0,0,.3,40l131.2,126a28.05,28.05,0,0,0,38.9-.1c37.8-36.6,118.3-114.5,126.7-122.9,5.8-5.8,18.2-7.1,28.7-7.1h.3A6.53,6.53,0,0,0,387,287.9Z" style="fill:none;stroke:currentColor;stroke-miterlimit:10;stroke-width:32px"></path>
-              </svg>
-            </div>
-            <h3>
-              <a href="#">Unlimited customization</a>
-            </h3>
-            <p class="text-center">Vvveb uses only html for templating for maximum flexibility.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="feature" data-aos="fade-up" data-aos-delay="300">
-            <div class="font-container text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" id="icons" width="72" height="72" color="#1064ea" fill="#1064ea" stroke-width="28">
-                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill-rule="evenodd" d="M80,176a16,16,0,0,0-16,16V408c0,30.24,25.76,56,56,56H392c30.24,0,56-24.51,56-54.75V192a16,16,0,0,0-16-16Z"></path>
-                <path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" fill-rule="evenodd" d="M160,176V144a96,96,0,0,1,96-96h0a96,96,0,0,1,96,96v32"></path>
-              </svg>
-            </div>
-            <h3>
-              <a href="#">Advanced Ecommerce</a>
-            </h3>
-            <p class="text-center">Vvveb is a full featured ecommerce platform with advanced functionality.</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-          <div class="feature" data-aos="fade-up" data-aos-delay="400">
-            <div class="font-container text-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="72" height="72" color="#1064ea" fill="#1064ea">
-                <path d="M80,464V68.14a8,8,0,0,1,4-6.9C91.81,56.66,112.92,48,160,48c64,0,145,48,192,48a199.53,199.53,0,0,0,77.23-15.77A2,2,0,0,1,432,82.08V301.44a4,4,0,0,1-2.39,3.65C421.37,308.7,392.33,320,352,320c-48,0-128-32-192-32s-80,16-80,16" style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></path>
-              </svg>
-            </div>
-            <h3>
-              <a href="#">Full Localization</a>
-            </h3>
-            <p class="text-center">Publish content in multiple languages or sell in different currencies.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="features-1 bg-alternate" title="features-1">
-    <div class="container">
-      <div class="row wrap">
-        <div class="col-md-7 align-self-center">
-          <div class="max-box">
-            <span class="badge  bg-success rounded-pill px-3 opacity-50">new</span>
-            <h3 class="mt-2">Code editor with syntax highglighting that updates in real time</h3>
-            <div class="mt-4">
-              <p>The html for sections blocks and components and this template are built using Bootstrap.</p>
-              <p>Use any of the hundreds fonts from google fonts for your design.</p>
-              <p>Powerful and easy to use drag and drop builder for blogs, websites or ecommerce stores.</p>
-            </div>
-            <a href="#" tile="Code editor features" role="button">
-              <span>Learn More</span>
-              <i class="la la-long-arrow-alt-right ms-1"></i>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-5">
-          <img src="img/illustrations.co/118-macbook.svg" alt="Macbook" loading="lazy" class="img-fluid">
-        </div>
-      </div>
-      <div class="row wrap">
-        <div class="col-md-5">
-          <img src="img/illustrations.co/day95-app-development.svg" alt="App development" loading="lazy" class="img-fluid">
-        </div>
-        <div class="col-md-7 align-self-center">
-          <div class="max-box ms-auto">
-            <span class="badge  bg-success rounded-pill px-3 opacity-50">on sale</span>
-            <h3 class="mt-2">Intuitive building with simple drag and drop for sections, components and blocks</h3>
-            <div class="mt-4">
-              <p>The html for sections blocks and components and this template are built using Bootstrap.</p>
-              <p>Use any of the hundreds fonts from google fonts for your design.</p>
-              <p>Powerful and easy to use drag and drop builder for blogs, websites or ecommerce stores.</p>
-            </div>
-            <a href="#" title="Drag and drop" role="button">
-              <span>Learn More</span>
-              <i class="la la-long-arrow-alt-right ms-1"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="products-1" title="latest-products-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-heading text-center">
-            <h2>Popular Products</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="container" data-v-component-products="popular" data-v-limit="8" data-v-image_size="medium">
-      <div class="row">
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-md-3" data-v-product="">
-
-          <article class="single-product-wrapper">
-            <!-- Product Image -->
-            <a href="product/product.html" data-v-product-url=""> </a>
-            <div class="product-image">
-              <a href="product/product.html" data-v-product-url="">
-
-                <img src="img/demo/product.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image="">
-
-                <!-- Hover Thumb -->
-                <img class="hover-img" src="img/demo/product-2.jpg" loading="lazy" data-v-product-alt="" alt="" data-v-size="thumb" data-v-product-image-1="">
-              </a>
-
-              <!-- Favourite -->
-              <div class="product-favourite">
-                <a href="product/product.html" class="la la-heart" data-v-vvveb-action="addToWishlist" data-v-product-add_wishlist_url="">
-                  <span></span>
-                </a>
-              </div>
-
-              <!-- Compare -->
-              <div class="product-compare">
-                <a href="product/product.html" class="la la-random" data-v-vvveb-action="addToCompare" data-v-product-add_compare_url="">
-                  <span></span>
-                </a>
-              </div>
-            </div>
-
-            <!-- Product Description -->
-            <div class="product-content">
-
-              <a href="product/product.html" class="text-body" data-v-product-url="">
-                <span data-v-product-name="">Product 8</span>
-              </a>
-
-              <p class="product-price" data-v-if="_product.price > 0" data-v-product-price_tax_formatted="">100.0000</p>
-
-              <!-- Hover Content -->
-              <div class="hover-content" data-v-if="_product.price > 0">
-                <!-- Add to Cart -->
-                <div class="add-to-cart-btn">
-                  <input type="hidden" name="product_id" value="" data-v-product-product_id="">
-                  <a href="" class="btn btn-primary w-100" data-v-product-add_cart_url="" data-v-vvveb-action="addToCart" data-product_id="1">
-                    <span class="loading d-none">
-                      <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true"> </span>
-                      <span>Add to cart</span>...
-                    </span>
-
-                    <span class="button-text">
-                      Add to cart
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <section class="testimonials-1 bg-alternate" title="testimonials-1">
-    <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-md-7 text-center">
-          <h2 class="mb-1">Some of our users</h2>
-          <h3 class="lead text-muted mb-3">Hear what our users have to say</h3>
-        </div>
-      </div>
-
-      <div class="row text-center">
-
-
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="rounded testimonial">
-
-            <svg enable-background="new 0 0 33 25" version="1.1" viewBox="0 0 33 25" width="42" height="42" fill="#0d6efd" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g>
-                <path d="M18.006,6.538c0-1.973,0.662-3.554,1.988-4.743c1.326-1.19,2.977-1.785,4.947-1.785   c2.517,0,4.488,0.799,5.916,2.397C32.285,4.004,33,6.13,33,8.782c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.061,4.743c-1.188,1.258-2.43,2.244-3.723,2.958c-1.291,0.714-2.413,1.239-3.365,1.581l-3.265-5.508   c1.36-0.545,2.517-1.412,3.468-2.602c0.953-1.19,1.496-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.724-1.786   C18.566,10.09,18.006,8.509,18.006,6.538z M0.359,6.538c0-1.973,0.663-3.554,1.989-4.743C3.674,0.604,5.324,0.01,7.295,0.01   c2.518,0,4.488,0.799,5.916,2.397c1.429,1.597,2.143,3.723,2.143,6.375c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.06,4.743c-1.188,1.258-2.431,2.244-3.724,2.958C6.004,24.133,4.883,24.658,3.93,25l-3.264-5.508   c1.36-0.545,2.516-1.412,3.467-2.602c0.953-1.19,1.497-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.723-1.786   C0.92,10.09,0.359,8.509,0.359,6.538z"></path>
-              </g>
-            </svg>
-
-            <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui.</p>
-
-            <img src="img/sections/team/1.jpg" alt="team" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow" loading="lazy">
-
-            <h4 class="mb-0">John Doe</h4>
-            <span class="small text-uppercase text-muted">Company Inc.</span>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="rounded testimonial">
-
-            <svg enable-background="new 0 0 33 25" version="1.1" viewBox="0 0 33 25" width="42" height="42" fill="#0d6efd" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g>
-                <path d="M18.006,6.538c0-1.973,0.662-3.554,1.988-4.743c1.326-1.19,2.977-1.785,4.947-1.785   c2.517,0,4.488,0.799,5.916,2.397C32.285,4.004,33,6.13,33,8.782c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.061,4.743c-1.188,1.258-2.43,2.244-3.723,2.958c-1.291,0.714-2.413,1.239-3.365,1.581l-3.265-5.508   c1.36-0.545,2.517-1.412,3.468-2.602c0.953-1.19,1.496-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.724-1.786   C18.566,10.09,18.006,8.509,18.006,6.538z M0.359,6.538c0-1.973,0.663-3.554,1.989-4.743C3.674,0.604,5.324,0.01,7.295,0.01   c2.518,0,4.488,0.799,5.916,2.397c1.429,1.597,2.143,3.723,2.143,6.375c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.06,4.743c-1.188,1.258-2.431,2.244-3.724,2.958C6.004,24.133,4.883,24.658,3.93,25l-3.264-5.508   c1.36-0.545,2.516-1.412,3.467-2.602c0.953-1.19,1.497-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.723-1.786   C0.92,10.09,0.359,8.509,0.359,6.538z"></path>
-              </g>
-            </svg>
-
-
-            <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui.</p>
-            <img src="img/sections/team/2.jpg" alt="team" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow" loading="lazy">
-
-            <h4 class="mb-0">Jane Doe</h4>
-            <span class="small text-uppercase text-muted">Company Inc.</span>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="rounded testimonial">
-
-            <svg enable-background="new 0 0 33 25" version="1.1" viewBox="0 0 33 25" width="42" height="42" fill="#0d6efd" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g>
-                <path d="M18.006,6.538c0-1.973,0.662-3.554,1.988-4.743c1.326-1.19,2.977-1.785,4.947-1.785   c2.517,0,4.488,0.799,5.916,2.397C32.285,4.004,33,6.13,33,8.782c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.061,4.743c-1.188,1.258-2.43,2.244-3.723,2.958c-1.291,0.714-2.413,1.239-3.365,1.581l-3.265-5.508   c1.36-0.545,2.517-1.412,3.468-2.602c0.953-1.19,1.496-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.724-1.786   C18.566,10.09,18.006,8.509,18.006,6.538z M0.359,6.538c0-1.973,0.663-3.554,1.989-4.743C3.674,0.604,5.324,0.01,7.295,0.01   c2.518,0,4.488,0.799,5.916,2.397c1.429,1.597,2.143,3.723,2.143,6.375c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.06,4.743c-1.188,1.258-2.431,2.244-3.724,2.958C6.004,24.133,4.883,24.658,3.93,25l-3.264-5.508   c1.36-0.545,2.516-1.412,3.467-2.602c0.953-1.19,1.497-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.723-1.786   C0.92,10.09,0.359,8.509,0.359,6.538z"></path>
-              </g>
-            </svg>
-
-
-            <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui.</p>
-
-            <img src="img/sections/team/3.jpg" alt="team" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow" loading="lazy">
-
-            <h4 class="mb-0">John Doe</h4>
-            <span class="small text-uppercase text-muted">Company Inc.</span>
-          </div>
-        </div>
-
-
-        <div class="col-xl-3 col-sm-6 mb-5">
-          <div class="rounded testimonial">
-
-            <svg enable-background="new 0 0 33 25" version="1.1" viewBox="0 0 33 25" width="42" height="42" fill="#0d6efd" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              <g>
-                <path d="M18.006,6.538c0-1.973,0.662-3.554,1.988-4.743c1.326-1.19,2.977-1.785,4.947-1.785   c2.517,0,4.488,0.799,5.916,2.397C32.285,4.004,33,6.13,33,8.782c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.061,4.743c-1.188,1.258-2.43,2.244-3.723,2.958c-1.291,0.714-2.413,1.239-3.365,1.581l-3.265-5.508   c1.36-0.545,2.517-1.412,3.468-2.602c0.953-1.19,1.496-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.724-1.786   C18.566,10.09,18.006,8.509,18.006,6.538z M0.359,6.538c0-1.973,0.663-3.554,1.989-4.743C3.674,0.604,5.324,0.01,7.295,0.01   c2.518,0,4.488,0.799,5.916,2.397c1.429,1.597,2.143,3.723,2.143,6.375c0,2.719-0.424,5.032-1.275,6.936   c-0.85,1.903-1.869,3.483-3.06,4.743c-1.188,1.258-2.431,2.244-3.724,2.958C6.004,24.133,4.883,24.658,3.93,25l-3.264-5.508   c1.36-0.545,2.516-1.412,3.467-2.602c0.953-1.19,1.497-2.465,1.633-3.824c-1.359,0-2.602-0.597-3.723-1.786   C0.92,10.09,0.359,8.509,0.359,6.538z"></path>
-              </g>
-            </svg>
-
-
-            <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui.</p>
-
-            <img src="img/sections/team/4.jpg" alt="team" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow" loading="lazy">
-
-            <h4 class="mb-0">Jane Doe</h4>
-            <span class="small text-uppercase text-muted">Company Inc.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="pricing-table-3" title="pricing-table-3">
-    <div class="container">
-      <div class="row justify-content-center pb-2">
-        <div class="col-md-7 heading-section text-center">
-          <h1 class="text-center">Choose your plan</h1>
-          <p class="lead text-center mb-4">14-day free trial no credit card required.</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="price-col shadow">
-            <div class="img">
-              <img src="img/illustrations.co/104-dumbbell.svg" alt="104-dumbbell" loading="lazy" class="img-fluid">
-            </div>
-            <div class="text-center p-4">
-              <span class="excerpt d-block">Personal</span>
-              <span class="price">
-                <sup>$</sup>
-                <span class="number">49</span>
-                <sub>/mos</sub>
-              </span>
-              <ul class="pricing-text mb-5">
-                <li>
-                  <span class="la la-check me-2"></span>5 Dog Walk
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>3 Vet Visit
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>3 Pet Spa
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>Free Support
-                </li>
-              </ul>
-              <a href="#" class="btn btn-primary">
-                <span>Get Started</span>
-                <i class="la la-long-arrow-alt-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="price-col shadow">
-            <div class="img">
-              <img src="img/illustrations.co/107-healthy.svg" alt="107-healthy" loading="lazy" class="img-fluid">
-            </div>
-            <div class="text-center p-4">
-              <span class="excerpt d-block">Business</span>
-              <span class="price">
-                <sup>$</sup>
-                <span class="number">79</span>
-                <sub>/mos</sub>
-              </span>
-              <ul class="pricing-text mb-5">
-                <li>
-                  <span class="la la-check me-2"></span>5 Dog Walk
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>3 Vet Visit
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>3 Pet Spa
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>Free Support
-                </li>
-              </ul>
-              <a href="#" class="btn btn-primary">
-                <span>Get Started</span>
-                <i class="la la-long-arrow-alt-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="price-col shadow">
-            <div class="img">
-              <img src="img/illustrations.co/126-namaste-no-hand-shake.svg" alt="126-namaste-no-hand-shake" loading="lazy" class="img-fluid">
-            </div>
-            <div class="text-center p-4">
-              <span class="excerpt d-block">Ultimate</span>
-              <span class="price">
-                <sup>$</sup>
-                <span class="number">109</span>
-                <sub>/mos</sub>
-              </span>
-              <ul class="pricing-text mb-5">
-                <li>
-                  <span class="la la-check me-2"></span>5 Dog Walk
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>3 Vet Visit
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>3 Pet Spa
-                </li>
-                <li>
-                  <span class="la la-check me-2"></span>Free Support
-                </li>
-              </ul>
-              <a href="#" class="btn btn-primary">
-                <span>Get Started</span>
-                <i class="la la-long-arrow-alt-right ms-1"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="posts-1" title="latest-post-1">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-heading text-center">
-            <h2>Latest Posts</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="container" data-v-component-posts="posts-1" data-v-limit="3" data-v-image_size="medium">
-      <div class="row">
-
-
-
-        <div class="col-12 col-lg-4 mb-2" data-v-post="">
-
-          <article class="card h-100 shadow-sm">
-            <div class="card-img-top" data-v-if="post.image">
-              <img src="img/demo/video-1.jpg" alt="" class="w-100" loading="lazy" data-v-size="thumb" data-v-post-image="">
-            </div>
-            <!-- Post Title -->
-            <div class="card-body">
-              <div class="post-title card-title">
-                <a href="#" data-v-post-url="">
-                  <h3 data-v-post-name="">
-                    Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et malesuada
-                  </h3>
-                </a>
-              </div>
-              <!-- Hover Content -->
-              <p class="card-text text-muted" data-v-post-excerpt="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus purus dignissim convallis.</p>
-              <a href="#" title="Read more" role="button" data-v-post-url="">
-                <span>Read more</span>
-                <i class="la la-angle-right"></i>
-              </a>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-12 col-lg-4 mb-2" data-v-post="">
-
-          <article class="card h-100 shadow-sm">
-            <div class="card-img-top" data-v-if="post.image">
-              <img src="img/demo/video-1.jpg" alt="" class="w-100" loading="lazy" data-v-size="thumb" data-v-post-image="">
-            </div>
-            <!-- Post Title -->
-            <div class="card-body">
-              <div class="post-title card-title">
-                <a href="#" data-v-post-url="">
-                  <h3 data-v-post-name="">
-                    Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et malesuada
-                  </h3>
-                </a>
-              </div>
-              <!-- Hover Content -->
-              <p class="card-text text-muted" data-v-post-excerpt="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus purus dignissim convallis.</p>
-              <a href="#" title="Read more" role="button" data-v-post-url="">
-                <span>Read more</span>
-                <i class="la la-angle-right"></i>
-              </a>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-        <div class="col-12 col-lg-4 mb-2" data-v-post="">
-
-          <article class="card h-100 shadow-sm">
-            <div class="card-img-top" data-v-if="post.image">
-              <img src="img/demo/video-1.jpg" alt="" class="w-100" loading="lazy" data-v-size="thumb" data-v-post-image="">
-            </div>
-            <!-- Post Title -->
-            <div class="card-body">
-              <div class="post-title card-title">
-                <a href="#" data-v-post-url="">
-                  <h3 data-v-post-name="">
-                    Vivamus sed nunc in arcu cursus mollis quis et orci. Interdum et malesuada
-                  </h3>
-                </a>
-              </div>
-              <!-- Hover Content -->
-              <p class="card-text text-muted" data-v-post-excerpt="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce enim nulla, mollis eu metus in, sagittis fringilla tortor. Phasellus purus dignissim convallis.</p>
-              <a href="#" title="Read more" role="button" data-v-post-url="">
-                <span>Read more</span>
-                <i class="la la-angle-right"></i>
-              </a>
-            </div>
-          </article>
-
-
-        </div>
-
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <section title="contact-form-6" class="contact-form-6">
-    <div class="container-fluid g-0">
-
-      <div style="height:300px" data-component-maps="">
-        <iframe loading="lazy" frameborder="0" title="map" src="https://maps.google.com/maps?q=Bucharest&amp;z=15&amp;t=q&amp;key=&amp;output=embed" width="100%" height="100%" style="width:100%;height:100%;left:0px">
-        </iframe>
-      </div>
-
-    </div>
-    <div class="container">
-      <div class="row my-5">
-        <div class="col-12 col-md-6 col-lg-5">
-          <h2>Contact Us</h2>
-          <p class="lead">
-            Powerful and easy to use drag and drop website builder for blogs, presentation or ecommerce stores.
-          </p>
-
-          <p class="lead">
-            The html for sections blocks and components and this template are built using Bootstrap 5.
-          </p>
-
-          <div data-v-component-site="">
-            <p class="mt-5">
-              <span>
-                <i class="la la-lg la-envelope opacity-50"></i> Email:
-              </span>
-              <span data-v-if="site.contact-email">
-                <a href="mailto:contact@mysite.com" data-v-site-contact-email="">
-                  <span data-v-site-contact-email="">contact@mysite.com</span>
-                </a>
-              </span>
-            </p>
-            <p class="">
-              <span>
-                <i class="la la-lg la-phone opacity-50"></i> Phone:
-              </span>
-              <a href="tel:5511112377" data-v-site-description-phone-number="">
-                <span data-v-site-description-phone-number="">+55 (111) 123 777</span>
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 ms-auto" data-v-component-plugin-contact-form-form="" data-v-storage="database" data-v-name="contact-us-home">
-
-          <div class="notifications" data-v-notifications="">
-
-            <div class="alert alert-danger d-flex alert-dismissable" role="alert" data-v-notification-error="">
-
-              <div class="icon align-middle me-2">
-                <i class="align-middle la la-2x lh-1 la-exclamation-triangle"></i>
-              </div>
-
-              <div class="flex-grow-1 align-self-center text-small">
-                <div>
-                  <div data-v-notification-text="">
-                    This is a placeholder for a notification message.
+											 <div class="tab-pane show active components" id="components" data-section="components" role="tabpanel" aria-labelledby="components-tab">
+												 
+												   <div class="search">
+														  <div class="expand">
+																  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button> 
+																  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+														  </div>	
+
+														  <input class="form-control component-search" placeholder="Search components" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+														  <button class="clear-backspace" data-vvveb-action="clearSearch">
+															  <i class="la la-times"></i>
+															</button>
+													</div>
+
+													<div class="drag-elements-sidepane sidepane">	
+														 <div>
+														  
+														<ul class="components-list clearfix" data-type="leftpanel">
+														</ul>
+
+													</div>											 
+												</div>
+											</div>
+
+											
+											
+											<div class="tab-pane show active blocks" id="blocks" data-section="content" role="tabpanel" aria-labelledby="content-tab">
+
+													   <div class="search">
+															  <div class="expand">
+																  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button> 
+																  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+															  </div>	
+
+															  <input class="form-control block-search" placeholder="Search blocks" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+															  <button class="clear-backspace" data-vvveb-action="clearSearch">
+																  <i class="la la-times"></i>
+															  </button>
+														</div>
+
+											  
+														<div class="drag-elements-sidepane sidepane">
+															  <div class="block-preview"><img src=""></div>
+															  <div>
+																<ul class="blocks-list clearfix" data-type="leftpanel">
+																</ul>
+
+															  </div>
+														</div>
+											</div>
+											
+										</div>
+							</div>
+
+								<div class="tab-pane" id="properties" role="tabpanel" aria-labelledby="properties-tab">
+									<div class="component-properties-sidepane">
+										<div>
+											<div class="component-properties">
+												<ul class="nav nav-tabs nav-fill nav-underline" id="properties-tabs" role="tablist">
+													  <li class="nav-item content-tab">
+														<a class="nav-link content-tab active" data-bs-toggle="tab" href="#content-left-panel-tab" role="tab" aria-controls="components" aria-selected="true">
+															<i class="icon-albums-outline"></i> <span>Content</span>
+														</a>
+													  </li>
+													  <li class="nav-item style-tab">
+														<a class="nav-link" data-bs-toggle="tab" href="#style-left-panel-tab" role="tab" aria-controls="style" aria-selected="false">
+															<i class="icon-color-fill-outline"></i> <span>Style</span></a>
+													  </li>
+													  <li class="nav-item advanced-tab">
+														<a class="nav-link" data-bs-toggle="tab" href="#advanced-left-panel-tab" role="tab" aria-controls="advanced" aria-selected="false">
+															<i class="icon-settings-outline"></i> <span>Advanced</span></a>
+													  </li>
+													</ul>
+											
+													<div class="tab-content" data-offset="20">
+														 <div class="tab-pane show active" id="content-left-panel-tab" data-section="content" role="tabpanel" aria-labelledby="content-tab">
+															<div class="alert alert-dismissible fade show alert-light m-3" role="alert" style="">		  
+																<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>		  
+																<strong>No selected element!</strong><br> Click on an element to edit.		
+															</div>
+														</div>
+														
+														 <div class="tab-pane show" id="style-left-panel-tab" data-section="style" role="tabpanel" aria-labelledby="style-tab">
+                              <div class="border-bottom pb-2 px-2">
+                                <div class="justify-content-end d-flex">
+                                  <select class="form-select w-50" data-vvveb-action="setState" data-vvveb-on="change">
+                                    <option value=""> - State - </option>
+                                    <option value="hover">hover</option>
+                                    <option value="active">active</option>
+                                    <option value="nth-of-type(2n)">nth-of-type(2n)</option>
+                                  </select>
+                                </div>
+                              </div>
+														</div>
+														
+														 <div class="tab-pane show" id="advanced-left-panel-tab" data-section="advanced"  role="tabpanel" aria-labelledby="advanced-tab">
+														</div>
+													</div>
+											</div>
+										</div>
+									</div>
+							  </div>
+							
+							<div class="tab-pane" id="configuration" role="tabpanel" aria-labelledby="configuration-tab">
+								
+									<ul class="nav nav-tabs nav-fill nav-underline sections-tabs" id="vars-tabs" role="tablist">
+									  <li class="nav-item vars-tab">
+										<a class="nav-link active" data-bs-toggle="tab" href="#vars-tab" role="tab" aria-controls="components" aria-selected="false">
+											<i class="icon-brush-outline"></i> <div><span>Variables</span></div></a>
+									  </li>
+									  <li class="nav-item css-tab">
+										<a class="nav-link" data-bs-toggle="tab" href="#css-tab" role="tab" aria-controls="css" aria-selected="true">
+											<i class="icon-code-slash-outline"></i> <div><span>Css</span></div></a>
+									  </li>
+									</ul>
+							
+									<div class="tab-content">
+
+										 <div class="tab-pane show active" id="vars-tab" data-section="vars" role="tabpanel" aria-labelledby="vars-tab">
+								
+													<div class="drag-elements-sidepane sidepane">
+													<div data-offset="80">
+														<div class="component-properties">
+								<!-- color palette -->
+															<!--
+															<label class="header" data-header="default" for="header_pallette"><span>Global styles</span>
+									<div class="header-arrow"></div>
+															</label> -->
+															<input class="header_check" type="checkbox" checked id="header_pallette">
+															<div class="tab-pane section px-0" data-section="content">
+										
+															</div>
+									
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										 <div class="tab-pane" id="css-tab" data-section="css" role="tabpanel" aria-labelledby="css-tab">
+											<div class="drag-elements-sidepane sidepane">
+											<div data-offset="80">
+												<textarea id="css-editor" class="form-control" rows="24"></textarea>
+											</div>
+											</div>
+										 </div>
+										
+									</div>
+								
+							
+							</div><!-- end configuration tab -->
+							
+							</div>
+						</div>							
+					
+					   </div>
+				      </div>
+				</div>	
+
+
+				<div id="canvas">
+					<div id="iframe-wrapper">
+						<div id="iframe-layer">
+							
+							<div class="loading-message active">
+									<div class="animation-container">
+									  <div class="dot dot-1"></div>
+									  <div class="dot dot-2"></div>
+									  <div class="dot dot-3"></div>
+									</div>
+
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+									  <defs>
+										<filter id="goo">
+										  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+										  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/>
+										</filter>
+									  </defs>
+									</svg>
+									<!-- https://codepen.io/Izumenko/pen/MpWyXK -->
+							</div>
+							
+							<div id="highlight-box">
+								<div id="highlight-name">
+								  <span class="name"></span>
+								  <span class="type"></span>
+								</div>
+								
+								<div id="section-actions">
+									<a id="add-section-btn" href="" title="Add element"><i class="la la-plus"></i></a>
+								</div>
+							</div>
+
+							<div id="select-box">
+
+								<div id="wysiwyg-editor" class="default-editor">
+										<!--
+										<a id="bold-btn" href="" title="Bold">
+											<svg height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+												<path clip-rule="evenodd" d="M56 40V216H148C176.719 216 200 192.719 200 164C200 147.849 192.637 133.418 181.084 123.88C187.926 115.076 192 104.014 192 92C192 63.2812 168.719 40 140 40H56ZM88 144V184H148C159.046 184 168 175.046 168 164C168 152.954 159.046 144 148 144H88ZM88 112V72H140C151.046 72 160 80.9543 160 92C160 103.046 151.046 112 140 112H88Z" fill="#252525" fill-rule="evenodd"/>
+											</svg>	
+										</a>
+										<a id="italic-btn" href="" title="Italic">
+											<svg height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+												<path d="M202 40H84V64H126.182L89.8182 192H54V216H172V192H129.818L166.182 64H202V40Z" fill="#252525"/>
+											</svg>											
+										</a>
+										<a id="underline-btn" href="" title="Underline">
+											<svg height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+												<path clip-rule="evenodd" d="M88 40H60V108.004C60 145.56 90.4446 176.004 128 176.004C165.555 176.004 196 145.56 196 108.004V40H168V108C168 130.091 150.091 148 128 148C105.909 148 88 130.091 88 108V40ZM204 216V192H52V216H204Z" fill="#252525" fill-rule="evenodd"/>
+											</svg>
+										</a>
+										--> 
+										
+										<a id="bold-btn" class="hint" href="" title="Bold" aria-label="Bold">
+											<svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+												<path d="M6,4h8a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4H6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+												<path d="M6,12h9a4,4,0,0,1,4,4h0a4,4,0,0,1-4,4H6Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+											</svg>	
+										</a>
+										<a id="italic-btn" class="hint" href="" title="Italic" aria-label="Italic">
+											<svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+												<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="19" x2="10" y1="4" y2="4"/>
+                                                <line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="14" x2="5" y1="20" y2="20"/>
+												<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="15" x2="9" y1="4" y2="20"/>
+											</svg>									
+										</a>
+										<a id="underline-btn" class="hint" href="" title="Underline" aria-label="Underline">
+											<svg height="18" viewBox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
+												<path d="M6,4v7a6,6,0,0,0,6,6h0a6,6,0,0,0,6-6V4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" y1="2" y2="2"/>
+												<line fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="4" x2="20" y1="22" y2="22"/>
+											</svg>
+										</a>
+										
+										
+										<a id="strike-btn" class="hint" href="" title="Strikeout" aria-label="Strikeout">
+											<del>S</del>
+										</a>
+										
+										<div class="dropdown">
+										  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<span class="hint" aria-label="Text align"><i class="la la-align-left"></i></span>
+										  </button>
+
+										  <div id="justify-btn" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+											<a class="dropdown-item" href="#" data-value="Left"><i class="la la-lg la-align-left"></i> Align Left</a>
+											<a class="dropdown-item" href="#" data-value="Center"><i class="la la-lg la-align-center"></i> Align Center</a>
+											<a class="dropdown-item" href="#" data-value="Right"><i class="la la-lg la-align-right"></i> Align Right</a>
+											<a class="dropdown-item" href="#" data-value="Full"><i class="la la-lg la-align-justify"></i> Align Justify</a>
+											  </div>
+										</div>
+										
+										<div class="separator"></div>
+										
+										<a id="link-btn" class="hint" href="" title="Create link" aria-label="Create link">
+											<i class="la la-link">
+										</i></a>
+										
+										<div class="separator"></div>
+										
+										<input id="fore-color" name="color" type="color" aria-label="Text color" pattern="#[a-f0-9]{6}" class="form-control form-control-color hint">
+										<input id="back-color" name="background-color" type="color" aria-label="Background color" pattern="#[a-f0-9]{6}" class="form-control form-control-color hint">
+										
+										<div class="separator"></div>
+										
+										<select id="font-size" class="form-select" aria-label="Font size">
+											<option value="">- Font size -</option>
+											<option value="8px">8 px</option>
+											<option value="9px">9 px</option>
+											<option value="10px">10 px</option>
+											<option value="11px">11 px</option>
+											<option value="12px">12 px</option>
+											<option value="13px">13 px</option>
+											<option value="14px">14 px</option>
+											<option value="15px">15 px</option>
+											<option value="16px">16 px</option>
+											<option value="17px">17 px</option>
+											<option value="18px">18 px</option>
+											<option value="19px">19 px</option>
+											<option value="20px">20 px</option>
+											<option value="21px">21 px</option>
+											<option value="22px">22 px</option>
+											<option value="23px">23 px</option>
+											<option value="24px">24 px</option>
+											<option value="25px">25 px</option>
+											<option value="26px">26 px</option>
+											<option value="27px">27 px</option>
+											<option value="28px">28 px</option>
+										</select>
+										
+										<div class="separator"></div>
+										
+										<select id="font-family" class="form-select" title="Font family">
+											<option value=""> - Font family - </option>
+											<optgroup label="System default">
+											<option value="Arial, Helvetica, sans-serif">Arial</option>
+											<option value="'Lucida Sans Unicode', 'Lucida Grande', sans-serif">Lucida Grande</option>
+											<option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino Linotype</option>
+											<option value="'Times New Roman', Times, serif">Times New Roman</option>
+											<option value="Georgia, serif">Georgia, serif</option>
+											<option value="Tahoma, Geneva, sans-serif">Tahoma</option>
+											<option value="'Comic Sans MS', cursive, sans-serif">Comic Sans</option>
+											<option value="Verdana, Geneva, sans-serif">Verdana</option>
+											<option value="Impact, Charcoal, sans-serif">Impact</option>
+											<option value="'Arial Black', Gadget, sans-serif">Arial Black</option>
+											<option value="'Trebuchet MS', Helvetica, sans-serif">Trebuchet</option>
+											<option value="'Courier New', Courier, monospace">Courier New</option>
+											<option value="'Brush Script MT', sans-serif">Brush Script</option>
+											</optgroup>
+										</select>
+								</div>
+
+								<div id="select-actions">
+									<a id="drag-btn" href="" title="Drag element"><i class="la la-arrows-alt"></i></a>
+									<a id="parent-btn" href="" title="Select parent" class="la-rotate-180"><i class="la la-level-up-alt"></i></a>
+									
+									<a id="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
+									<a id="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
+									<a id="edit-code-btn" href="" title="Edit html code"><i class="icon-code-outline"></i></a>
+
+								<a id="save-reusable-btn" href="" title="Save as reusable" class="mx-2"><i class="icon-save-outline"></i></i></a>
+									<a id="clone-btn" href="" title="Clone element"><i class="icon-copy-outline"></i></a>
+									<a id="delete-btn" href="" title="Remove element"><i class="icon-trash-outline"></i></i></a>
+								</div>
+								
+								<div class="resize">
+									<!-- top -->
+									<div class="top-left">
+									</div>
+									<div class="top-center">
+									</div>
+									<div class="top-right">
+									</div>
+									<!-- center -->
+									<div class="center-left">
+									</div>
+									<div class="center-right">
+									</div>
+									<!-- bottom -->
+									<div class="bottom-left">
+									</div>
+									<div class="bottom-center">
+									</div>
+									<div class="bottom-right">
+									</div>
+								</div>
+
+							</div>
+							
+							<!-- add section box -->
+							<div id="add-section-box" class="drag-elements">
+
+									<div class="header">							
+										<ul class="nav nav-tabs" id="box-elements-tabs" role="tablist">
+										  <li class="nav-item component-tab">
+											<a class="nav-link px-3 active" id="box-components-tab" data-bs-toggle="tab" href="#box-components" role="tab" aria-controls="components" aria-selected="true"><i class="icon-cube-outline"></i><small>Components</small></a>
+										  </li>
+										  <li class="nav-item sections-tab">
+											<a class="nav-link px-3" id="box-sections-tab" data-bs-toggle="tab" href="#box-blocks" role="tab" aria-controls="blocks" aria-selected="false"><i class="icon-copy-outline"></i><small>Blocks</small></a>
+										  </li>
+                          <!--
+										  <li class="nav-item component-properties-tab" style="display:none">
+											<a class="nav-link" id="box-properties-tab" data-bs-toggle="tab" href="#box-properties" role="tab" aria-controls="properties" aria-selected="false"><i class="la la-lg la-cog"></i> <div><small>Properties</small></div></a>
+										  </li>
+                          -->
+										</ul>
+										
+										<div class="section-box-actions">
+
+									<div id="close-section-btn" class="btn btn-outline-secondary btn-sm mt-1 border-0 float-end"><i class="la la-times la-lg"></i></div>
+										
+										<div class="me-4 small mt-2 float-end">
+											
+								<div class="form-check d-inline-block small me-1">
+												  <input type="radio" id="add-section-insert-mode-after" value="after" checked="checked" name="add-section-insert-mode" class="form-check-input">
+								  <label class="form-check-label" for="add-section-insert-mode-after">After</label>
+												</div>
+												
+								<div class="form-check d-inline-block small">
+												  <input type="radio" id="add-section-insert-mode-inside" value="inside" name="add-section-insert-mode" class="form-check-input">
+								  <label class="form-check-label" for="add-section-insert-mode-inside">Inside</label>
+												</div>
+										
+											</div>
+											
+										</div>
+										
+										<div class="tab-content">
+										  <div class="tab-pane show active" id="box-components" role="tabpanel" aria-labelledby="components-tab">
+											  
+											   <div class="search">
+													  <div class="expand">
+														  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
+														  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+													  </div>	
+
+													  <input class="form-control component-search" placeholder="Search components" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+													  <button class="clear-backspace" data-vvveb-action="clearSearch">
+														  <i class="la la-times"></i>
+													  </button>
+												  </div>
+
+												<div class="overflow-y-auto mb-5">
+												  <div>
+													  
+													<ul class="components-list clearfix" data-type="addbox">
+													</ul>
+
+												  </div>
+												</div>
+										  
+										  </div>
+										  <div class="tab-pane" id="box-blocks" role="tabpanel" aria-labelledby="blocks-tab">
+											  
+											   <div class="search">
+													  <div class="expand">
+														  <button class="text-sm" title="Expand All" data-vvveb-action="expand"><i class="la la-plus"></i></button>
+														  <button title="Collapse all" data-vvveb-action="collapse"><i class="la la-minus"></i></button> 
+													  </div>	
+
+													  <input class="form-control block-search" placeholder="Search blocks" type="text" data-vvveb-action="search" data-vvveb-on="keyup">
+													  <button class="clear-backspace"  data-vvveb-action="clearSearch">
+														  <i class="la la-times"></i>
+													  </button>
+												  </div>
+
+												<div class="overflow-y-auto mb-5">
+												  <div>
+													  
+													<ul class="blocks-list clearfix"  data-type="addbox">
+													</ul>
+
+												  </div>
+												</div>
+										  
+										  </div>
+										
+											<!-- div class="tab-pane" id="box-properties" role="tabpanel" aria-labelledby="blocks-tab">
+												<div class="component-properties-sidepane">
+													<div>
+														<div class="component-properties">
+															<div class="mt-4 text-center">Click on an element to edit.</div>
+														</div>
+													</div>
+												</div>
+											</div -->
+										</div>
+									</div>		
+
+							</div>
+							<!-- //add section box -->
+
+							<div id="drop-highlight-box">
+						</div>
+						</div>
+							
+														
+						<iframe src="" id="iframe1">
+						</iframe>
+					</div>
+					
+					
+				</div>
+
+				<div id="right-panel">
+					<div class="component-properties">
+						
+						<ul class="nav nav-tabs nav-fill nav-underline" id="properties-tabs" role="tablist">
+							  <li class="nav-item content-tab">
+								<a class="nav-link active" data-bs-toggle="tab" href="#content-tab" role="tab" aria-controls="components" aria-selected="true">
+									 <i class="icon-albums-outline"></i> <span>Content</span></a>
+							  </li>
+							  <li class="nav-item style-tab">
+								<a class="nav-link" data-bs-toggle="tab" href="#style-tab" role="tab" aria-controls="blocks" aria-selected="false">
+									<i class="icon-color-fill-outline"></i></i> <span>Style</span></a>
+							  </li>
+							  <li class="nav-item advanced-tab">
+								<a class="nav-link" data-bs-toggle="tab" href="#advanced-tab" role="tab" aria-controls="blocks" aria-selected="false">
+									<i class="icon-settings-outline"></i> <span>Advanced</span></a>
+							  </li>
+							</ul>
+					
+							<div class="tab-content">
+								 <div class="tab-pane show active" id="content-tab" data-section="content" role="tabpanel" aria-labelledby="content-tab">
+									<div class="alert alert-dismissible fade show alert-light m-3" role="alert">		  
+										<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>		  
+										<strong>No selected element!</strong><br> Click on an element to edit.		
+									</div>
+								</div>
+								
+								 <div class="tab-pane show" id="style-tab" data-section="style" role="tabpanel" aria-labelledby="style-tab">
+                <div class="border-bottom pb-2 px-2">
+                  <div class="justify-content-end d-flex">
+                    <select class="form-select w-50" data-vvveb-action="setState" data-vvveb-on="change">
+                      <option value=""> - State - </option>
+                      <option value="hover">hover</option>
+                      <option value="active">active</option>
+                      <option value="nth-of-type(2n)">nth-of-type(2n)</option>
+                    </select>
                   </div>
                 </div>
-              </div>
+								</div>
+								
+								 <div class="tab-pane show" id="advanced-tab" data-section="advanced"  role="tabpanel" aria-labelledby="advanced-tab">
+								</div>
+								
+								
+							</div>
+							
+							
+							
+					</div>
+				</div>
+				
+				<div id="bottom-panel">
+
+						<div>
+
+							<div class="breadcrumb-navigator px-2" style="--bs-breadcrumb-divider: '>';">
+							
+						  <ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">body</a></li>
+							<li class="breadcrumb-item"><a href="#">section</a></li>
+							<li class="breadcrumb-item"><a href="#">img</a></li>
+						  </ol>			
+						</div>
 
 
-              <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
+							<div class="btn-group" role="group">
 
-            <div class="alert alert-success d-flex  alert-dismissable d-flex" role="alert" data-v-notification-success="">
+								<div id="toggleEditorJsExecute" class="form-check mt-1" style="display:none">
+									<input type="checkbox" class="form-check-input" id="runjs" name="runjs" data-vvveb-action="toggleEditorJsExecute">
+									<label class="form-check-label" for="runjs"><small>Run javascript code on edit</small></label>&ensp;
+								</div>
+							
 
-              <div class="icon align-middle me-2">
-                <i class="align-middle la la-2x lh-1 la-check-circle"></i>
-              </div>
+		 			 <button id="code-editor-btn" class="btn btn-sm btn-light btn-sm"  title="Code editor" data-vvveb-action="toggleEditor">
+						  <i class="la la-code"></i> Code editor
+					  </button>
+					 
 
-              <div class="flex-grow-1 align-self-center align-middle" data-v-notification-text="">
-                This is a placeholder for a success message.
-              </div>
-
-              <button type="button" class="btn-close align-middle" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
-
-            <div class="alert alert-primary d-flex alert-dismissable d-flex" role="alert" data-v-notification-info="">
-
-              <div class="icon align-middle me-2">
-                <i class="align-middle la la-2x lh-1  la-info-circle"></i>
-              </div>
-
-              <div class="flex-grow-1 align-self-center" data-v-notification-text="">
-                This is a placeholder for a info message.
-              </div>
-
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">
-                  <!-- <i class="la la-times"></i> -->
-                </span>
-              </button>
-            </div>
-
-          </div>
-
-          <form action="" method="post" data-v-vvveb-action="submit" data-selector="[data-v-component-plugin-contact-form-form]" data-v-vvveb-on="submit">
-            <input type="hidden" class="form-control" placeholder="First name" name="firstname-empty">
-            <input type="hidden" class="form-control" placeholder="Email" name="csrf" data-v-csrf="">
-
-            <div class="row">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="First name" name="firstname" required="">
-              </div>
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Last name" name="lastname" required="">
-              </div>
-            </div>
-
-            <div class="row mt-4">
-              <div class="col">
-                <input type="email" class="form-control" placeholder="Enter email" name="email" required="">
-              </div>
-            </div>
-
-            <div class="row mt-4">
-              <div class="col">
-                <input type="text" class="form-control" placeholder="Subject" name="subject" required="">
-              </div>
-            </div>
-            <div class="row mt-4">
-              <div class="col">
-                <textarea class="form-control" name="message" rows="3" placeholder="How can we help?" required=""></textarea>
-              </div>
-            </div>
-
-
-            <!-- if these hidden inputs are filled then ignore, robots -->
-
-            <input type="text" class="form-control d-none" placeholder="Contact form" name="contact-form">
-
-            <input type="text" class="form-control d-none" placeholder="Subject" name="subject-empty">
-
-            <input type="text" class="form-control visually-hidden" placeholder="Last name" name="lastname-empty" tabindex="-1">
-
-
-            <div class="row mt-4">
-              <div class="col">
-                <button type="submit" class="btn btn-primary">
-                  <span class="loading d-none">
-                    <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
-                    </span>
-                    <span>Submitting</span> ...
-                  </span>
-
-                  <span class="button-text">
-                    <span>Submit</span>
-                    <i class="la la-lg la-envelope opacity-50 ms-2"></i>
-                  </span>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <footer class="footer-1" title="footer-1" data-v-save-global="index.html,.footer-1">
-    <div class="container" data-v-component-menu="footer" data-v-slug="main-footer">
-
-      <div class="row" data-v-menu-items="">
-
-        <div class="col-md">
-
-          <div data-v-component-site="">
-            <img src="img/logo-white.png" alt="Site logo dark" loading="lazy" class="logo-default-dark" data-v-site-logo-dark="">
-            <img src="img/logo.png" alt="Site logo" loading="lazy" class="logo-default" data-v-site-logo="">
-          </div>
-
-        </div>
-
-
-        <div class="col-md" data-v-menu-item="" data-v-if="category.children > 0">
-          <div class="h6" data-v-menu-item-name="">Vvveb</div>
-          <nav data-v-menu-item-recursive="">
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="https://themes.vvveb.com/" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Themes</span>
-              </a>
-            </div>
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="https://plugins.vvveb.com/" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Plugins</span>
-              </a>
-            </div>
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="content/index.html" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Blog</span>
-              </a>
-            </div>
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="product/index.html" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Shop</span>
-              </a>
-            </div>
-          </nav>
-        </div>
-
-        <div class="col-md" data-v-menu-item="" data-v-if="category.children > 0">
-          <div class="h6" data-v-menu-item-name="">Resources</div>
-          <nav data-v-menu-item-recursive="">
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">User documentation</span>
-              </a>
-            </div>
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="https://github.com/givanz/VvvebJs/wiki" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Developer documentation</span>
-              </a>
-            </div>
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="pricing.html" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Pricing</span>
-              </a>
-            </div>
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="services.html" data-v-menu-item-url="">
-                <span data-v-menu-item-name="">Services</span>
-              </a>
-            </div>
-          </nav>
-        </div>
-
-        <div class="col-md" data-v-menu-item="" data-v-if="category.children > 0">
-          <div class="h6" data-v-menu-item-name="">Contact</div>
-          <nav data-v-menu-item-recursive="">
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="">Contact us</a>
-              <a href="">Portfolio</a>
-              <a href="">About us</a>
-              <a href="">Return form</a>
-            </div>
-          </nav>
-        </div>
-
-        <div class="col-md" data-v-menu-item="" data-v-if="category.children > 0">
-          <div class="h6" data-v-menu-item-name="">My account</div>
-          <nav data-v-menu-item-recursive="">
-            <div data-v-menu-item="" data-v-if="category.children == 0">
-              <a href="">Order tracking</a>
-              <a href="">Wishlist</a>
-              <a href="">Orders</a>
-              <a href="">Compare</a>
-            </div>
-          </nav>
-        </div>
-
-
-
-      </div>
-      <!--
-		<div class="row justify-content-end">
-			<div class="col-md-3 text-muted text-small mt-5">
-				&copy; <span data-v-year>2023</span> <span data-v-sitename>Vvveb</span>. Powered by <a href="https://vvveb.com" target="_blank">Vvveb</a>	
+						</div>
+							
+					</div>
+					
+					<div id="vvveb-code-editor">
+						<textarea class="form-control"></textarea>
+					<div>
+				</div>
+				</div>	
 			</div>
 		</div>
-		-->
-
-    </div>
-
-    <div class="footer-copyright">
-      <div class="container">
-        <div class="d-flex flex-column flex-md-row">
-          <div class="text-muted flex-grow-1">
-            <a class="btn-link text-muted" href="content/page.html">Terms and conditions</a> |
-            <a class="btn-link text-muted" href="content/page.html">Privacy Policy</a>
-          </div>
-          <div class="text-muted">
-            © <span data-v-year="">2023</span>
-            <span data-v-global-site.title="">Vvveb</span>. <span>Powered by</span>
-            <a href="https://vvveb.com" class="btn-link text-muted" target="_blank">Vvveb</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </footer>
 
 
+<!-- templates -->
 
-  <div class="bg-image"></div>
+<script id="vvveb-input-textinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="text" class="form-control"/>
+	</div>
+	
+</script>
 
-  <div class="alert alert-light alert-dismissible fade alert-top" role="alert" style="display:none">
-    <div class="container">
+<script id="vvveb-input-textareainput" type="text/html">
+	
+	<div>
+		<textarea name="{%=key%}" {% if (typeof rows !== 'undefined') { %} rows="{%=rows%}" {% } else { %} rows="3" {% } %} class="form-control"/>
+	</div>
+	
+</script>
 
-      <div class="message">
-        Product was added to cart.
-      </div>
+<script id="vvveb-input-checkboxinput" type="text/html">
+	
+	<div class="form-check{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}">
+		  <input name="{%=key%}" class="form-check-input" type="checkbox" id="{%=key%}_check">
+		  <label class="form-check-label" for="{%=key%}_check">{% if (typeof text !== 'undefined') { %} {%=text%} {% } %}</label>
+	</div>
+	
+</script>
 
+<script id="vvveb-input-radioinput" type="text/html">
+	
+	<div>
+	
+		{% for ( var i = 0; i < options.length; i++ ) { %}
 
-      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
-    </div>
-  </div>
+		<label class="form-check-input  {% if (typeof inline !== 'undefined' && inline == true) { %}custom-control-inline{% } %}"  title="{%=options[i].title%}">
+		  <input name="{%=key%}" class="form-check-input" type="radio" value="{%=options[i].value%}" id="{%=key%}{%=i%}" {%if (options[i].checked) { %}checked="{%=options[i].checked%}"{% } %}>
+		  <label class="form-check-label" for="{%=key%}{%=i%}">{%=options[i].text%}</label>
+		</label>
 
-  <!-- Vvveb Common Js -->
-  <script id="popper-js" src="js/popper.min.js"></script>
-  <!-- <script src="../../js/bootstrap.min.js"></script> -->
-  <!-- <script src="../../js/bootstrap.bundle.min.js"></script> -->
-  <script id="bootstrap-js" src="js/bootstrap.min.js"></script>
-  <!-- Vvveb Ajax Common Js -->
-  <script id="app-js" src="js/app.js"></script>
+		{% } %}
 
-  <!-- Animation -->
+	</div>
+	
+</script>
 
-  <link rel="stylesheet" href="js/aos.css">
-  <noscript>
-    <style type="text/css">
-      [data-aos] {
-        opacity: 1 !important;
-        transform: translate(0) scale(1) !important;
-      }
-    </style>
-  </noscript>
+<script id="vvveb-input-radiobuttoninput" type="text/html">
+	
+	<div class="btn-group {%if (extraclass) { %}{%=extraclass%}{% } %} clearfix" role="group">
+		{% var namespace = 'rb-' + Math.floor(Math.random() * 100); %}
+		
+		{% for ( var i = 0; i < options.length; i++ ) { %}
 
-  <script src="js/aos.js"></script>
-  <script src="js/theme.js"></script>
+		<input name="{%=key%}" class="btn-check" type="radio" value="{%=options[i].value%}" id="{%=namespace%}{%=key%}{%=i%}" {%if (options[i].checked) { %}checked="{%=options[i].checked%}"{% } %} autocomplete="off">
+		<label class="btn btn-outline-primary {%if (options[i].extraclass) { %}{%=options[i].extraclass%}{% } %}" for="{%=namespace%}{%=key%}{%=i%}" title="{%=options[i].title%}">
+		  {%if (options[i].icon) { %}<i class="{%=options[i].icon%}"></i>{% } %}
+		  {%=options[i].text%}
+		</label>
 
-  <script>
-	AOS.init();
+		{% } %}
+				
+	</div>
+	
 </script>
 
 
+<script id="vvveb-input-toggle" type="text/html">
+	
+    <div class="form-check form-switch {% if (typeof className !== 'undefined') { %} {%=className%}{% } %}">
+        <input 
+		type="checkbox" 
+		name="{%=key%}" 
+		value="{%=on%}" 
+		{%if (off) { %} data-value-off="{%=off%}" {% } %}
+		{%if (on) { %} data-value-on="{%=on%}" {% } %} 
+		class="form-check-input" type="checkbox" role="switch"
+		id="{%=key%}">
+        <label class="form-check-label"for="{%=key%}">
+        </label>
+    </div>
+	
+</script>
+
+<script id="vvveb-input-header" type="text/html">
+
+		<h6 class="header">{%=header%}</h6>
+	
+</script>
+
+	
+<script id="vvveb-input-select" type="text/html">
+
+	<div>
+
+		<select class="form-select" name="{%=key%}">
+			{% var optgroup = false; for ( var i = 0; i < options.length; i++ ) { %}
+				{% if (options[i].optgroup) {  %}
+					{% if (optgroup) {  %}
+						</optgroup>
+					{% } %}
+					<optgroup label="{%=options[i].optgroup%}">
+				{% optgroup = true; } else { %}
+			<option value="{%=options[i].value%}" 
+				{% 
+					for (attr in options[i]) {
+							if (attr != "value" && attr != "text") {
+						 %} 
+							{%=attr%}={%=options[i][attr]%} 
+						{% } 
+					} %}>
+			{%=options[i].text%}</option>
+			{% } } %}
+		</select>
+	
+	</div>
+	
+</script>
+
+<script id="vvveb-input-icon-select" type="text/html">
+
+	<div class="input-list-select">
+		
+		<div class="elements">
+			<div class="row">
+				{% for ( var i = 0; i < options.length; i++ ) { %}
+				<div class="col">
+					<div class="element">
+						{%=options[i].value%}
+						<label>{%=options[i].text%}</label>
+					</div>
+				</div>
+				{% } %}
+			</div>
+		</div>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-html-list-select" type="text/html">
+
+	<div class="input-html-list-select">
+		
+		<div class="current-element">
+		</div>
+		
+		<div class="popup">
+			<select class="form-select">
+				{% var optgroup = false; for ( var i = 0; i < options.length; i++ ) { %}
+					{% if (options[i].optgroup) {  %}
+						{% if (optgroup) {  %}
+							</optgroup>
+						{% } %}
+						<optgroup label="{%=options[i].optgroup%}">
+					{% optgroup = true; } else { %}
+					<option value="{%=options[i].value%}">{%=options[i].text%}</option>
+				{% } } %}
+			</select>
+			
+		      <div class="search">
+				  <input class="form-control search" placeholder="Search elements" type="text">
+				  <button class="clear-backspace">
+					  <i class="la la-times"></i>
+				  </button>
+			</div>
+			
+			<div class="elements">
+					{%=elements%}
+			</div>
+		</div>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-html-list-dropdown" type="text/html">
+
+	<div class="input-html-list-select" {% if (typeof id !== "undefined") { %} id={%=id%} {% } %}>
+		
+		<div class="current-element">
+		
+		</div>
+		
+		<div class="popup">
+			<select class="form-select">
+				{% var optgroup = false; for ( var i = 0; i < options.length; i++ ) { %}
+					{% if (options[i].optgroup) {  %}
+						{% if (optgroup) {  %}
+							</optgroup>
+						{% } %}
+						<optgroup label="{%=options[i].optgroup%}">
+					{% optgroup = true; } else { %}
+					<option value="{%=options[i].value%}">{%=options[i].text%}</option>
+				{% } } %}
+			</select>
+			
+		      <div class="search">
+				  <input class="form-control search" placeholder="Search elements" type="text">
+				  <button class="clear-backspace">
+					  <i class="la la-times"></i>
+				  </button>
+			</div>
+			
+			<div class="elements">
+					{%=elements%}
+			</div>
+		</div>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-dateinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="date" class="form-control" 
+			{% if (typeof min_date === 'undefined') { %} min="{%=min_date%}" {% } %} {% if (typeof max_date === 'undefined') { %} max="{%=max_date%}" {% } %}
+		/>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-listinput" type="text/html">
+
+	<div class="sections-container">
+
+		{% for ( var i = 0; i < options.length; i++ ) { %}
+		<div class="section-item" draggable="true">
+			<div class="controls">
+				<div class="handle"></div>
+				<div class="info">
+					<div class="name">{%=options[i].name%}
+						<div class="type">{%=options[i].type%}</div>
+				</div>
+			  </div>
+				<div class="buttons">
+					<a class="delete-btn" href="" title="Remove section"><i class="icon-trash-outline text-danger"></i></a>
+					<!-- 
+					<a class="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
+					<a class="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
+					<a class="properties-btn" href="" title="Properties"><i class="icon-settings-outline"></i></a>
+					-->
+		</div>
+			</div>
 
 
-</body></html>
+			<input class="header_check" type="checkbox" id="section-components-{%=options[i].suffix%}">
+
+			<label for="section-components-{%=options[i].suffix%}"> 
+				<div class="header-arrow"></div>
+			</label>
+			
+			<div class="tree">
+				{%=options[i].name%}
+			</div>
+		</div>
+		
+
+
+
+		{% } %}
+
+
+		{% if (typeof hide_remove === 'undefined') { %}
+		<div class="mt-3">
+		
+			<button class="btn btn-sm btn-outline-primary btn-new">
+				<i class="la la-plus la-lg"></i> Add new
+			</button>
+			
+		</div>
+		{% } %}
+			
+	</div>
+	
+</script>
+
+<script id="vvveb-input-grid" type="text/html">
+
+	<div class="row">
+		<div class="col-6">
+		
+			<label>Extra small</label>
+			<select class="form-select" name="col" autocomplete="off">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col !== 'undefined') && col == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+		</div>
+
+				
+		<div class="col-6">
+			<label>Small</label>
+			<select class="form-select" name="col-sm" autocomplete="off">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_sm !== 'undefined') && col_sm == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+		</div>
+		
+		<div class="col-6">
+			<label>Medium</label>
+			<select class="form-select" name="col-md" autocomplete="off">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_md !== 'undefined') && col_md == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+		</div>
+		
+		<div class="col-6">
+			<label>Large</label>
+			<select class="form-select" name="col-lg" autocomplete="off">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_lg !== 'undefined') && col_lg == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+		</div>
+		
+		
+		<div class="col-6">
+			<label>Extra large </label>
+			<select class="form-select" name="col-xl" autocomplete="off">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_xl !== 'undefined') && col_xl == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+		</div>
+		
+		<div class="col-6">
+			<label>Extra extra large</label>
+			<select class="form-select" name="col-xxl" autocomplete="off">
+				
+				<option value="">None</option>
+				{% for ( var i = 1; i <= 12; i++ ) { %}
+				<option value="{%=i%}" {% if ((typeof col_xxl !== 'undefined') && col_xxl == i) { %} selected {% } %}>{%=i%}</option>
+				{% } %}
+				
+			</select>
+		</div>
+		
+		{% if (typeof hide_remove === 'undefined') { %}
+		<div class="col-12">
+		
+			<button class="btn btn-sm btn-outline-light text-danger">
+				<i class="la la-trash la-lg"></i> Remove
+			</button>
+			
+		</div>
+		{% } %}
+		
+	</div>
+	
+</script>
+
+<script id="vvveb-input-textvalue" type="text/html">
+	
+	<div class="row">
+		<div class="col-6 mb-1">
+			<label>Value</label>
+			<input name="value" type="text" value="{%=value%}" class="form-control" autocomplete="off" />
+		</div>
+
+		<div class="col-6 mb-1">
+			<label>Text</label>
+			<input name="text" type="text" value="{%=text%}" class="form-control" autocomplete="off" />
+		</div>
+
+		{% if (typeof hide_remove === 'undefined') { %}
+		<div class="col-12">
+		
+			<button class="btn btn-sm btn-outline-light text-danger">
+				<i class="la la-trash la-lg"></i> Remove
+			</button>
+			
+		</div>
+		{% } %}
+
+	</div>
+	
+</script>
+
+<script id="vvveb-input-rangeinput" type="text/html">
+	
+	<div class="input-range">
+		
+		<input name="{%=key%}" type="range" min="{%=min%}" max="{%=max%}" step="{%=step%}" class="form-range" data-input-value/>
+		<input name="{%=key%}" type="number" min="{%=min%}" max="{%=max%}" step="{%=step%}" class="form-control" data-input-value/>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-imageinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="text" class="form-control"/>
+		<input name="file" type="file" class="form-control"/>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-imageinput-gallery" type="text/html">
+	
+	<div>
+		<img id="thumb-{%=key%}" class="img-thumbnail p-0" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}" style="cursor:pointer" src="" width="225" height="225">
+		<input name="{%=key%}" type="text" class="form-control mt-1" id="input-{%=key%}"/>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2 px-2" data-target-input="#input-{%=key%}" data-target-thumb="#thumb-{%=key%}"><i class="la la-image la-lg"></i><span>Set image</span></button>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-videoinput-gallery" type="text/html">
+	
+	<div>
+		<video id="thumb-v{%=key%}" class="img-thumbnail p-0" data-target-input="#input-v{%=key%}" data-target-thumb="#thumb-v{%=key%}" style="cursor:pointer" src="" width="225" height="225" playsinline loop muted controls></video>
+		<input name="v{%=key%}" type="text" class="form-control mt-1" id="input-v{%=key%}"/>
+		<button name="button" class="btn btn-primary btn-sm btn-icon mt-2" data-target-input="#vinput-v{%=key%}" data-target-thumb="#thumb-v{%=key%}"><i class="la la-video la-lg"></i><span>Set video</span></button>
+	</div>
+	
+</script>
+
+<script id="vvveb-input-colorinput" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" {%  if (typeof palette !== 'undefined') { %} list="{%=key%}-color-palette" {% } %} type="color" {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %}  pattern="#[a-f0-9]{6}" class="form-control form-control-color"/>
+		{%  if (typeof palette !== 'undefined') { %}
+		<datalist id="{%=key%}-color-palette">
+			{% for (const color in palette) { %}
+				<option value="{%=color%}">{%=palette[color]%}</option>
+			{% } %}		
+		{% } %}
+	</div>
+	
+</script>
+
+<script id="vvveb-input-bootstrap-color-picker-input" type="text/html">
+	
+	<div>
+		<div id="cp2" class="input-group" title="Using input value">
+		  <input name="{%=key%}" type="text" {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %}	 class="form-control"/>
+		  <span class="input-group-append">
+			<span class="input-group-text colorpicker-input-addon"><i></i></span>
+		  </span>
+		</div>
+	</div>
+
+</script>
+
+<script id="vvveb-input-numberinput" type="text/html">
+	<div>
+		<input name="{%=key%}" type="number" value="{%=value%}" 
+			  {% if (typeof min !== 'undefined' && min != false) { %}min="{%=min%}"{% } %} 
+			  {% if (typeof max !== 'undefined' && max != false) { %}max="{%=max%}"{% } %} 
+			  {% if (typeof step !== 'undefined' && step != false) { %}step="{%=step%}"{% } %} 
+		class="form-control"/>
+	</div>
+</script>
+
+<script id="vvveb-input-button" type="text/html">
+	<div>
+		<button class="btn btn-sm btn-primary">
+			<i class="la  {% if (typeof icon !== 'undefined') { %} {%=icon%} {% } else { %} la-plus {% } %} la-lg"></i> {%=text%}
+		</button>
+	</div>		
+</script>
+
+<script id="vvveb-input-cssunitinput" type="text/html">
+	<div class="input-group css-unit" id="cssunit-{%=key%}">
+		<input name="number" type="number"  {% if (typeof value !== 'undefined' && value != false) { %} value="{%=value%}" {% } %} 
+			  {% if (typeof min !== 'undefined' && min != false) { %}min="{%=min%}"{% } %} 
+			  {% if (typeof max !== 'undefined' && max != false) { %}max="{%=max%}"{% } %} 
+			  {% if (typeof step !== 'undefined' && step != false) { %}step="{%=step%}"{% } %} 
+		class="form-control"/>
+		<select class="form-select small-arrow" name="unit">
+			<option value="em">em</option>
+			<option value="rem">rem</option>
+			<option value="px">px</option>
+			<option value="%">%</option>
+			<option value="vw">vw</option>
+			<option value="vh">vh</option>
+			<option value="ex">ex</option>
+			<option value="ch">ch</option>
+			<option value="cm">cm</option>
+			<option value="mm">mm</option>
+			<option value="in">in</option>
+			<option value="pt">pt</option>
+			<option value="auto">auto</option>
+			<option value="">-</option>
+		</select>
+	</div>
+	
+</script>
+
+
+<script id="vvveb-filemanager-folder" type="text/html">
+	<li data-folder="{%=folder%}" class="folder">
+		<label for="{%=folder%}"><span>{%=folderTitle%}</span></label> <input type="checkbox" id="{%=folder%}" />
+		<ol></ol>
+	</li>
+</script>
+
+<script id="vvveb-filemanager-page" type="text/html">
+	<li data-url="{%=url%}" data-file="{%=file%}" data-page="{%=name%}" class="file{% if (typeof className !== 'undefined') { %} {%=className%}{% } %}">
+		<label for="{%=name%}" {% if (typeof description !== 'undefined') { %} title="{%=description%}" {% } %}>
+			<span>{%=title%}</span>
+			<div class="file-actions">
+				<button href="#" class="delete btn btn-outline-danger" title="Delete"><i class="la la-trash"></i></button>
+				<a href="{%=url%}" target="_blank" class="view btn btn-outline-primary" title="View page"><i class="la la la-external-link-alt"></i></a>
+				<button href="#" class="rename btn btn-outline-primary" title="Rename"><i class="la la-pen"></i></button>
+				<button href="#" class="duplicate btn btn-outline-primary" title="Clone"><i class="icon-copy-outline"></i></button>
+			</div>
+		</label> <input type="checkbox" id="{%=name%}" />
+		<!-- <ol></ol> -->
+	</li>
+</script>
+
+<script id="vvveb-filemanager-component" type="text/html">
+	<li data-url="{%=url%}" data-component="{%=name%}" class="component">
+		<a href="{%=url%}"><span>{%=title%}</span></a>
+	</li>
+</script>
+
+<script id="vvveb-breadcrumb-navigaton-item" type="text/html">
+	<li class="breadcrumb-item"><a href="#" {% if (typeof className !== 'undefined') { %}class="{%=className%}"{% } %}>{%=name%}</a></li>
+</script>
+
+<script id="vvveb-input-sectioninput" type="text/html">
+	<div>
+		{% var namespace = '-' + Math.floor(Math.random() * 1000); %}
+		<label class="header" data-header="{%=key%}" for="header_{%=key%}{%=namespace%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}><span>{%=header%}</span> <div class="header-arrow"></div></label> 
+		<input class="header_check" type="checkbox" {% if (typeof expanded !== 'undefined' && expanded == false) { %} {% } else { %}checked="true"{% } %} id="header_{%=key%}{%=namespace%}"> 
+		<div class="section row" data-section="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}></div>		
+	</div>
+</script>
+
+
+<script id="vvveb-property" type="text/html">
+
+	<div class="mb-3 {% if (typeof col !== 'undefined' && col != false) { %} col-sm-{%=col%} {% } else { %}row{% } %} {% if (typeof inline !== 'undefined' && inline == true) { %}inline{% } %} " data-key="{%=key%}" {% if (typeof group !== 'undefined' && group != null) { %}data-group="{%=group%}" {% } %}>
+		
+		{% if (typeof name !== 'undefined' && name != false) { %}<label class="{% if (typeof inline === 'undefined' ) { %}col-sm-4{% } %} form-label" for="input-model">{%=name%}</label>{% } %}
+		
+		<div class="{% if (typeof inline === 'undefined') { %}col-sm-{% if (typeof name !== 'undefined' && name != false) { %}8{% } else { %}12{% } } %} input"></div>
+		
+	</div>		 
+	
+</script>
+
+<script id="vvveb-input-autocompletelist" type="text/html">
+	
+	<div>
+		<input name="{%=key%}" type="text" class="form-control"/>
+		
+		<div class="form-control autocomplete-list" style="min-height: 150px; overflow: auto;">
+                  </div>
+                  </div>
+	
+</script>
+
+<script id="vvveb-input-tagsinput" type="text/html">
+	
+	<div>
+		<div class="form-control tags-input" style="height:auto;">
+				
+
+				<input name="{%=key%}" type="text" class="form-control" style="border:none;min-width:60px;"/>
+                  </div>
+                  </div>
+	
+</script>
+
+<script id="vvveb-input-noticeinput" type="text/html">
+	<div>
+		<div class="alert alert-dismissible fade show alert-{%=type%}" role="alert">		  
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>		  
+			<strong class="d-block mb-1">{%=title%}</strong> 
+			
+			{%=text%}
+		</div>
+	</div>
+</script>
+
+<script id="vvveb-section" type="text/html">
+	{% var suffix = Math.floor(Math.random() * 10000); %}
+
+	<div class="section-item" draggable="true">
+		<div class="controls">
+			<div class="handle"></div>
+			<div class="info">
+				<div class="name">{%=name%} 
+					<div class="type">{%=type%}</div>
+				</div>
+			</div>
+			<div class="buttons">
+				<a class="delete-btn" href="" title="Remove section"><i class="la la-trash text-danger"></i></a>
+				<!-- 
+				<a class="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
+				<a class="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
+				-->
+				<a class="properties-btn" href="" title="Properties"><i class="icon-settings-outline"></i></a>
+		</div>
+		</div>
+
+
+		<input class="header_check" type="checkbox" id="section-components-{%=suffix%}">
+
+		<label for="section-components-{%=suffix%}"> 
+			<div class="header-arrow"></div>
+		</label>
+		
+		<div class="tree">
+			<ol>
+				<!--
+				<li data-component="Products" class="file">							
+					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+					<input type="checkbox" id="idNaN">
+				</li>
+				<li data-component="Posts" class="file">							
+					<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+					<input type="checkbox" id="idNaN">
+				</li>
+				-->
+			</ol>
+		</div>
+	</div>
+	
+</script>
+
+
+<!--// end templates -->
+
+
+        <div id="tree-list">
+          <div class="header">
+            <div>Navigator</div>
+            <button class="btn btn-sm" data-vvveb-action="toggleTreeList" aria-pressed="true">
+              <i class="icon-close"></i>
+            </button>
+          </div>
+          <div class="tree">
+            <ol>
+              <!--
+			<li data-component="Products" class="file">							
+				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/products.svg)"><span>Products</span></label>							
+				<input type="checkbox" id="idNaN">
+			</li>
+			<li data-component="Posts" class="file">							
+				<label for="idNaN" style="background-image:url(/js/vvvebjs/icons/posts.svg)"><span>Posts</span></label>							
+				<input type="checkbox" id="idNaN">
+			</li>
+			-->
+            </ol>
+          </div>
+        </div>
+
+<!-- code editor modal -->
+<div class="modal modal-full fade" id="codeEditorModal" tabindex="-1" aria-labelledby="codeEditorModal" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+	  <input type="hidden" name="file" value="">  	
+	
+      <div class="modal-header justify-content-between">
+        <span class="modal-title"></span>
+		<div class="float-end">
+			<button type="button" class="btn btn-light border btn-icon" data-bs-dismiss="modal"><i class="la la-times"></i>Close</button>
+			
+			<button class="btn btn-primary btn-icon save-btn" title="Save changes">
+				<span class="loading d-none">
+				<i class="la la-save"></i>
+				  <span class="spinner-border spinner-border-sm align-middle" role="status" aria-hidden="true">
+				  </span>
+				  <span>Saving </span> ... </span>
+
+				<span class="button-text">
+				  <i class="la la-save"></i> <span>Save changes</span>
+				</span>				
+			</button>
+		</div>
+      </div>
+	  
+      <div class="modal-body p-0">
+        <textarea class="form-control h-100"></textarea>
+      </div>
+	  
+
+    </div>
+  </div>
+</div>
+
+<!-- export html modal-->
+<div class="modal fade" id="textarea-modal" tabindex="-1" role="dialog" aria-labelledby="textarea-modal" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title text-primary"><i class="la la-lg la-save"></i> Export html</p>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <textarea rows="25" cols="150" class="form-control"></textarea>
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal"><i class="la la-times"></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- message modal-->
+<div class="modal fade" id="message-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p class="modal-title text-primary"><i class="la la-lg la-comment"></i> VvvebJs</p>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Page was successfully saved!.</p>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-primary">Ok</button> -->
+        <button type="button" class="btn btn-secondary btn-lg" data-bs-dismiss="modal"><i class="la la-times"></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- new page modal-->
+<div class="modal fade" id="new-page-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    
+    <form action="save.php">
+		
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-title text-primary fw-normal"><i class="la la-lg la-file"></i> New page</span>
+        <button type="button" class="btn-close p-0 me-1" data-bs-dismiss="modal" aria-label="Close">
+          <!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
+        </button>
+      </div>
+
+      <div class="modal-body text">
+		<div class="mb-3 row" data-key="type">      
+			<label class="col-sm-3 col-form-label">
+				Template 
+				<abbr title="The contents of this template will be used as a start for the new template">
+                    <i class="la la-lg la-question-circle text-primary"></i>
+				</abbr>
+				
+			</label>      
+			<div class="col-sm-9 input">
+				<div>    
+					<select class="form-select" name="startTemplateUrl">        
+						<option value="new-page-blank-template.html">Blank Template</option>        
+						<option value="demo/narrow-jumbotron/index.html">Narrow jumbotron</option>       
+						<option value="demo/album/index.html">Album</option>       
+					</select>    
+				</div>
+			</div>     
+		</div>
+
+		<div class="mb-3 row" data-key="href">     
+			 <label class="col-sm-3 col-form-label">Page name</label>      
+			<div class="col-sm-9 input">
+				<div>   
+					<input name="title" type="text" value="My page" class="form-control" placeholder="My page" required>  
+				</div>
+			</div>     
+		</div>
+		
+		<div class="mb-3 row" data-key="href">     
+			 <label class="col-sm-3 col-form-label">File name</label>      
+			<div class="col-sm-9 input">
+				<div>   
+					<input name="file" type="text" value="my-page.html" class="form-control" placeholder="my-page.html" required>  
+				</div>
+			</div>     
+		</div>
+		
+		<!-- 
+		<div class="mb-3 row" data-key="href">     
+			 <label class="col-sm-3 form-label">Url</label>      
+			<div class="col-sm-9 input">
+				<div>   
+					<input name="url" type="text" value="my-page.html" class="form-control" placeholder="/my-page.html" required>  
+				</div>
+			</div>     
+		</div>
+		-->
+		
+		<div class="mb-3 row" data-key="href">     
+			 <label class="col-sm-3 col-form-label">Save to folder</label>      
+			<div class="col-sm-9 input">
+				<div>   
+					<input name="folder" type="text" value="my-pages" class="form-control" placeholder="/" required>  
+				</div>
+			</div>     
+		</div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-icon" type="reset" data-bs-dismiss="modal"><i class="la la-times"></i> Cancel</button>
+		<button class="btn btn-primary btn-icon" type="submit"><i class="la la-check"></i> Create page</button>
+      </div>
+    </div>
+    
+   </form>		
+
+  </div>
+</div>
+
+<!-- save toast -->
+<div class="toast-container position-fixed end-0 bottom-0 me-3 mb-3" id="top-toast">
+  <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	    <div class="toast-header text-white">
+			<strong class="me-auto">Page save</strong>
+			<!-- <small class="badge bg-success">status</small> -->
+			<button type="button" class="btn-close text-white px-2" data-bs-dismiss="toast" aria-label="Close"></button>
+		</div>
+		<div class="toast-body ">
+			<div class="flex-grow-1">
+			  <div class="message">Elements saved!
+				  <div>Template backup was saved!</div>
+				  <div>Template was saved!</div>
+			  </div>
+			  <!--
+			  <div><a class="btn btn-success  btn-icon btn-sm w-100 mt-2" href="">View page</a></div>
+			  -->
+			</div>
+		</div>
+	</div>
+</div>
+	
+<!-- bootstrap-->
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<!-- builder code-->
+<script src="libs/builder/builder.js"></script>	
+<!-- undo manager-->
+<script src="libs/builder/undo.js"></script>	
+<!-- inputs-->
+<script src="libs/builder/inputs.js"></script>	
+
+
+<!-- media gallery -->
+<link href="libs/media/media.css" rel="stylesheet">
+<script>
+window.mediaPath = '/vvvebjs/media';
+Vvveb.themeBaseUrl = 'demo/landing/';
+</script>
+<script src="libs/media/media.js"></script>	
+<!--
+<script src="libs/media/openverse.js"></script>
+-->
+<script src="libs/builder/plugin-media.js"></script>	
+
+<!-- bootstrap colorpicker //uncomment bellow scripts to enable -->
+<!--
+<script src="libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<link href="libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+<script src="libs/builder/plugin-bootstrap-colorpicker.js"></script>
+-->
+
+<!-- components-->
+<!-- script src="libs/builder/components-server.js"></script -->	
+<script src="libs/builder/plugin-google-fonts.js"></script>	
+<script src="libs/builder/components-common.js"></script>	
+<script src="libs/builder/plugin-aos.js"></script>
+<script src="libs/builder/components-html.js"></script>	
+<script src="libs/builder/components-elements.js"></script>	
+<script src="libs/builder/section.js"></script>	
+<script src="libs/builder/components-bootstrap5.js"></script>	
+<script src="libs/builder/components-widgets.js"></script>	
+<script src="libs/builder/oembed.js"></script>
+<script src="libs/builder/components-embeds.js"></script>
+
+
+<!-- sections-->
+<script src="demo/landing/sections/sections.js"></script>	
+<script src="libs/builder/sections-bootstrap4.js"></script>	
+
+<!-- blocks-->
+<script src="libs/builder/blocks-bootstrap4.js"></script>	
+
+<!-- plugins -->
+
+<!-- code mirror - code editor syntax highlight -->
+<link href="libs/codemirror/lib/codemirror.css" rel="stylesheet"/>
+<link href="libs/codemirror/theme/material.css" rel="stylesheet"/>
+<script src="libs/codemirror/lib/codemirror.js"></script>
+<script src="libs/codemirror/lib/xml.js"></script>
+<script src="libs/codemirror/lib/css.js"></script>
+<script src="libs/codemirror/lib/formatting.js"></script>
+<script src="libs/builder/plugin-codemirror.js"></script>	
+
+
+<!-- 
+Tinymce plugin
+Clone or copy https://github.com/tinymce/tinymce-dist to libs/tinymce-dist 
+-->
+<!-- 
+<script src="libs/tinymce-dist/tinymce.min.js"></script>
+<script src="libs/builder/plugin-tinymce.js"></script>	
+-->
+
+<!-- 
+CKEditor plugin
+Unzip the latest ckeditor release zip from https://github.com/ckeditor/ckeditor4/releases to libs/ckeditor or use the CDN
+-->
+<!--
+<script src="libs/ckeditor/ckeditor.js"></script> <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+<script src="libs/builder/plugin-ckeditor.js"></script>	
+-->
+
+<!-- jszip - download page as zip -->
+<script src="libs/jszip/jszip.min.js"></script>
+<script src="libs/jszip/filesaver.min.js"></script>
+<script src="libs/builder/plugin-jszip.js"></script>
+<script src="libs/builder/plugin-ai-assistant.js"></script>
+
+
+<!-- autocomplete plugin used by autocomplete input-->
+<!--
+<script src="libs/autocomplete/jquery.autocomplete.js"></script>	
+-->
+<script>
+let renameUrl = 'save.php?action=rename';
+let deleteUrl = 'save.php?action=delete';	
+let saveReusableUrl = 'save.php?action=saveReusable';	
+let oEmbedProxyUrl = 'save.php?action=oembedProxy';
+let chatgptOptions = {"key":"","model":"gpt-3.5-turbo-instruct","temperature":0,"max_tokens":300};
+
+let defaultPages = {
+	//uncomment php code below and rename file to .php extension to load saved html files in the editor or use editor.php
+	/*
+	<?php 
+	   $htmlFiles = glob('{my-pages/*.html,demo/*\/*.html, demo/*.html}',  GLOB_BRACE);
+	   foreach ($htmlFiles as $file) { 
+		   if (in_array($file, array('new-page-blank-template.html', 'editor.html'))) continue;//skip template files
+		   $pathInfo = pathinfo($file);
+		   $filename = $pathInfo['filename'];
+		   $folder = preg_replace('@/.+?$@', '', $pathInfo['dirname']);
+		   $subfolder = preg_replace('@^.+?/@', '', $pathInfo['dirname']);
+		   if ($filename == 'index' && $subfolder) {
+			   $filename = $subfolder;
+		   }
+		   $url = $pathInfo['dirname'] . '/' . $pathInfo['basename'];
+	?>
+	"<?php echo ucfirst($filename);?>":{name:"<?php echo ucfirst($filename);?>", file:"<?php echo ucfirst($filename);?>", title:"<?php echo ucfirst($filename);?>",  url: "<?php echo $url;?>", folder:"<?php echo $folder?>"},
+	<?php } ?>
+	*/
+  "index": {
+    name: "index",
+    filename: "index.html",
+    file: "demo/landing/index.html",
+    url: "demo/landing/index.html",
+    title: "Home page",
+    folder: null,
+    description: "Website homepage"
+  },
+  "animate": {
+    name: "index",
+    filename: "index.html",
+    file: "demo/animate/index.html",
+    url: "demo/animate/index.html",
+    title: "Animate page",
+    folder: null,
+    description: "Animate homepage"
+  },
+  "contact": {
+    name: "contact",
+    filename: "contact.html",
+    file: "demo/landing/contact.html",
+    url: "demo/landing/contact.html",
+    title: "Contact us page",
+    folder: null,
+    description: "Contact us page"
+  },
+  "blank": {
+    name: "blank",
+    filename: "blank.html",
+    file: "demo/landing/blank.html",
+    url: "demo/landing/blank.html",
+    title: "Blank page",
+    folder: null,
+    description: "Template page used for new pages"
+  },
+  "error404": {
+    name: "error404",
+    filename: "error404.html",
+    file: "demo/landing/error404.html",
+    url: "demo/landing/error404.html",
+    title: "Page not found",
+    folder: null,
+    description: "Shows when a page is not available"
+  },
+  "error500": {
+    name: "error500",
+    filename: "error500.html",
+    file: "demo/landing/error500.html",
+    url: "demo/landing/error500.html",
+    title: "Server error",
+    folder: null,
+    description: "Site error display page"
+  },
+  "index-blog": {
+    name: "index-blog",
+    filename: "index-blog.html",
+    file: "demo/landing/index-blog.html",
+    url: "demo/landing/index-blog.html",
+    title: "Index blog",
+    folder: null,
+    description: ""
+  },
+  "index-landing": {
+    name: "index-landing",
+    filename: "index-landing.html",
+    file: "demo/landing/index-landing.html",
+    url: "demo/landing/index-landing.html",
+    title: "Index landing",
+    folder: null,
+    description: ""
+  },
+  "index.coming-soon": {
+    name: "index.coming-soon",
+    filename: "index.coming-soon.html",
+    file: "demo/landing/index.coming-soon.html",
+    url: "demo/landing/index.coming-soon.html",
+    title: "Coming soon",
+    folder: null,
+    description: "Coming soon message page"
+  },
+  "index.maintenance": {
+    name: "index.maintenance",
+    filename: "index.maintenance.html",
+    file: "demo/landing/index.maintenance.html",
+    url: "demo/landing/index.maintenance.html",
+    title: "Under maintenance",
+    folder: null,
+    description: "Website under maintenance message page"
+  },
+  "email-new": {
+    name: "email-new",
+    filename: "new.html",
+    file: "demo/landing/email/order/new.html",
+    url: "demo/landing/email/order/new.html",
+    title: "New",
+    folder: "email",
+    description: ""
+  },
+  "email-new.txt": {
+    name: "email-new.txt",
+    filename: "new.txt.html",
+    file: "demo/landing/email/order/new.txt.html",
+    url: "demo/landing/email/order/new.txt.html",
+    title: "New txt",
+    folder: "email",
+    description: ""
+  },
+  "email-reset": {
+    name: "email-reset",
+    filename: "reset.html",
+    file: "demo/landing/email/user/reset.html",
+    url: "demo/landing/email/user/reset.html",
+    title: "Reset",
+    folder: "email",
+    description: ""
+  },
+  "email-reset.txt": {
+    name: "email-reset.txt",
+    filename: "reset.txt.html",
+    file: "demo/landing/email/user/reset.txt.html",
+    url: "demo/landing/email/user/reset.txt.html",
+    title: "Reset txt",
+    folder: "email",
+    description: ""
+  },
+  "email-signup": {
+    name: "email-signup",
+    filename: "signup.html",
+    file: "demo/landing/email/user/signup.html",
+    url: "demo/landing/email/user/signup.html",
+    title: "Signup",
+    folder: "email",
+    description: ""
+  },
+  "email-signup.txt": {
+    name: "email-signup.txt",
+    filename: "signup.txt.html",
+    file: "demo/landing/email/user/signup.txt.html",
+    url: "demo/landing/email/user/signup.txt.html",
+    title: "Signup txt",
+    folder: "email",
+    description: ""
+  },
+  "user-edit": {
+    name: "user-edit",
+    filename: "edit.html",
+    file: "demo/landing/user/edit.html",
+    url: "demo/landing/user/edit.html",
+    title: "Edit",
+    folder: "user",
+    description: ""
+  },
+  "user-reset": {
+    name: "user-reset",
+    filename: "reset.html",
+    file: "demo/landing/user/reset.html",
+    url: "demo/landing/user/reset.html",
+    title: "Reset",
+    folder: "user",
+    description: ""
+  },
+  "cart-cart": {
+    name: "cart-cart",
+    filename: "cart.html",
+    file: "demo/landing/cart/cart.html",
+    url: "demo/landing/cart/cart.html",
+    title: "Cart",
+    folder: "cart",
+    description: ""
+  },
+  "checkout-checkout": {
+    name: "checkout-checkout",
+    filename: "checkout.html",
+    file: "demo/landing/checkout/checkout.html",
+    url: "demo/landing/checkout/checkout.html",
+    title: "Checkout",
+    folder: "checkout",
+    description: ""
+  },
+  "checkout-confirm": {
+    name: "checkout-confirm",
+    filename: "confirm.html",
+    file: "demo/landing/checkout/confirm.html",
+    url: "demo/landing/checkout/confirm.html",
+    title: "Confirm",
+    folder: "checkout",
+    description: ""
+  },
+  "checkout-order": {
+    name: "checkout-order",
+    filename: "order.html",
+    file: "demo/landing/checkout/order.html",
+    url: "demo/landing/checkout/order.html",
+    title: "Order",
+    folder: "checkout",
+    description: ""
+  },
+  "content-archive": {
+    name: "content-archive",
+    filename: "archive.html",
+    file: "demo/landing/content/archive.html",
+    url: "demo/landing/content/archive.html",
+    title: "Archive",
+    folder: "content",
+    description: ""
+  },
+  "content-category": {
+    name: "content-category",
+    filename: "category.html",
+    file: "demo/landing/content/category.html",
+    url: "demo/landing/content/category.html",
+    title: "Category",
+    folder: "content",
+    description: ""
+  },
+  "content-index": {
+    name: "content-index",
+    filename: "index.html",
+    file: "demo/landing/content/index.html",
+    url: "demo/landing/content/index.html",
+    title: "Blog homepage",
+    folder: "content",
+    description: "Blog page with latest posts"
+  },
+  "content-page": {
+    name: "content-page",
+    filename: "page.html",
+    file: "demo/landing/content/page.html",
+    url: "demo/landing/content/page.html",
+    title: "Page",
+    folder: "content",
+    description: ""
+  },
+  "content-post-image-header": {
+    name: "content-post-image-header",
+    filename: "post-image-header.html",
+    file: "demo/landing/content/post-image-header.html",
+    url: "demo/landing/content/post-image-header.html",
+    title: "Post image header",
+    folder: "content",
+    description: ""
+  },
+  "content-post-image-hero": {
+    name: "content-post-image-hero",
+    filename: "post-image-hero.html",
+    file: "demo/landing/content/post-image-hero.html",
+    url: "demo/landing/content/post-image-hero.html",
+    title: "Post image hero",
+    folder: "content",
+    description: ""
+  },
+  "content-post": {
+    name: "content-post",
+    filename: "post.html",
+    file: "demo/landing/content/post.html",
+    url: "demo/landing/content/post.html",
+    title: "Blog post",
+    folder: "content",
+    description: "Blog post",
+    "editor": {
+      "template": "post"
+    }
+  },
+  "content-tag": {
+    name: "content-tag",
+    filename: "tag.html",
+    file: "demo/landing/content/tag.html",
+    url: "demo/landing/content/tag.html",
+    title: "Tag",
+    folder: "content",
+    description: ""
+  },
+  "content-user": {
+    name: "content-user",
+    filename: "user.html",
+    file: "demo/landing/content/user.html",
+    url: "demo/landing/content/user.html",
+    title: "User",
+    folder: "content",
+    description: ""
+  },
+  "product-category": {
+    name: "product-category",
+    filename: "category.html",
+    file: "demo/landing/product/category.html",
+    url: "demo/landing/product/category.html",
+    title: "Category",
+    folder: "product",
+    description: ""
+  },
+  "product-index": {
+    name: "product-index",
+    filename: "index.html",
+    file: "demo/landing/product/index.html",
+    url: "demo/landing/product/index.html",
+    title: "Shop page",
+    folder: "product",
+    description: "Shop homepage"
+  },
+  "product-manufacturer": {
+    name: "product-manufacturer",
+    filename: "manufacturer.html",
+    file: "demo/landing/product/manufacturer.html",
+    url: "demo/landing/product/manufacturer.html",
+    title: "Manufacturer",
+    folder: "product",
+    description: ""
+  },
+  "product-product": {
+    name: "product-product",
+    filename: "product.html",
+    file: "demo/landing/product/product.html",
+    url: "demo/landing/product/product.html",
+    title: "Product",
+    folder: "product",
+    description: ""
+  },
+  "product-vendor": {
+    name: "product-vendor",
+    filename: "vendor.html",
+    file: "demo/landing/product/vendor.html",
+    url: "demo/landing/product/vendor.html",
+    title: "Vendor",
+    folder: "product",
+    description: ""
+  },
+  "search-index": {
+    name: "search-index",
+    filename: "index.html",
+    file: "demo/landing/search/index.html",
+    url: "demo/landing/search/index.html",
+    title: "Search page",
+    folder: "search",
+    description: "Search page"
+  },
+  "user-address": {
+    name: "user-address",
+    filename: "address.html",
+    file: "demo/landing/user/address.html",
+    url: "demo/landing/user/address.html",
+    title: "Address",
+    folder: "user",
+    description: ""
+  },
+  "user-comments": {
+    name: "user-comments",
+    filename: "comments.html",
+    file: "demo/landing/user/comments.html",
+    url: "demo/landing/user/comments.html",
+    title: "Comments",
+    folder: "user",
+    description: ""
+  },
+  "user-downloads": {
+    name: "user-downloads",
+    filename: "downloads.html",
+    file: "demo/landing/user/downloads.html",
+    url: "demo/landing/user/downloads.html",
+    title: "Downloads",
+    folder: "user",
+    description: ""
+  },
+  "user-index": {
+    name: "user-index",
+    filename: "index.html",
+    file: "demo/landing/user/index.html",
+    url: "demo/landing/user/index.html",
+    title: "Dashboard",
+    folder: "user",
+    description: "User dashboard"
+  },
+  "user-login": {
+    name: "user-login",
+    filename: "login.html",
+    file: "demo/landing/user/login.html",
+    url: "demo/landing/user/login.html",
+    title: "Login",
+    folder: "user",
+    description: ""
+  },
+  "user-orders": {
+    name: "user-orders",
+    filename: "orders.html",
+    file: "demo/landing/user/orders.html",
+    url: "demo/landing/user/orders.html",
+    title: "Orders",
+    folder: "user",
+    description: ""
+  },
+  "user-profile": {
+    name: "user-profile",
+    filename: "profile.html",
+    file: "demo/landing/user/profile.html",
+    url: "demo/landing/user/profile.html",
+    title: "Profile",
+    folder: "user",
+    description: ""
+  },
+  "user-signup": {
+    name: "user-signup",
+    filename: "signup.html",
+    file: "demo/landing/user/signup.html",
+    url: "demo/landing/user/signup.html",
+    title: "Signup",
+    folder: "user",
+    description: ""
+  },
+ "narrow-jumbotron":{name:"narrow-jumbotron", title:"Jumbotron",  url: "demo/narrow-jumbotron/index.html", file: "demo/narrow-jumbotron/index.html"},
+ "album":{name:"album", title:"Album",  url: "demo/album/index.html", file: "demo/album/index.html", folder:"content"},
+ "blog":{name:"blog", title:"Blog",  url: "demo/blog/index.html", file: "demo/blog/index.html", folder:"content"},
+ "carousel":{name:"carousel", title:"Carousel",  url: "demo/carousel/index.html",  file: "demo/carousel/index.html", folder:"content"},
+ "offcanvas":{name:"offcanvas", title:"Offcanvas",  url: "demo/offcanvas/index.html", file: "demo/offcanvas/index.html", folder:"content"},
+ "pricing":{name:"pricing", title:"Pricing",  url: "demo/pricing/index.html", file: "demo/pricing/index.html", folder:"ecommerce"},
+ "product":{name:"product", title:"Product",  url: "demo/product/index.html", file: "demo/product/index.html", folder:"ecommerce"}  
+};	
+	
+
+let pages = defaultPages;
+
+let firstPage = Object.keys(pages)[0];
+Vvveb.Builder.init(pages[firstPage]["url"], function() {
+	//load code after page is loaded here
+});
+
+Vvveb.Gui.init();
+Vvveb.FileManager.init();
+Vvveb.SectionList.init();
+Vvveb.TreeList.init();
+Vvveb.Breadcrumb.init();
+Vvveb.CssEditor.init();
+
+Vvveb.FileManager.addPages(pages);
+Vvveb.FileManager.loadPage(pages[firstPage]["name"]);
+Vvveb.Gui.toggleRightColumn(false);
+Vvveb.Breadcrumb.init();
+</script>
+</body>
+</html>
