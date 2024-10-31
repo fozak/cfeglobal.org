@@ -1,18 +1,10 @@
 // Function to log all loaded <div> elements on the page
 function parseFullDOM() {
-    // Get all <div> elements in the document
-    const allDivs = document.querySelectorAll('div');
-    
-    // Check if any <div> elements were found
-    if (allDivs.length === 0) {
-        console.log("No <div> elements found.");
-        return;
-    }
+    // Get the entire document as a string
+    const fullDOMString = document.documentElement.outerHTML;
 
-    // Log each <div> element's outer HTML
-    allDivs.forEach((div, index) => {
-        console.log(`Div ${index + 1}:`, div.outerHTML);
-    });
+    // Log the full DOM as a string
+    console.log("Full DOM:", fullDOMString);
 }
 
 // Wait for a specified amount of time (e.g., 2 seconds) before executing the function
