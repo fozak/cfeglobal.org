@@ -18,7 +18,7 @@
             // Step 4: Use the extracted segment in the components array
             const components = [
                 '../components/header.html',
-                `../components/${currentPage}-hero.html`, // Dynamically include the correct hero component
+                `../components/hero-${currentPage}.html`, // Dynamically include the correct hero component
                 '../components/services-stats.html',
                 '../components/faces.html',
                 `../components/featured-${currentPage}.html`, // Dynamically use the page variable
