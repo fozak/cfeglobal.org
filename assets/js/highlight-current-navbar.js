@@ -28,4 +28,4 @@ function updateActiveNavLinks() {
 // Use setTimeout to wait for 2 seconds before executing the function
 setTimeout(() => {
     updateActiveNavLinks();
-}, 1000);
+}, 300);
