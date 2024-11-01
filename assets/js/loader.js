@@ -9,10 +9,10 @@
 
             const components = [
                 '/components/header.html',
-                `/components/hero-${currentPage}.html`,
+                `/components/hero-${currentPage}`,
                 '/components/services-stats.html',
                 '/components/faces.html',
-                `/components/featured-${currentPage}.html`,
+                `/components/featured-${currentPage}`,
                 '/components/services-types.html',
                 '/components/portfolio.html',
                 '/components/call-to-action.html',
