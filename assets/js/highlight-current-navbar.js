@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+// Function to update active navigation links
+function updateActiveNavLinks() {
     // Get the current URL path
     const currentPath = window.location.pathname;
 
@@ -22,4 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentPath !== '/') {
         homeLink.classList.remove('active');
     }
-});
+}
+
+// Use setTimeout to wait for 2 seconds before executing the function
+setTimeout(() => {
+    updateActiveNavLinks();
+}, 2000);
