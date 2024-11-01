@@ -8,15 +8,15 @@
             const currentPage = segments[segments.length - 1];
 
             const components = [
-                '../components/header.html',
-                `../components/hero-${currentPage}.html`,
-                '../components/services-stats.html',
-                '../components/faces.html',
-                `../components/featured-${currentPage}.html`,
-                '../components/services-types.html',
-                '../components/portfolio.html',
-                '../components/call-to-action.html',
-                '../components/footer.html',
+                '/components/header.html',
+                `/components/hero-${currentPage}.html`,
+                '/components/services-stats.html',
+                '/components/faces.html',
+                `/components/featured-${currentPage}.html`,
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/call-to-action.html',
+                '/components/footer.html',
             ];
 
             // Create an array of fetch promises

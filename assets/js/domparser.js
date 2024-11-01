@@ -1,5 +1,6 @@
 // Function to log all loaded <div> elements on the page
 function parseFullDOM() {
+
     // Get the entire document as a string
     const fullDOMString = document.documentElement.outerHTML;
 
