@@ -48,3 +48,19 @@
         console.log("The script will not run as 'run' is set to false.");
     }
 })();
+// Add event listener to detect Ctrl+E key combination
+
+document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'e') {
+        event.preventDefault(); // Prevent default behavior of the key combination
+
+        // Get the current page's HTML
+        const currentHTML = document.documentElement.outerHTML;
+
+        // Store the HTML in session storage
+        sessionStorage.setItem('editContent', currentHTML);
+
+        // Redirect to the edit page
+        window.location.href = 'components/edit.html';
+    }
+});
