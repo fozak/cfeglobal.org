@@ -68,22 +68,33 @@ document.addEventListener('keydown', function (event) {
 });
 
 // Function to check if the suburl exists
-function checkAndRedirect() {
-    // Get the full current URL
-    const fullPath = window.location.pathname; // e.g., "/domain/suburl/karen-horn.html"
-    const basePath = '/domain/suburl/'; // Define the base path
-    const suburl = fullPath.replace(basePath, '').replace('.html', ''); // Extract the suburl
+function handleLinkClick(event) {
+    const link = event.currentTarget; // The clicked link
+    const href = link.getAttribute('href'); // Get the href attribute
 
-    // Construct the expected fallback URL
-    const fallbackUrl = `/components/template-item-${suburl}.html?${suburl}`;
+    // Define the base path
+    const basePath = '/domain/suburl/';
 
-    // Check if the current URL matches the base path
-    if (fullPath.startsWith(basePath) && suburl) {
+    // Check if the href starts with the base path
+    if (href.startsWith(basePath)) {
+        // Prevent the default navigation
+        event.preventDefault();
+
+        // Extract the suburl
+        const suburl = href.replace(basePath, '').replace('.html', '');
+
+        // Construct the fallback URL
+        const fallbackUrl = `/components/template-item-${suburl}.html?${suburl}`;
+
         // Redirect to the fallback URL
-        window.location.href = fallbackUrl;
+        window.location.href = fallbackUrl; 
     }
 }
 
-window.onload = function() {
-    checkAndRedirect();
-};
+// Attach event listeners to links with the specified base path after a timeout
+setTimeout(() => {
+    const links = document.querySelectorAll('a[href^="/domain/suburl/"]'); // Select links with the base path
+    links.forEach(link => {
+        link.addEventListener('click', handleLinkClick); // Attach the click event handler
+    });
+}, 2000); // 2000 milliseconds = 2 seconds
