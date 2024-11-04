@@ -1,3 +1,5 @@
+// assets/js/loader.js
+
 (function() {
     const loaderScript = document.getElementById("loaderScript");
 
