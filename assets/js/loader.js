@@ -48,9 +48,11 @@
         console.log("The script will not run as 'run' is set to false.");
     }
 })();
-// Add event listener to detect Ctrl+E key combination
 
-document.addEventListener('keydown', function(event) {
+// loader js Add event listener to detect Ctrl+E key combination
+
+
+document.addEventListener('keydown', function (event) {
     if (event.ctrlKey && event.key === 'e') {
         event.preventDefault(); // Prevent default behavior of the key combination
 

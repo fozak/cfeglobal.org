@@ -1,46 +1,45 @@
+<!-- New Document (edit.html) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        #content {
-            border: 1px solid #ccc;
-            padding: 10px;
-            white-space: pre-wrap; /* Preserve whitespace */
-        }
-        textarea {
-            width: 100%;
-            height: 200px; /* Height for the textarea */
-            margin-top: 20px; /* Spacing above the textarea */
-        }
-    </style>
+    <title>Edit Document</title>
+    <script>
+        window.onload = function() {
+            // Retrieve the HTML content from session storage
+            const editContent = sessionStorage.getItem('editContent');
+
+            // Check if there is content to edit
+            if (editContent) {
+                // Create a temporary div to hold the content for replacement
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = editContent;
+
+                // Replace the head section
+                const oldHead = tempDiv.querySelector('head');
+                if (oldHead) {
+                    const newHead = document.head;
+                    while (oldHead.firstChild) {
+                        newHead.appendChild(oldHead.firstChild);
+                    }
+                }
+
+                // Replace the body section
+                const oldBody = tempDiv.querySelector('body');
+                if (oldBody) {
+                    const newBody = document.body;
+                    newBody.innerHTML = ''; // Clear current body content
+                    while (oldBody.firstChild) {
+                        newBody.appendChild(oldBody.firstChild);
+                    }
+                }
+
+            } else {
+                document.body.innerText = 'No content to edit.';
+            }
+        };
+    </script>
 </head>
 <body>
-
-<h1>Edit Page</h1>
-<div id="content"></div>
-<textarea id="editor" placeholder="Edit the content here..."></textarea>
-
-<script>
-    window.onload = function() {
-        // Retrieve the HTML content from session storage
-        const editContent = sessionStorage.getItem('editContent');
-
-        // Check if there is content to edit
-        if (editContent) {
-            document.getElementById('content').innerHTML = editContent; // Render the HTML in the content div
-            document.getElementById('editor').value = editContent; // Load the HTML into the textarea for editing
-        } else {
-            document.getElementById('content').innerText = 'No content to edit.';
-        }
-    };
-</script>
-
+    <div>No content loaded.</div>
 </body>
 </html>
