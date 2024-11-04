@@ -13,10 +13,12 @@
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = editContent;
 
-                // Replace the head section
+                // Replace the head section (if necessary)
                 const oldHead = tempDiv.querySelector('head');
                 if (oldHead) {
                     const newHead = document.head;
+                    // Clear existing head (optional)
+                    newHead.innerHTML = '';
                     while (oldHead.firstChild) {
                         newHead.appendChild(oldHead.firstChild);
                     }
@@ -31,14 +33,14 @@
                         newBody.appendChild(oldBody.firstChild);
                     }
                 }
-
             } else {
+                // If no content is found, display a message
                 document.body.innerText = 'No content to edit.';
             }
         };
     </script>
 </head>
 <body>
-    <div>No content loaded.</div>
+    <div>No content loaded.</div> <!-- This will be replaced if content is found -->
 </body>
 </html>
