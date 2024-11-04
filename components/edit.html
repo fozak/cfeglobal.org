@@ -6,7 +6,7 @@
         window.onload = function() {
             // Retrieve the HTML content from session storage
             const editContent = sessionStorage.getItem('editContent');
-
+            console.log(editContent);
             // Check if there is content to edit
             if (editContent) {
                 // Create a temporary div to hold the content for replacement
