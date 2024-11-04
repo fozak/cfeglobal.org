@@ -88,6 +88,7 @@ function handleLinkClick(event) {
 
         // Redirect to the fallback URL
         window.location.href = fallbackUrl; 
+        console.log(`Redirecting to: ${fallbackUrl}`);
     }
 }
 
