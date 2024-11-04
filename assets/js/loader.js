@@ -67,35 +67,38 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// Function to check if the suburl exists
-function handleLinkClick(event) {
+ // Function to handle link clicks
+ function handleLinkClick(event) {
     const link = event.currentTarget; // The clicked link
     const href = link.getAttribute('href'); // Get the href attribute
+    
+    // Regular expression to extract the first suburl
+    const regex = /^\/([^/]+)\//; // Matches: /something/anything
 
-    // Define the base path
-    const basePath = '/domain/suburl/';
+    const match = href.match(regex);
 
-    // Check if the href starts with the base path
-    if (href.startsWith(basePath)) {
-        // Prevent the default navigation
-        event.preventDefault();
+    if (match && match.length > 1) {
+        const firstSuburl = match[1]; // Extracted first suburl
 
-        // Extract the suburl
-        const suburl = href.replace(basePath, '').replace('.html', '');
-
-        // Construct the fallback URL
-        const fallbackUrl = `/components/template-item-${suburl}.html?${suburl}`;
+        // Construct the desired URL (for demonstration purposes)
+        const fallbackUrl = `/components/template-item-${firstSuburl}.html?${firstSuburl}`;
 
         // Redirect to the fallback URL
         window.location.href = fallbackUrl; 
         console.log(`Redirecting to: ${fallbackUrl}`);
+    } else {
+        console.log("No valid suburl found!");
     }
 }
 
-// Attach event listeners to links with the specified base path after a timeout
-setTimeout(() => {
-    const links = document.querySelectorAll('a[href^="/domain/suburl/"]'); // Select links with the base path
+// Function to attach event listeners to links after a 2-second timeout
+function attachLinkListeners() {
+    const links = document.querySelectorAll('a[href^="/"][href*="/"]'); // Select all links that start with / and contain /
     links.forEach(link => {
         link.addEventListener('click', handleLinkClick); // Attach the click event handler
     });
-}, 2000); // 2000 milliseconds = 2 seconds
+    console.log("Event listeners attached after 2-second timeout.");
+}
+
+// Execute the link listener attachment after 2 seconds
+setTimeout(attachLinkListeners, 2000);
