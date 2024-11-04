@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Prompt Construction</title>
+    <style>
+        .parsed-text {
+            background-color: #f0f0f0; /* Light grey background */
+            color: black; /* Text color for parsedText */
+            font-weight: bold;
+            border: 1px solid #ccc; /* Light border */
+            padding: 5px;
+            width: 100%; /* Full width */
+        }
+        .prompt-text {
+            background-color: #ffffff; /* White background for prompt text */
+            color: black; /* Text color for prompt text */
+            font-weight: bold;
+            border: 1px solid #ccc; /* Light border */
+            padding: 5px;
+            width: 100%; /* Full width */
+            height: 150px; /* Fixed height for textarea */
+        }
+        .output {
+            margin-top: 20px;
+            white-space: pre-wrap; /* Preserve new lines in output */
+            background-color: #f9f9f9; /* Slightly off-white background for output */
+            border: 1px solid #ccc; /* Light border */
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function generatePrompt() {
+            const parsedText = document.getElementById('parsedText').value;
+            const topicList = ["Global Entrepreneurship Week", "Startup 101"];
+            const templateDraft = "<!-- Your HTML template here -->";
+
+            // Construct the prompt using template literals
+            const prompt = `
+                Take this input as DRAFTPOST about Center for Entrepreneurship program: ${parsedText}. If in Russian, translate to English. Using internet sources, create a 350-word POST emphasizing the Center for Entrepreneurship role and the program in English in HTML, following these rules:
+                1) Focus on programs. Remove all references to Russia and Russian persons (e.g., Victor Sedov, Sergey Borisov, Konstantin, Mikhail) and related text.
+                2) Exclude Russian geographical names (e.g., Moscow, Russia, Россия, российских). Use 'The Center for Entrepreneurship' instead.
+                3) Check if the mentioned name is a person name. For person names in DRAFTPOST, add a link in the URL structure inside an <a> tag (e.g., <a href='/people/patricia-cloherty'>Patricia M. Cloherty</a>).
+                4) For all company names in DRAFTPOST, add their website or Wikipedia links inside an <a> tag (e.g., <a href='https://en.wikipedia.org/wiki/Entrepreneurs%27_Organization'>Entrepreneurs' Organization</a>).
+                5) Identify programs or topics from ${JSON.stringify(topicList)} in DRAFTPOST and link to them (e.g., <a href='/programs/global-entrepreneurship-week'>Global Entrepreneurship Week</a>). Save the topic link in json_data['parentlink'].
+                6) Format it as a news post in HTML using this template: ${templateDraft}.
+                7) Generate a TITLE from DRAFTPOST without date, place it in the <h2 data-semantic='blog-title'> tag, and save it to json['title'].
+                8) Create a longer title and place it in <h4 data-semantic='blog-subtitle1'>. Insert the main post text into <p data-semantic='blog-main-text'>.
+                9) Generate 200 words of additional info for key programs and benefits and partners, if any, in DRAFTPOST (excluding 'The Center for Entrepreneurship'), and place it in <p data-semantic='blog-additional-text'>.
+                10) Create a subtitle for the additional text and place it in <h4 data-semantic='blog-subtitle2'>. Exclude all single quotes and save the entire POST to json['post'], without any new line symbols (e.g., \\n).
+                11) Generate an SEO description and save it to json['description']. Create SEO keywords and save them as a comma-separated string to json['keywords'].
+                Ensure the result is in JSON, with all data in the following fields: json['title'], json['description'], json['keywords'], json['parentlink'], json['post']. Do not include any new line symbols or additional formatting in the HTML.
+            `;
+
+            // Output the generated prompt to the designated area
+            document.getElementById('output').textContent = prompt;
+        }
+    </script>
+</head>
+<body>
+    <h1>Editable Prompt Construction</h1>
+    <div>
+        <label for="parsedText">Parsed Text:</label><br>
+        <input type="text" id="parsedText" class="parsed-text" value="Sample draft text about entrepreneurship." oninput="generatePrompt()"><br><br>
+    </div>
+    <div>
+        <label for="promptText">Prompt Text:</label><br>
+        <textarea id="promptText" class="prompt-text" oninput="generatePrompt()">
+            Take this input as DRAFTPOST about Center for Entrepreneurship program: {parsed_text}. If in Russian, translate to English. Using internet sources, create a 350-word POST emphasizing the Center for Entrepreneurship role and the program in English in HTML, following these rules: 
+        </textarea>
+    </div>
+    <h2>Generated Prompt:</h2>
+    <div id="output" class="output"></div>
+</body>
+</html>
