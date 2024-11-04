@@ -66,3 +66,24 @@ document.addEventListener('keydown', function (event) {
         window.location.href = '/components/edit.html';
     }
 });
+
+// Function to check if the suburl exists
+function checkAndRedirect() {
+    // Get the full current URL
+    const fullPath = window.location.pathname; // e.g., "/domain/suburl/karen-horn.html"
+    const basePath = '/domain/suburl/'; // Define the base path
+    const suburl = fullPath.replace(basePath, '').replace('.html', ''); // Extract the suburl
+
+    // Construct the expected fallback URL
+    const fallbackUrl = `/components/template-item-${suburl}.html?${suburl}`;
+
+    // Check if the current URL matches the base path
+    if (fullPath.startsWith(basePath) && suburl) {
+        // Redirect to the fallback URL
+        window.location.href = fallbackUrl;
+    }
+}
+
+window.onload = function() {
+    checkAndRedirect();
+};
