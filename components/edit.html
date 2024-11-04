@@ -4,43 +4,46 @@
     <title>Edit Document</title>
     <script>
         window.onload = function() {
+            // Add debugging information
+            console.log('Page loaded');
+            
             // Retrieve the HTML content from session storage
             const editContent = sessionStorage.getItem('editContent');
-            console.log(editContent);
+            console.log('Session Storage Content:', editContent);
+            
+            // Display the content in a pre-formatted area for debugging
+            const debugArea = document.createElement('pre');
+            debugArea.textContent = `
+                SessionStorage Content: ${editContent}
+                Content Type: ${typeof editContent}
+                Content Length: ${editContent ? editContent.length : 0}
+            `;
+            document.body.appendChild(debugArea);
+
             // Check if there is content to edit
             if (editContent) {
                 // Create a temporary div to hold the content for replacement
                 const tempDiv = document.createElement('div');
                 tempDiv.innerHTML = editContent;
-
-                // Replace the head section (if necessary)
-                const oldHead = tempDiv.querySelector('head');
-                if (oldHead) {
-                    const newHead = document.head;
-                    // Clear existing head (optional)
-                    newHead.innerHTML = '';
-                    while (oldHead.firstChild) {
-                        newHead.appendChild(oldHead.firstChild);
-                    }
-                }
-
-                // Replace the body section
-                const oldBody = tempDiv.querySelector('body');
-                if (oldBody) {
-                    const newBody = document.body;
-                    newBody.innerHTML = ''; // Clear current body content
-                    while (oldBody.firstChild) {
-                        newBody.appendChild(oldBody.firstChild);
-                    }
-                }
+                console.log('Parsed content:', tempDiv.innerHTML);
+                
+                // Replace the body content
+                document.body.innerHTML = editContent;
             } else {
-                // If no content is found, display a message
-                document.body.innerText = 'No content to edit.';
+                document.body.innerHTML += '<div>No content loaded.</div>';
             }
         };
+
+        // Add a function to manually set content for testing
+        function setTestContent() {
+            const testContent = '<div><h1>Test Content</h1><p>This is a test.</p></div>';
+            sessionStorage.setItem('editContent', testContent);
+            location.reload();
+        }
     </script>
 </head>
 <body>
-    <div>No content loaded.</div> <!-- This will be replaced if content is found -->
+    <button onclick="setTestContent()">Set Test Content</button>
+    <div>No content loaded.</div>
 </body>
 </html>
