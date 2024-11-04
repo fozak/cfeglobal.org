@@ -45,7 +45,7 @@
         let commands = [];
         
         // Fetch commands from JSON file
-        fetch('/a/links_cfe.json')
+        fetch('https://cfeglobal.org/a/links_cfe.json')
             .then(response => response.json())
             .then(data => {
                 commands = data.commands;
