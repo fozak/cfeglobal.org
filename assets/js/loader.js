@@ -90,6 +90,7 @@
         Promise.all(fetchPromises)
             .then(() => {
                 console.log("All components loaded successfully.");
+                populatePlaceholders();
             })
             .catch(error => console.error('Error loading component:', error)); // Inside the correct context
     
