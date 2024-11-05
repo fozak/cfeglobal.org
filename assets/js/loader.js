@@ -3,7 +3,41 @@
 (function() {
     const loaderScript = document.getElementById("loaderScript");
 
-    if (loaderScript.getAttribute("run") === "true") {
+    if (loaderScript.getAttribute("run") === "true" && !document.head) {
+
+        // loading head
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch the external head template
+            fetch('/components/template-head.html') // Update this path as necessary
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(headContent => {
+                    // Create a temporary DOM element to parse the fetched content
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = headContent;
+
+                    // Create a <head> element
+                    const headElement = document.createElement('head');
+                    headElement.innerHTML = tempDiv.innerHTML; // Set the fetched content as innerHTML
+
+                    // Insert the <head> element into the document
+                    document.documentElement.insertBefore(headElement, document.body);
+                    console.log("The <head> section has been loaded successfully.");
+
+                    // Optionally, load other components or scripts here, if necessary
+
+                    loaderScript.setAttribute("run", "false");
+                })
+                .catch(error => {
+                    console.error('Error loading head template:', error);
+                });
+        });
+
+
         document.addEventListener("DOMContentLoaded", function() {
             const urlPath = window.location.pathname;
             const segments = urlPath.split('/');
