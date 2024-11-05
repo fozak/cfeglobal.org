@@ -3,77 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Data</title>
+    <title>Edit Data with CodeMirror</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css" />
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            resize: vertical; /* Allows vertical resizing */
-        }
         #sourceText {
-            height: 100px; /* Height for the source text area */
+            height: 200px; /* Height for the source text area */
+            border: 1px solid #ccc; /* Border for the editor */
+            border-radius: 5px; /* Rounded corners */
+            margin-bottom: 20px; /* Space below the editor */
         }
         #itemHtml {
-            height: 300px; /* Height for the item HTML area */
             background-color: #f0f0f0; /* Light gray background */
             font-family: monospace; /* Monospace font for code-like appearance */
             white-space: pre-wrap; /* Preserve whitespace */
             overflow: auto; /* Enable scrolling */
             border: 1px solid #ccc; /* Border for the item HTML area */
             border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding for spacing */
+        }
+        .highlight {
+            background-color: #e1f5fe; /* Light blue background for HTML tags */
+            padding: 2px 4px;
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
-    <div id="dataContainer" style="display: none;">
+    <div id="dataContainer">
         <h1>Edit Data</h1>
         <label for="sourceText">Source Text:</label>
-        <textarea id="sourceText" placeholder="Edit source text here..."></textarea>
+        <textarea id="sourceText"></textarea>
 
         <label for="itemHtml">Item HTML:</label>
-        <textarea id="itemHtml" readonly></textarea>
+        <div id="itemHtml"></div> <!-- For displaying formatted HTML -->
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script> <!-- For HTML Mode -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script> <!-- For JS Mode -->
+
     <script>
-        window.onload = function() {
-            // Get the full document content from session storage
-            const editContent = sessionStorage.getItem('editContent');
+        // Initialize CodeMirror
+        var editor = CodeMirror.fromTextArea(document.getElementById("sourceText"), {
+            lineNumbers: true,
+            mode: "text/html", // Set mode to HTML for syntax highlighting
+            theme: "default",
+            autoCloseTags: true,
+            matchBrackets: true,
+            lineWrapping: true,
+        });
 
-            if (editContent) {
-                // Create a temporary DOM element to parse the HTML string
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(editContent, 'text/html');
+        // Function to format and display HTML
+        function formatHtml(html) {
+            return html.replace(/&/g, '&amp;') // Escape ampersands
+                       .replace(/</g, '&lt;') // Escape less than
+                       .replace(/>/g, '&gt;') // Escape greater than
+                       .replace(/(\/?\w+)(\s|>)/g, '<span class="highlight">&lt;$1</span>$2') // Highlight tags
+                       .replace(/(\s*<\/\w+>)/g, '<span class="highlight">$1</span>'); // Highlight closing tags
+        }
 
-                // Extract the JSON data from the script tag with id "data"
-                const jsonDataElement = doc.getElementById('data');
-
-                if (jsonDataElement) {
-                    try {
-                        // Parse the JSON content
-                        const jsonData = JSON.parse(jsonDataElement.textContent);
-
-                        // Populate the textareas with the extracted data
-                        document.getElementById('sourceText').value = jsonData.source_text || '';
-                        document.getElementById('itemHtml').value = jsonData['item-html'] || '';
-
-                        // Display the container with the loaded data
-                        document.getElementById('dataContainer').style.display = 'block';
-                    } catch (error) {
-                        console.error('Error parsing JSON from the script tag:', error);
-                    }
-                } else {
-                    console.warn('No JSON data found in the script tag with id "data".');
-                }
-            } else {
-                console.warn('No content found in session storage.');
-            }
-        };
+        // Update the itemHtml div when the source text changes
+        editor.on("change", function() {
+            const htmlContent = editor.getValue();
+            document.getElementById("itemHtml").innerHTML = formatHtml(htmlContent);
+        });
     </script>
 </body>
 </html>
