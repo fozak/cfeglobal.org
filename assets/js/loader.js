@@ -98,7 +98,7 @@
         function populatePlaceholders() {
             // Fetch the JSON data from the script tag
             const jsonData = JSON.parse(document.getElementById("data").textContent);
-    
+            console.log(jsonData);
             // Populate the placeholders in the HTML
             document.title = jsonData.title;
             console.log(document.title);
