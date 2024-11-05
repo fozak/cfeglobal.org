@@ -1,5 +1,4 @@
 // assets/js/loader.js
-
 (function () {
     const loaderScript = document.getElementById("loaderScript");
 
@@ -44,61 +43,57 @@
 
         // Now load the other components
         loadComponents(); // Calling the function to load components
-    })
-                .catch (error => {
-        console.error('Error loading head template:', error);
-    });
+    } else { // Corrected placement of else
+        console.log("The script will not run as 'run' is set to false.");
+    }
 
-} else {
-    console.log("The script will not run as 'run' is set to false.");
-}
-function loadComponents() {
-    // This function will load the other components
-    const urlPath = window.location.pathname;
-    const segments = urlPath.split('/');
-    const currentPage = segments[segments.length - 1];
+    function loadComponents() {
+        // This function will load the other components
+        const urlPath = window.location.pathname;
+        const segments = urlPath.split('/');
+        const currentPage = segments[segments.length - 1];
 
-    // Create and append the divs to the body
-    const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    divIds.forEach(id => {
-        const div = document.createElement('div');
-        div.id = id;
-        document.body.appendChild(div);
-    });
+        // Create and append the divs to the body
+        const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        divIds.forEach(id => {
+            const div = document.createElement('div');
+            div.id = id;
+            document.body.appendChild(div);
+        });
 
-    const components = [
-        '/components/header.html',
-        `/components/hero-${currentPage}.html`, // Added .html extension
-        '/components/services-stats.html',
-        '/components/faces.html',
-        `/components/featured-${currentPage}.html`, // Added .html extension
-        '/components/services-types.html',
-        '/components/portfolio.html',
-        '/components/call-to-action.html',
-        '/components/footer.html',
-    ];
+        const components = [
+            '/components/header.html',
+            `/components/hero-${currentPage}.html`, // Added .html extension
+            '/components/services-stats.html',
+            '/components/faces.html',
+            `/components/featured-${currentPage}.html`, // Added .html extension
+            '/components/services-types.html',
+            '/components/portfolio.html',
+            '/components/call-to-action.html',
+            '/components/footer.html',
+        ];
 
-    // Create an array of fetch promises
-    const fetchPromises = components.map((component, index) => {
-        return fetch(component)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text().then(data => {
-                    document.getElementById(divIds[index]).innerHTML = data; // Set the HTML content
+        // Create an array of fetch promises
+        const fetchPromises = components.map((component, index) => {
+            return fetch(component)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text().then(data => {
+                        document.getElementById(divIds[index]).innerHTML = data; // Set the HTML content
+                    });
                 });
-            });
-    });
+        });
 
-    // Wait for all fetch promises to resolve
-    Promise.all(fetchPromises)
-        .then(() => {
-            console.log("All components loaded successfully.");
-        })
-        .catch(error => console.error('Error loading component:', error));
-}
-}) ();
+        // Wait for all fetch promises to resolve
+        Promise.all(fetchPromises)
+            .then(() => {
+                console.log("All components loaded successfully.");
+            })
+            .catch(error => console.error('Error loading component:', error)); // Inside the correct context
+    }
+})();
 
 // loader js Add event listener to detect Ctrl+E key combination
 
