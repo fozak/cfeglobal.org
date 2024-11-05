@@ -52,7 +52,7 @@
         const urlPath = window.location.pathname;
         const segments = urlPath.split('/');
         const currentPage = segments[segments.length - 1];
-
+    
         // Create and append the divs to the body
         const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
         divIds.forEach(id => {
@@ -60,19 +60,36 @@
             div.id = id;
             document.body.appendChild(div);
         });
-
-        const components = [
-            '/components/header.html',
-            `/components/hero-${currentPage}.html`, // Added .html extension
-            '/components/services-stats.html',
-            '/components/faces.html',
-            `/components/featured-${currentPage}.html`, // Added .html extension
-            '/components/services-types.html',
-            '/components/portfolio.html',
-            '/components/call-to-action.html',
-            '/components/footer.html',
-        ];
-
+    
+        // Fetch the JSON data from the script tag
+        const jsonData = JSON.parse(document.getElementById("data").textContent);
+        console.log(jsonData);
+    
+        // Determine which components to load based on the presence and validity of jsonData.title
+        const components = jsonData && jsonData.title !== null && jsonData.title !== '' 
+            ? [
+                '/components/header.html',
+                `/components/hero-${currentPage}.html`, // Use current page data
+                '/components/services-stats.html',
+                '/components/faces.html',
+                `/components/featured-${currentPage}.html`, // Use current page data
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/call-to-action.html',
+                '/components/footer.html',
+            ]
+            : [
+                '/components/header.html',
+                '/components/hero-comingsoon.html', // Default to coming soon
+                '/components/services-stats.html',
+                '/components/faces.html',
+                '/components/featured-people.html', // Default to featured people
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/call-to-action.html',
+                '/components/footer.html',
+            ];
+    
         // Create an array of fetch promises
         const fetchPromises = components.map((component, index) => {
             return fetch(component)
@@ -85,29 +102,34 @@
                     });
                 });
         });
-
+    
         // Wait for all fetch promises to resolve
         Promise.all(fetchPromises)
             .then(() => {
                 console.log("All components loaded successfully.");
                 populatePlaceholders();
             })
-            .catch(error => console.error('Error loading component:', error)); // Inside the correct context
+            .catch(error => console.error('Error loading component:', error));
+    }
     
-        }
-        // loading data
-        function populatePlaceholders() {
-            // Fetch the JSON data from the script tag
-            const jsonData = JSON.parse(document.getElementById("data").textContent);
-            console.log(jsonData);
-            // Populate the placeholders in the HTML
+    // Loading data
+    function populatePlaceholders() {
+        // Fetch the JSON data from the script tag
+        const jsonData = JSON.parse(document.getElementById("data").textContent);
+        console.log(jsonData);
+    
+        // Check if the title in JSON data is present and not null before populating
+        if (jsonData && jsonData.title !== null && jsonData.title !== '') {
             document.title = jsonData.title;
             console.log(document.title);
-            document.querySelector('meta[name="description"]').setAttribute("content", jsonData.description);
-            document.querySelector('meta[name="keywords"]').setAttribute("content", jsonData.keywords);
+            document.querySelector('meta[name="description"]').setAttribute("content", jsonData.description || ''); // Fallback to empty string if description is undefined
+            document.querySelector('meta[name="keywords"]').setAttribute("content", jsonData.keywords || ''); // Fallback to empty string if keywords is undefined
             document.querySelector('link[rel="canonical"]').setAttribute("href", `https://${jsonData.domain}/${jsonData.url}`);
-            document.querySelector('script[type="application/ld+json"]').textContent = JSON.stringify(jsonData.ld-script);
+            document.querySelector('script[type="application/ld+json"]').textContent = JSON.stringify(jsonData['ld-script']);
+        } else {
+            console.warn("Title is null or empty in JSON data. Placeholders not populated.");
         }
+    }
 })();
 
 // loader js Add event listener to detect Ctrl+E key combination
