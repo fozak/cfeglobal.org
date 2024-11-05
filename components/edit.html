@@ -12,13 +12,9 @@
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(editContent, 'text/html');
 
-                // Extract the head and body HTML
-                const headContent = doc.head.innerHTML; // Get head content
-                const bodyContent = doc.body.innerHTML; // Get body content
-
-                // Set the current document's head and body
-                document.head.innerHTML = headContent; // Replace head content
-                document.body.innerHTML = bodyContent; // Replace body content
+                // Update the current document's head and body
+                document.head.innerHTML = doc.head.innerHTML; // Replace head content
+                document.body.innerHTML = doc.body.innerHTML; // Replace body content
             } else {
                 document.body.innerHTML = '<div>No content loaded.</div>';
             }
