@@ -8,13 +8,13 @@
             // Get the full document content from session storage
             const editContent = sessionStorage.getItem('editContent');
             if (editContent) {
-                // Create a temporary element to parse the HTML string
-                const tempDiv = document.createElement('div');
-                tempDiv.innerHTML = editContent;
+                // Create a temporary HTML document
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(editContent, 'text/html');
 
                 // Extract the head and body HTML
-                const headContent = tempDiv.getElementsByTagName('head')[0].innerHTML;
-                const bodyContent = tempDiv.getElementsByTagName('body')[0].innerHTML;
+                const headContent = doc.head.innerHTML; // Get head content
+                const bodyContent = doc.body.innerHTML; // Get body content
 
                 // Set the current document's head and body
                 document.head.innerHTML = headContent; // Replace head content
