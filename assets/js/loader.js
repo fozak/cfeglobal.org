@@ -6,7 +6,6 @@
     // Check if the script should run and if the <head> is not present
     if (loaderScript.getAttribute("run") === "true") {
         // Check if <head> already exists
-        if (!document.head) {
             // Fetch the external head template
             fetch('/components/template-head.html') // Ensure the path is correct
                 .then(response => {
@@ -42,7 +41,7 @@
                         gtag('js', new Date());
                         gtag('config', gtmId);
                     })();
-                    
+
                     // After the head is loaded, set 'run' to false
                     loaderScript.setAttribute("run", "false");
 
@@ -52,10 +51,7 @@
                 .catch(error => {
                     console.error('Error loading head template:', error);
                 });
-        } else {
-            console.log("The <head> section already exists; no need to load.");
-            loadComponents(); // Load components if head exists
-        }
+
     } else {
         console.log("The script will not run as 'run' is set to false.");
     }
