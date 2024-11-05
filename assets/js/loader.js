@@ -47,11 +47,13 @@
         console.log("The script will not run as 'run' is set to false.");
     }
 
+
     function loadComponents() {
         // This function will load the other components
         const urlPath = window.location.pathname;
+        const baseUrl = window.location.href; // Get the full URL for comparison
         const segments = urlPath.split('/');
-        const currentPage = segments[segments.length - 1];
+        const currentPage = segments[segments.length - 1]; // Extract the current page
     
         // Create and append the divs to the body
         const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -65,20 +67,88 @@
         const jsonData = JSON.parse(document.getElementById("data").textContent);
         console.log(jsonData);
     
-        // Determine which components to load based on the presence and validity of jsonData.title
-        const components = jsonData && jsonData.title !== null && jsonData.title !== '' 
-            ? [
-                '/components/header.html',
-                `/components/hero-${currentPage}.html`, // Use current page data
-                '/components/services-stats.html',
-                '/components/faces.html',
-                `/components/featured-${currentPage}.html`, // Use current page data
-                '/components/services-types.html',
-                '/components/portfolio.html',
-                '/components/call-to-action.html',
-                '/components/footer.html',
-            ]
-            : [
+        // Parse item-html once
+        const itemHtml = jsonData['item-html'];
+    
+        let components = [];
+        let heroHtml = ''; // Initialize heroHtml variable
+    
+        // Check if jsonData and title are valid
+        if (jsonData && jsonData.title !== null && jsonData.title !== '') {
+            if (baseUrl.includes('/programs')) {
+                heroHtml = '/components/hero-programs.html'; // Set heroHtml for programs
+                components = [
+                    '/components/header.html',
+                    // Conditional inclusion of itemHtml for programs
+                    ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
+                    '/components/programs-list.html',
+                    '/components/services-stats.html',
+                    '/components/faces.html',
+                    '/components/featured-programs.html',
+                    '/components/services-types.html',
+                    '/components/portfolio.html',
+                    '/components/footer.html',
+                ];
+            } 
+            else if (baseUrl.includes('/people')) {
+                heroHtml = '/components/hero-people.html'; // Set heroHtml for people
+                components = [
+                    '/components/header.html',
+                    ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
+                    '/components/people-list.html',
+                    '/components/services-stats.html',
+                    '/components/faces.html',
+                    '/components/featured-people.html',
+                    '/components/services-types.html',
+                    '/components/portfolio.html',
+                    '/components/footer.html',
+                ];
+            } 
+            else if (baseUrl.includes('/blog')) {
+                heroHtml = '/components/hero-blog.html'; // Set heroHtml for blog
+                components = [
+                    '/components/header.html',
+                    ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
+                    '/components/blog-posts.html',
+                    '/components/services-stats.html',
+                    '/components/faces.html',
+                    '/components/featured-blog.html',
+                    '/components/services-types.html',
+                    '/components/portfolio.html',
+                    '/components/footer.html',
+                ];
+            } 
+            else if (baseUrl.includes('/partners')) {
+                heroHtml = '/components/hero-partners.html'; // Set heroHtml for partners
+                components = [
+                    '/components/header.html',
+                    ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
+                    '/components/partners-list.html',
+                    '/components/services-stats.html',
+                    '/components/faces.html',
+                    '/components/featured-partners.html',
+                    '/components/services-types.html',
+                    '/components/portfolio.html',
+                    '/components/footer.html',
+                ];
+            } 
+            else {
+                // Default components if none of the above match
+                components = [
+                    '/components/header.html',
+                    `/components/hero-${currentPage}.html`, // Use current page data
+                    '/components/services-stats.html',
+                    '/components/faces.html',
+                    `/components/featured-${currentPage}.html`, // Use current page data
+                    '/components/services-types.html',
+                    '/components/portfolio.html',
+                    '/components/call-to-action.html',
+                    '/components/footer.html',
+                ];
+            }
+        } else {
+            // Fallback components if title is null or empty
+            components = [
                 '/components/header.html',
                 '/components/hero-comingsoon.html', // Default to coming soon
                 '/components/services-stats.html',
@@ -89,18 +159,37 @@
                 '/components/call-to-action.html',
                 '/components/footer.html',
             ];
+        }
     
-        // Create an array of fetch promises
+        // Load other components after handling the special case for partners
         const fetchPromises = components.map((component, index) => {
-            return fetch(component)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text().then(data => {
-                        document.getElementById(divIds[index]).innerHTML = data; // Set the HTML content
+            // Check if the current component is itemHtml
+            if (component === itemHtml) {
+                document.getElementById(divIds[index]).innerHTML = itemHtml; // Set the HTML content directly
+                return Promise.resolve(); // Resolve immediately since we set the content directly
+            } 
+            // Fetching heroHtml if itemHtml does not exist
+            else if (component === heroHtml) {
+                return fetch(heroHtml)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.text().then(data => {
+                            document.getElementById(divIds[index]).innerHTML = data; // Set the HTML content
+                        });
                     });
-                });
+            } else {
+                return fetch(component)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.text().then(data => {
+                            document.getElementById(divIds[index]).innerHTML = data; // Set the HTML content
+                        });
+                    });
+            }
         });
     
         // Wait for all fetch promises to resolve
