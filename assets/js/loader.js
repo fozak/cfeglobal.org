@@ -81,7 +81,7 @@
                     '/components/header.html',
                     // Conditional inclusion of itemHtml for programs
                     ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
-                    '/components/programs-list.html',
+                    '/components/list-programs.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
                     '/components/featured-programs.html',
@@ -95,7 +95,7 @@
                 components = [
                     '/components/header.html',
                     ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
-                    '/components/people-list.html',
+                    '/components/list-people.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
                     '/components/featured-people.html',
@@ -123,7 +123,7 @@
                 components = [
                     '/components/header.html',
                     ...(itemHtml ? [itemHtml] : [heroHtml]), // Use itemHtml if it's not null or empty
-                    '/components/partners-list.html',
+                    '/components/list-partners.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
                     '/components/featured-partners.html',
