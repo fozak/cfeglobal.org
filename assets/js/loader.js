@@ -4,9 +4,9 @@
     const loaderScript = document.getElementById("loaderScript");
 
     // Check if the script should run and if the <head> is not present
-    if (loaderScript.getAttribute("run") === "true" && !document.head) {
-        // loading head
-        document.addEventListener("DOMContentLoaded", function() {
+    if (loaderScript.getAttribute("run") === "true") {
+        // Check if <head> already exists
+        if (!document.head) {
             // Fetch the external head template
             fetch('/components/template-head.html') // Ensure the path is correct
                 .then(response => {
@@ -37,14 +37,13 @@
                 .catch(error => {
                     console.error('Error loading head template:', error);
                 });
-        });
-    } else if (document.head) {
-        console.log("The <head> section already exists; no need to load.");
-        loadComponents(); // Load components if head exists
+        } else {
+            console.log("The <head> section already exists; no need to load.");
+            loadComponents(); // Load components if head exists
+        }
     } else {
         console.log("The script will not run as 'run' is set to false.");
     }
-
     function loadComponents() {
         // This function will load the other components
         const urlPath = window.location.pathname;
