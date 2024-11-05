@@ -92,20 +92,7 @@
                 console.log("All components loaded successfully.");
             })
             .catch(error => console.error('Error loading component:', error)); // Inside the correct context
-    
-        }
-        // loading data
-        function populatePlaceholders() {
-            // Fetch the JSON data from the script tag
-            const jsonData = JSON.parse(document.getElementById("data").textContent);
-    
-            // Populate the placeholders in the HTML
-            document.title = jsonData.title;
-            document.querySelector('meta[name="description"]').setAttribute("content", jsonData.description);
-            document.querySelector('meta[name="keywords"]').setAttribute("content", jsonData.keywords);
-            document.querySelector('link[rel="canonical"]').setAttribute("href", `https://${jsonData.domain}/${jsonData.url}`);
-            document.querySelector('script[type="application/ld+json"]').textContent = JSON.stringify(jsonData.ld-script);
-        }
+    }
 })();
 
 // loader js Add event listener to detect Ctrl+E key combination
