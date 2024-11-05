@@ -1,78 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<div id="content">Loading content...</div>
+
     <script>
-        // On page load, retrieve the head from the source document
+        // On page load, retrieve the content from session storage
         window.onload = function() {
-            // Get the original head content from session storage
-            const originalHead = sessionStorage.getItem('originalHead');
-            if (originalHead) {
-                // Insert the original head content into the head of the document
-                document.head.insertAdjacentHTML('afterbegin', originalHead);
-            }
-
-            // Retrieve the HTML content for editing
+            // Get the full document content from session storage
             const editContent = sessionStorage.getItem('editContent');
-            console.log('Session Storage Content:', editContent);
-
-            // Create a debugging area
-            const debugArea = document.createElement('pre');
-            debugArea.textContent = `
-                SessionStorage Content: ${editContent}
-                Content Type: ${typeof editContent}
-                Content Length: ${editContent ? editContent.length : 0}
-            `;
-            document.body.appendChild(debugArea);
-
-            // Check if there is content to edit
             if (editContent) {
-                // Create a container for the loaded content
-                const contentContainer = document.createElement('div');
-                contentContainer.innerHTML = editContent;
-
-                // Append the content to the body
-                document.body.appendChild(contentContainer);
+                // Insert the loaded content into the div
+                document.getElementById('content').innerHTML = editContent;
             } else {
-                document.body.innerHTML += '<div>No content loaded.</div>';
+                document.getElementById('content').innerHTML = '<div>No content loaded.</div>';
             }
 
-            // Create a container for the editing buttons
-            const buttonContainer = document.createElement('div');
-            buttonContainer.style.marginTop = '20px'; // Add some spacing
-            buttonContainer.innerHTML = `
-                <button onclick="saveChanges()">Save Changes</button>
-                <button onclick="cancelEdit()">Cancel</button>
-                <button onclick="addNewElement()">Add Element</button>
-            `;
-            document.body.appendChild(buttonContainer);
+            // Debugging: Show what's loaded
+            console.log('Content Loaded:', editContent);
         };
-
-        // Function to manually set content for testing
-        function setTestContent() {
-            const testContent = '<div><h1>Test Content</h1><p>This is a test.</p></div>';
-            sessionStorage.setItem('editContent', testContent);
-            location.reload();
-        }
-
-        // Placeholder functions for the editing buttons
-        function saveChanges() {
-            alert('Changes saved! (This is just a placeholder)');
-        }
-
-        function cancelEdit() {
-            alert('Edit canceled! Returning to the previous page.');
-            window.location.href = '/'; // Change this to your desired URL
-        }
-
-        function addNewElement() {
-            const newElement = document.createElement('div');
-            newElement.innerHTML = '<p>A new editable element!</p>';
-            document.body.appendChild(newElement);
-        }
     </script>
-</head>
-<body>
-    <button onclick="setTestContent()">Set Test Content</button>
-    <div>No content loaded.</div>
-</body>
+
 </html>
