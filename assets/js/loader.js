@@ -101,6 +101,7 @@
     
             // Populate the placeholders in the HTML
             document.title = jsonData.title;
+            console.log(document.title);
             document.querySelector('meta[name="description"]').setAttribute("content", jsonData.description);
             document.querySelector('meta[name="keywords"]').setAttribute("content", jsonData.keywords);
             document.querySelector('link[rel="canonical"]').setAttribute("href", `https://${jsonData.domain}/${jsonData.url}`);
