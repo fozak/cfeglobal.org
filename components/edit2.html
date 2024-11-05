@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+ <script>
+        window.onload = function() {
+            // Add debugging information
+            console.log('Page loaded');
+            
+            // Retrieve the HTML content from session storage
+            const editContent = sessionStorage.getItem('editContent');
+            console.log('Session Storage Content:', editContent);
+            
+            // Display the content in a pre-formatted area for debugging
+            const debugArea = document.createElement('pre');
+            debugArea.textContent = `
+                SessionStorage Content: ${editContent}
+                Content Type: ${typeof editContent}
+                Content Length: ${editContent ? editContent.length : 0}
+            `;
+            document.body.appendChild(debugArea);
+
+            // Check if there is content to edit
+            if (editContent) {
+                // Create a temporary div to hold the content for replacement
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = editContent;
+                console.log('Parsed content:', tempDiv.innerHTML);
+                
+                // Replace the body content
+                document.body.innerHTML = editContent;
+            } else {
+                document.body.innerHTML += '<div>No content loaded.</div>';
+            }
+        };
+
+        // Add a function to manually set content for testing
+        function setTestContent() {
+            const testContent = '<div><h1>Test Content</h1><p>This is a test.</p></div>';
+            sessionStorage.setItem('editContent', testContent);
+            location.reload();
+        }
+    </script>
+
+<body>
+    <button onclick="setTestContent()">Set Test Content</button>
+    <div>No content loaded.</div>
+</body>
+</html>
