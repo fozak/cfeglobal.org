@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,6 +43,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/xml/xml.min.js"></script> <!-- For HTML Mode -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.0/beautify-html.min.js"></script> <!-- Include js-beautify -->
 
     <script>
         window.onload = function() {
@@ -77,8 +79,10 @@
                             smartIndent: true, // Enable smart indentation
                         });
 
-                        // Set the initial value for the CodeMirror instance
-                        editor.setValue(jsonData['item-html'] || '');
+                        // Get the initial HTML value and beautify it
+                        const initialHtml = jsonData['item-html'] || '';
+                        const beautifiedHtml = html_beautify(initialHtml); // Beautify HTML
+                        editor.setValue(beautifiedHtml); // Set beautified HTML back to CodeMirror
 
                         // Display the container with the loaded data
                         document.getElementById('dataContainer').style.display = 'block';
