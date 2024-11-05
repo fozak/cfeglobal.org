@@ -9,14 +9,6 @@
             const segments = urlPath.split('/');
             const currentPage = segments[segments.length - 1];
 
-            // Create and append the divs to the body
-            const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-            divIds.forEach(id => {
-                const div = document.createElement('div');
-                div.id = id;
-                document.body.appendChild(div);
-            });
-
             const components = [
                 '/components/header.html',
                 `/components/hero-${currentPage}`,
@@ -37,7 +29,7 @@
                             throw new Error(`HTTP error! status: ${response.status}`);
                         }
                         return response.text().then(data => {
-                            document.getElementById(divIds[index]).innerHTML = data; // Set the HTML content
+                            document.getElementById(index + 1).innerHTML = data; // Set the HTML content
                         });
                     });
             });
