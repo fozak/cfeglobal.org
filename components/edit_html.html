@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical; /* Allows vertical resizing */
+        }
+        #sourceText {
+            height: 100px; /* Height for the source text area */
+        }
+        #itemHtml {
+            height: 300px; /* Height for the item HTML area */
+            background-color: #f0f0f0; /* Light gray background */
+            font-family: monospace; /* Monospace font for code-like appearance */
+            white-space: pre-wrap; /* Preserve whitespace */
+            overflow: auto; /* Enable scrolling */
+            border: 1px solid #ccc; /* Border for the item HTML area */
+            border-radius: 5px; /* Rounded corners */
+        }
+    </style>
+</head>
+<body>
+    <div id="dataContainer" style="display: none;">
+        <h1>Edit Data</h1>
+        <label for="sourceText">Source Text:</label>
+        <textarea id="sourceText" placeholder="Edit source text here..."></textarea>
+
+        <label for="itemHtml">Item HTML:</label>
+        <textarea id="itemHtml" readonly></textarea>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Get the full document content from session storage
+            const editContent = sessionStorage.getItem('editContent');
+
+            if (editContent) {
+                // Create a temporary DOM element to parse the HTML string
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(editContent, 'text/html');
+
+                // Extract the JSON data from the script tag with id "data"
+                const jsonDataElement = doc.getElementById('data');
+
+                if (jsonDataElement) {
+                    try {
+                        // Parse the JSON content
+                        const jsonData = JSON.parse(jsonDataElement.textContent);
+
+                        // Populate the textareas with the extracted data
+                        document.getElementById('sourceText').value = jsonData.source_text || '';
+                        document.getElementById('itemHtml').value = jsonData['item-html'] || '';
+
+                        // Display the container with the loaded data
+                        document.getElementById('dataContainer').style.display = 'block';
+                    } catch (error) {
+                        console.error('Error parsing JSON from the script tag:', error);
+                    }
+                } else {
+                    console.warn('No JSON data found in the script tag with id "data".');
+                }
+            } else {
+                console.warn('No content found in session storage.');
+            }
+        };
+    </script>
+</body>
+</html>
