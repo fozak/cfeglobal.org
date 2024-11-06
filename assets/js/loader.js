@@ -253,7 +253,7 @@ document.addEventListener('keydown', function (event) {
         console.log("category: " + data.category);
 
         // Construct the URL for the template based on the category
-        const templateUrl = `${domain}/components/template-${category}.html`;
+        const templateUrl = `https://${domain}/components/template-${category}.html`;
         console.log("templateUrl: " + templateUrl);
         // Fetch the template HTML
         fetch(templateUrl)
