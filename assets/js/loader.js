@@ -235,7 +235,7 @@ document.addEventListener('keydown', function (event) {
         sessionStorage.setItem('editContent', currentHTML);
 
         // Redirect to the edit page
-        window.location.href = '/components/edit.html';
+        window.location.href = '/components/edit_html.html';
     }
 });
 
