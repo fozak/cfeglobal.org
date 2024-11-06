@@ -80,7 +80,7 @@
                         });
 
                         // Get the initial HTML value and beautify it
-                        const initialHtml = jsonData['item-html'] || '';
+                        const initialHtml = jsonData['templateHtml'] || '';
                         const beautifiedHtml = html_beautify(initialHtml); // Beautify HTML
                         editor.setValue(beautifiedHtml); // Set beautified HTML back to CodeMirror
 
