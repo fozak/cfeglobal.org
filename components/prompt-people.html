@@ -1,0 +1,19 @@
+<!-- the data in loaded from /assets/js/loader.js
+
+-->
+
+<prompt-element>
+    Take this input () as DRAFTPOST about Center for Entrepreneurship program: {{parsed_text}}. If in Russian, translate to English. Using internet sources, create a 350-word POST emphasizing the Center for Entrepreneurship role and the program in English in HTML, following these rules: "
+    f"1) Focus on programs. Remove all references to Russia and Russian persons (e.g., Victor Sedov, Sergey Borisov, Konstantin, Mikhail) and related text. "
+    f"2) Exclude Russian geographical names (e.g., Moscow, Russia, Россия, российских). Use 'The Center for Entrepreneurship' instead. "
+    f"3) Check if the mentioned name is person name. For person name in DRAFTPOST, add a link in the URL structure inside an <a> tag (e.g., <a href='/people/patricia-cloherty'>Patricia M. Cloherty</a>). "
+    f"4) For all company names in DRAFTPOST, add their website or Wikipedia links inside an <a> tag (e.g., <a href='https://en.wikipedia.org/wiki/Entrepreneurs%27_Organization'>Entrepreneurs' Organization</a>). "
+    f"5) Identify programs or topics from {{topic_list}} in DRAFTPOST and link to them (e.g., <a href='/programs/global-entrepreneurship-week'>Global Entrepreneurship Week</a>). Save the topic link in json_data['parentlink']. "
+    f"6) Format it as a news post in HTML using this template: {{template_draft}}. "
+    f"7) Generate a TITLE from DRAFTPOST without date, place it in the <h2 data-semantic='blog-title'> tag, and save it to json['title']. "
+    f"8) Create a longer title and place it in <h4 data-semantic='blog-subtitle1'>. Insert the main post text into <p data-semantic='blog-main-text'>. "
+    f"9) Generate 200 words of additional info for key programs and benefits and partners if any in DRAFTPOST (excluding 'The Center for Entrepreneurship'), and place it in <p data-semantic='blog-additional-text'>. "
+    f"10) Create a subtitle for the additional text and place it in <h4 data-semantic='blog-subtitle2'>. Exclude all single quotes and save the entire POST to json['post'], without any new line symbols (e.g., \\n)."
+    f"11) Generate an SEO description and save it to json['description']. Create SEO keywords and save them as a comma-separated string to json['keywords']. "
+    f"Ensure the result is in JSON, with all data in the following fields: json['title'], json['description'], json['keywords'], json['parentlink'], json['post']. Do not include any new line symbols or additional formatting in the HTML."
+</prompt-element>

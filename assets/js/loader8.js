@@ -54,7 +54,7 @@
         const baseUrl = window.location.href; // Get the full URL for comparison
         const segments = urlPath.split('/');
         const currentPage = segments[segments.length - 1]; // Extract the current page
-
+    
         // Create and append the divs to the body
         const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
         divIds.forEach(id => {
@@ -62,17 +62,17 @@
             div.id = id;
             document.body.appendChild(div);
         });
-
+    
         // Fetch the JSON data from the script tag
         const jsonData = JSON.parse(document.getElementById("data").textContent);
         console.log(jsonData);
-
+    
         // Parse item-html once
         const itemHtml = jsonData['item-html'];
-
+    
         let components = [];
         let heroHtml = ''; // Initialize heroHtml variable
-
+    
         // Check if jsonData and title are valid
         if (jsonData && jsonData.is_draft !== true) {
             if (baseUrl.includes('/programs')) {
@@ -89,7 +89,7 @@
                     '/components/portfolio.html',
                     '/components/footer.html',
                 ];
-            }
+            } 
             else if (baseUrl.includes('/people')) {
                 heroHtml = '/components/hero-people.html'; // Set heroHtml for people
                 components = [
@@ -103,7 +103,7 @@
                     '/components/portfolio.html',
                     '/components/footer.html',
                 ];
-            }
+            } 
             else if (baseUrl.includes('/blog')) {
                 heroHtml = '/components/hero-blog.html'; // Set heroHtml for blog
                 components = [
@@ -117,7 +117,7 @@
                     '/components/portfolio.html',
                     '/components/footer.html',
                 ];
-            }
+            } 
             else if (baseUrl.includes('/partners')) {
                 heroHtml = '/components/hero-partners.html'; // Set heroHtml for partners
                 components = [
@@ -131,7 +131,7 @@
                     '/components/portfolio.html',
                     '/components/footer.html',
                 ];
-            }
+            } 
             else {
                 // Default components if none of the above match
                 components = [
@@ -160,14 +160,14 @@
                 '/components/footer.html',
             ];
         }
-
+    
         // Load other components after handling the special case for partners
         const fetchPromises = components.map((component, index) => {
             // Check if the current component is itemHtml
             if (component === itemHtml) {
                 document.getElementById(divIds[index]).innerHTML = itemHtml; // Set the HTML content directly
                 return Promise.resolve(); // Resolve immediately since we set the content directly
-            }
+            } 
             // Fetching heroHtml if itemHtml does not exist
             else if (component === heroHtml) {
                 return fetch(heroHtml)
@@ -191,7 +191,7 @@
                     });
             }
         });
-
+    
         // Wait for all fetch promises to resolve
         Promise.all(fetchPromises)
             .then(() => {
@@ -200,13 +200,13 @@
             })
             .catch(error => console.error('Error loading component:', error));
     }
-
+    
     // Loading data
     function populatePlaceholders() {
         // Fetch the JSON data from the script tag
         const jsonData = JSON.parse(document.getElementById("data").textContent);
         console.log(jsonData);
-
+    
         // Check if the title in JSON data is present and not null before populating
         if (jsonData && jsonData.title !== null && jsonData.title !== '') {
             document.title = jsonData.title;
@@ -231,27 +231,7 @@ document.addEventListener('keydown', function (event) {
         // Get the current page's HTML
         const currentHTML = document.documentElement.outerHTML;
 
-        // Get the current domain and path
-        const domain = window.location.hostname; // This will get 'cfeglobal.org'
-        const path = window.location.pathname; // This will get '/category/item.html'
-
-        // Extract category from the path
-        const pathSegments = path.split('/').filter(segment => segment); // Split path and filter empty segments
-        const category = pathSegments.length > 1 ? pathSegments[1] : ''; // Get the second segment as category
-
-        // Get the existing JSON data from the <script> tag
-        const dataElement = document.getElementById('data');
-        const data = JSON.parse(dataElement.innerHTML); // Parse the JSON data
-
-        // Update the JSON object with the new domain, url, and category
-        data.domain = domain; // Update domain
-        data.url = path;      // Update url
-        data.category = category; // Add/update category field
-
-        // Store the updated JSON object back as a string in the existing HTML
-        dataElement.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
-
-        // Store the updated HTML in session storage
+        // Store the HTML in session storage
         sessionStorage.setItem('editContent', currentHTML);
 
         // Redirect to the edit page
