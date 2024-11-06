@@ -252,6 +252,25 @@ document.addEventListener('keydown', function (event) {
         data.category = category; // Add/update category field
         console.log("category: " + data.category);
 
+        // Construct the URL for the template based on the category
+        const templateUrl = `${domain}/components/template-${category}.html`;
+        console.log("templateUrl: " + templateUrl);
+        // Fetch the template HTML
+        fetch(templateUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Network response was not ok: ${response.statusText}`);
+                }
+                return response.text(); // Get the response as text
+            })
+            .then(templateHtml => {
+                // Set the fetched HTML into the data object
+                data.templateHtml = templateHtml;
+
+            })
+            .catch(error => {
+                console.error("Error fetching the template HTML:", error);
+            });
         // Store the updated JSON object back as a string in the existing HTML
         dataElement.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
 
@@ -262,4 +281,8 @@ document.addEventListener('keydown', function (event) {
         window.location.href = '/components/edit_html.html';
     }
 });
+
+// domain: cfeglobal.org
+// loader.js:251 path: /people/template-item-people.html
+//loader.js:253 category: people
 
