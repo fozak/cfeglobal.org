@@ -256,6 +256,7 @@ document.addEventListener('keydown', function (event) {
         const templateUrl = `https://${domain}/components/template-${category}.html`;
         console.log("templateUrl: " + templateUrl);
         // Fetch the template HTML
+        // Fetch the template HTML
         fetch(templateUrl)
             .then(response => {
                 if (!response.ok) {
@@ -267,20 +268,19 @@ document.addEventListener('keydown', function (event) {
                 // Set the fetched HTML into the data object
                 data.templateHtml = templateHtml;
                 console.log("templateHtml: " + data.templateHtml);
+
+                // Store the updated JSON object back as a string in the existing HTML
+                dataElement.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
+
+                // Store the updated HTML in session storage
+                sessionStorage.setItem('editContent', currentHTML);
+
+                // Redirect to the edit page
+                window.location.href = '/components/edit_html.html';
             })
             .catch(error => {
                 console.error("Error fetching the template HTML:", error);
             });
-        // Store the updated JSON object back as a string in the existing HTML
-        dataElement.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
-
-        // Store the updated HTML in session storage
-        sessionStorage.setItem('editContent', currentHTML);
-
-        // Redirect to the edit page
-        window.location.href = '/components/edit_html.html';
     }
 });
 
-//<script id="data" type="application/json">{"is_draft":false,"source_text":"","title":"","description":"Empowering entrepreneurs through impactful programs.","keywords":"entrepreneurship, programs, growth","domain":"cfeglobal.org","url":"index.html","ld-script":{"@context":"https://schema.org","@type":"Organization","name":"Center for Entrepreneurship","url":"https://cfeglobal.org","logo":"/assets/images/logo/cfe-logo.png"},"item-html":"<div>ITEM HTML FOR TEMPLATE</div>","path":"/people/template-item-people.html","category":"people"}</script>
-		
