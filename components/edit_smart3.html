@@ -57,18 +57,11 @@
                     const sampleTemplate = `Welcome to our website, ${jsonData.title}! Here’s what we do: ${jsonData.description}.`;
                     document.getElementById('inputArea').value = sampleTemplate;
 
-                    // Render the template_html as plain text, not as HTML
-                    renderTemplateAsText(jsonData.template_html);
+                    // Render the template_html and update the output
+                    renderTemplate(jsonData.template_html);
                 }
             }
         };
-
-        // Function to escape HTML characters
-        function escapeHtml(html) {
-            const text = document.createElement('textarea');
-            text.innerText = html;
-            return text.innerHTML;
-        }
 
         // Function to substitute placeholders in the template HTML
         function substitutePlaceholders(template) {
@@ -78,14 +71,13 @@
             });
         }
 
-        // Function to render the HTML template as plain text
-        function renderTemplateAsText(templateHtml) {
+        // Function to render the HTML template
+        function renderTemplate(templateHtml) {
             const substitutedHtml = substitutePlaceholders(templateHtml);
-            const escapedHtml = escapeHtml(substitutedHtml); // Escape HTML to display as text
             const outputDiv = document.getElementById('output');
 
-            // Set the innerHTML of the output div to the escaped HTML
-            outputDiv.innerHTML = escapedHtml;
+            // Set the innerHTML of the output div to the substituted HTML
+            outputDiv.innerHTML = substitutedHtml;
         }
 
         // Get the input area
@@ -98,8 +90,8 @@
             // Substitute placeholders in the input template
             const resultText = substitutePlaceholders(templateText);
 
-            // Escape HTML to display as text
-            document.getElementById('output').innerHTML = escapeHtml(resultText);
+            // Update the output display
+            document.getElementById('output').innerHTML = resultText;
         });
     </script>
 </body>
