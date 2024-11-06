@@ -229,20 +229,19 @@ document.addEventListener('keydown', function (event) {
         event.preventDefault(); // Prevent default behavior of the key combination
 
         // Get the current page's HTML
-        const currentHTML = document.documentElement.outerHTML;
+        const current_html = document.documentElement.outerHTML;
 
         // Get the current domain and path
         const domain = window.location.hostname; // This will get 'cfeglobal.org'
         const path = window.location.pathname; // This will get '/category/item.html'
 
         // Extract category from the path
-        // Extract category from the path
-        const pathSegments = path.split('/').filter(segment => segment); // Split path and filter empty segments
-        const category = pathSegments.length > 0 ? pathSegments[0] : ''; // Get the first segment as category
+        const path_segments = path.split('/').filter(segment => segment); // Split path and filter empty segments
+        const category = path_segments.length > 0 ? path_segments[0] : ''; // Get the first segment as category
 
         // Get the existing JSON data from the <script> tag
-        const dataElement = document.getElementById('data');
-        const data = JSON.parse(dataElement.innerHTML); // Parse the JSON data
+        const data_element = document.getElementById('data');
+        const data = JSON.parse(data_element.innerHTML); // Parse the JSON data
 
         // Update the JSON object with the new domain, url, and category
         data.domain = domain; // Update domain
@@ -253,27 +252,27 @@ document.addEventListener('keydown', function (event) {
         console.log("category: " + data.category);
 
         // Construct the URL for the template based on the category
-        const templateUrl = `https://${domain}/components/template-${category}.html`;
-        console.log("templateUrl: " + templateUrl);
+        const template_url = `https://${domain}/components/template-${category}.html`;
+        console.log("template_url: " + template_url);
+
         // Fetch the template HTML
-        // Fetch the template HTML
-        fetch(templateUrl)
+        fetch(template_url)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Network response was not ok: ${response.statusText}`);
                 }
                 return response.text(); // Get the response as text
             })
-            .then(templateHtml => {
+            .then(template_html => {
                 // Set the fetched HTML into the data object
-                data.templateHtml = templateHtml;
-                console.log("templateHtml: " + data.templateHtml);
+                data.template_html = template_html;
+                console.log("template_html: " + data.template_html);
 
                 // Store the updated JSON object back as a string in the existing HTML
-                dataElement.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
+                data_element.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
 
                 // Store the updated HTML in session storage
-                sessionStorage.setItem('editContent', currentHTML);
+                sessionStorage.setItem('edit_content', current_html);
 
                 // Redirect to the edit page
                 window.location.href = '/components/edit_html.html';
@@ -284,3 +283,5 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+//
+<script id="data" type="application/json">{"is_draft":false,"source_text":"","title":"","description":"Empowering entrepreneurs through impactful programs.","keywords":"entrepreneurship, programs, growth","domain":"cfeglobal.org","url":"index.html","ld-script":{"@context":"https://schema.org","@type":"Organization","name":"Center for Entrepreneurship","url":"https://cfeglobal.org","logo":"/assets/images/logo/cfe-logo.png"},"item-html":"<div>ITEM HTML FOR TEMPLATE</div>","path":"/people/template-item-people.html","category":"people","templateHtml":"<div class=\"post-1\">\n    <div class=\"container\">\n        <div class=\"c-spacer\" style=\"height:30px;\"> </div>\n < div class=\"c-testimonials__caption-title\">\n            <h4>\n                <span class=\"pr-3\">People behind the Center for Entrepreneurship</span>\n            </h4>\n            <div class=\"c-spacer\" style=\"height:30px;\"> </div>\n        </div>\n    </div>\n    <div class=\"container\">\n        <div class=\"row justify-content-between\">\n            <div class=\"col-md-7\">\n                <h2 data-semantic=\"name\"></h2>\n                <div class=\"l-post-content-section__content\">\n                    <p data-semantic=\"biography\"></p>\n                </div>\n            </div>\n            <div class=\"col-lg-4 col-md-12\">\n                <div class=\"l-post-content-section__author-details\">\n                    <div class=\"row\">\n                        <div class=\"l-team-archive__image-wrapper\">\n                            <div class=\"l-team-archive__profile-image\" data-semantic=\"picture\"\n                                style=\"background-image: url(/images/misha-plam.jpg); width: 300px\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>"}</script >

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +10,14 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        #sourceText {
+        #source_text {
             height: 200px; /* Height for the editable area */
             border: 1px solid #ccc; /* Border for the editor */
             border-radius: 5px; /* Rounded corners */
             margin-bottom: 20px; /* Space below the editor */
             padding: 10px; /* Padding for spacing */
         }
-        #itemHtml {
+        #item_html {
             height: 200px; /* Height for the CodeMirror instance */
             border: 1px solid #ccc; /* Border for the CodeMirror area */
             border-radius: 5px; /* Rounded corners */
@@ -32,13 +31,13 @@
     </style>
 </head>
 <body>
-    <div id="dataContainer" style="display: none;">
+    <div id="data_container" style="display: none;">
         <h1>Edit Data</h1>
-        <label for="sourceText">Source Text:</label>
-        <div id="sourceText" contenteditable="true"></div> <!-- Content editable div -->
+        <label for="source_text">Source Text:</label>
+        <div id="source_text" contenteditable="true"></div> <!-- Content editable div -->
 
-        <label for="itemHtml">Item HTML:</label>
-        <textarea id="itemHtml"></textarea> <!-- For displaying formatted HTML -->
+        <label for="item_html">Item HTML:</label>
+        <textarea id="item_html"></textarea> <!-- For displaying formatted HTML -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
@@ -48,26 +47,26 @@
     <script>
         window.onload = function() {
             // Get the full document content from session storage
-            const editContent = sessionStorage.getItem('editContent');
+            const edit_content = sessionStorage.getItem('editContent');
 
-            if (editContent) {
+            if (edit_content) {
                 // Create a temporary DOM element to parse the HTML string
                 const parser = new DOMParser();
-                const doc = parser.parseFromString(editContent, 'text/html');
+                const doc = parser.parseFromString(edit_content, 'text/html');
 
                 // Extract the JSON data from the script tag with id "data"
-                const jsonDataElement = doc.getElementById('data');
+                const json_data_element = doc.getElementById('data');
 
-                if (jsonDataElement) {
+                if (json_data_element) {
                     try {
                         // Parse the JSON content
-                        const jsonData = JSON.parse(jsonDataElement.textContent);
+                        const json_data = JSON.parse(json_data_element.textContent);
 
                         // Populate the contenteditable div with the extracted source text
-                        document.getElementById('sourceText').innerText = jsonData.source_text || '';
+                        document.getElementById('source_text').innerText = json_data.source_text || '';
 
                         // Initialize CodeMirror for the item HTML textarea
-                        var editor = CodeMirror.fromTextArea(document.getElementById("itemHtml"), {
+                        var editor = CodeMirror.fromTextArea(document.getElementById("item_html"), {
                             lineNumbers: true,
                             mode: "text/html", // Set mode to HTML for syntax highlighting
                             theme: "default",
@@ -80,12 +79,12 @@
                         });
 
                         // Get the initial HTML value and beautify it
-                        const initialHtml = jsonData['templateHtml'] || '';
-                        const beautifiedHtml = html_beautify(initialHtml); // Beautify HTML
-                        editor.setValue(beautifiedHtml); // Set beautified HTML back to CodeMirror
+                        const initial_html = json_data['template_html'] || '';
+                        const beautified_html = html_beautify(initial_html); // Beautify HTML
+                        editor.setValue(beautified_html); // Set beautified HTML back to CodeMirror
 
                         // Display the container with the loaded data
-                        document.getElementById('dataContainer').style.display = 'block';
+                        document.getElementById('data_container').style.display = 'block';
                     } catch (error) {
                         console.error('Error parsing JSON from the script tag:', error);
                     }
