@@ -266,7 +266,7 @@ document.addEventListener('keydown', function (event) {
             .then(templateHtml => {
                 // Set the fetched HTML into the data object
                 data.templateHtml = templateHtml;
-
+                console.log("templateHtml: " + data.templateHtml);
             })
             .catch(error => {
                 console.error("Error fetching the template HTML:", error);
@@ -282,7 +282,5 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-// domain: cfeglobal.org
-// loader.js:251 path: /people/template-item-people.html
-//loader.js:253 category: people
-
+//<script id="data" type="application/json">{"is_draft":false,"source_text":"","title":"","description":"Empowering entrepreneurs through impactful programs.","keywords":"entrepreneurship, programs, growth","domain":"cfeglobal.org","url":"index.html","ld-script":{"@context":"https://schema.org","@type":"Organization","name":"Center for Entrepreneurship","url":"https://cfeglobal.org","logo":"/assets/images/logo/cfe-logo.png"},"item-html":"<div>ITEM HTML FOR TEMPLATE</div>","path":"/people/template-item-people.html","category":"people"}</script>
+		
