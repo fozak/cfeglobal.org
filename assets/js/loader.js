@@ -238,7 +238,7 @@ document.addEventListener('keydown', function (event) {
         // Extract category from the path
         // Extract category from the path
         const pathSegments = path.split('/').filter(segment => segment); // Split path and filter empty segments
-        const category = pathSegments.length > 0 ? pathSegments[1] : ''; // Get the first segment as category
+        const category = pathSegments.length > 0 ? pathSegments[0] : ''; // Get the first segment as category
 
         // Get the existing JSON data from the <script> tag
         const dataElement = document.getElementById('data');
