@@ -245,11 +245,11 @@ document.addEventListener('keydown', function (event) {
 
         // Update the JSON object with the new domain, url, and category
         data.domain = domain; // Update domain
-        console.log("domain: " + "data.domain);
+        console.log("domain: " + data.domain);
         data.path = path;      // Update url
-        console.log("path: " + "data.path);
+        console.log("path: " + data.path);
         data.category = category; // Add/update category field
-        console.log("category: " + "data.category);
+        console.log("category: " + data.category);
 
         // Store the updated JSON object back as a string in the existing HTML
         dataElement.innerHTML = JSON.stringify(data); // Update the <script> element with the modified JSON
