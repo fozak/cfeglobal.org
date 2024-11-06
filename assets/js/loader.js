@@ -225,7 +225,7 @@
 
 
 document.addEventListener('keydown', function (event) {
-    if (event.ctrlKey && event.key === 'e') {
+    if (event.ctrlKey && event.key === 'q') {
         event.preventDefault(); // Prevent default behavior of the key combination
 
         // Get the current page's HTML
