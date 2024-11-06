@@ -208,7 +208,7 @@
         console.log(jsonData);
 
         // Check if the title in JSON data is present and not null before populating
-        if (jsonData && jsonData.title !== null && jsonData.title !== '') {
+        if (jsonData && jsonData.is_draft === false ) {
             document.title = jsonData.title;
             console.log(document.title);
             document.querySelector('meta[name="description"]').setAttribute("content", jsonData.description || ''); // Fallback to empty string if description is undefined
