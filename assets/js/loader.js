@@ -74,7 +74,7 @@
         let heroHtml = ''; // Initialize heroHtml variable
     
         // Check if jsonData and title are valid
-        if (jsonData && jsonData.title !== null && jsonData.title !== '') {
+        if (jsonData && jsonData.is_draft !== true) {
             if (baseUrl.includes('/programs')) {
                 heroHtml = '/components/hero-programs.html'; // Set heroHtml for programs
                 components = [
@@ -147,7 +147,7 @@
                 ];
             }
         } else {
-            // Fallback components if title is null or empty
+            // Fallback components if is_draft is true
             components = [
                 '/components/header.html',
                 '/components/hero-comingsoon.html', // Default to coming soon
