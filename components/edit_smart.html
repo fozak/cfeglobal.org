@@ -68,7 +68,7 @@
                 const value = sessionStorage.getItem(key.trim());
                 console.log(`Substituting ${match}: ${value}`); // Debugging line
                 // Instead of using a span, we highlight with brackets
-                return value !== null ? `[${value}]` : match;
+                return value !== null ? `${value}` : match;
             });
         }
 
