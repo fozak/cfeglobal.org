@@ -58,20 +58,9 @@
                 }
             }
 
-            // Optionally, initialize the input area with a sample template
-            // const sampleTemplate = `Welcome to our website, /title! Here’s what we do: /description.`;
-            // document.getElementById('inputArea').value = sampleTemplate;
-
             // Render the template with placeholders
             renderTemplateAsText(document.getElementById('inputArea').value);
         };
-
-        // Function to escape HTML characters
-        function escapeHtml(html) {
-            const text = document.createElement('textarea');
-            text.innerText = html;
-            return text.innerHTML;
-        }
 
         // Function to substitute placeholders in the template
         function substitutePlaceholders(template) {
@@ -86,9 +75,8 @@
         // Function to render the template as plain text
         function renderTemplateAsText(templateHtml) {
             const substitutedHtml = substitutePlaceholders(templateHtml);
-            const escapedHtml = escapeHtml(substitutedHtml); // Escape HTML to prevent XSS
             const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = escapedHtml; // Set the HTML of the output div
+            outputDiv.textContent = substitutedHtml; // Use textContent to avoid rendering HTML
         }
 
         // Get the input area
@@ -98,7 +86,7 @@
         inputArea.addEventListener('input', function() {
             const templateText = inputArea.value;
             const resultText = substitutePlaceholders(templateText);
-            document.getElementById('output').innerHTML = resultText; // Directly set the HTML, no escaping here
+            document.getElementById('output').textContent = resultText; // Set as textContent to avoid rendering
         });
     </script>
 </body>
