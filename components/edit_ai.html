@@ -137,7 +137,19 @@
 
             // Call the OpenAI API and get the response
             const responseContent = await callOpenAI(prompt, apiKey, model); // Pass prompt, API key, and model
-
+            //saving to session storage
+            // Check if responseContent is a valid JSON object
+            if (typeof responseContent === 'object' && responseContent !== null) {
+                // Iterate through the keys of the responseContent object
+                for (const key in responseContent) {
+                    if (responseContent.hasOwnProperty(key)) {
+                        const sessionKey = `generated_${key}`; // Prefix the key
+                        const value = responseContent[key]; // Get the value
+                        sessionStorage.setItem(sessionKey, value); // Save to sessionStorage
+                        console.log(`Stored ${sessionKey} in sessionStorage with value:`, value);
+                    }
+                }
+            }
             // Display the overall AI response in the ai_output div
             document.getElementById('ai_output').textContent = responseContent; // Show the response
 
