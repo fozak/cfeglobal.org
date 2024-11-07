@@ -150,6 +150,12 @@
                     }
                 }
             }
+
+            const userInput = document.getElementById('inputArea').value; // Get user input from the textarea
+
+            // Save the text from the textarea into sessionStorage as key "prompt"
+            sessionStorage.setItem('prompt', userInput);
+
             // Display the overall AI response in the ai_output div
             document.getElementById('ai_output').textContent = responseContent; // Show the response
 
