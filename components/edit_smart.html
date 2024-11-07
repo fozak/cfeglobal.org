@@ -33,6 +33,7 @@
 
     <script>
         window.onload = function() {
+            // Retrieve the content from sessionStorage (this should contain your actual data)
             const edit_content = sessionStorage.getItem('edit_content');
 
             if (edit_content) {
@@ -42,33 +43,41 @@
 
                 if (json_data_element) {
                     const jsonData = JSON.parse(json_data_element.textContent);
+                    
+                    // Store the variables in sessionStorage
                     for (const key in jsonData) {
                         if (jsonData.hasOwnProperty(key)) {
                             sessionStorage.setItem(key, jsonData[key]);
                         }
                     }
-
-                    const sampleTemplate = `Welcome to our website, /title! Here’s what we do: /description.`;
-                    document.getElementById('inputArea').value = sampleTemplate;
-
-                    renderTemplateAsText(jsonData.template_html);
                 }
             }
+
+            // Initialize the input area with a sample template using the extracted data
+            const sampleTemplate = `Welcome to our website, /title! Here’s what we do: /description.`;
+            document.getElementById('inputArea').value = sampleTemplate;
+
+            // Render the template with placeholders if data is available
+            renderTemplateAsText(sampleTemplate);
         };
 
+        // Function to escape HTML characters
         function escapeHtml(html) {
             const text = document.createElement('textarea');
             text.innerText = html;
             return text.innerHTML;
         }
 
+        // Function to substitute placeholders in the template
         function substitutePlaceholders(template) {
             return template.replace(/\/(.*?)\b/g, (match, key) => {
                 const value = sessionStorage.getItem(key.trim());
+                console.log(`Substituting ${match}: ${value}`); // Debugging line
                 return value !== null ? value : match;
             });
         }
 
+        // Function to render the template as plain text
         function renderTemplateAsText(templateHtml) {
             const substitutedHtml = substitutePlaceholders(templateHtml);
             const escapedHtml = escapeHtml(substitutedHtml);
@@ -76,8 +85,10 @@
             outputDiv.innerHTML = escapedHtml;
         }
 
+        // Get the input area
         const inputArea = document.getElementById('inputArea');
 
+        // Event listener for dynamic updates
         inputArea.addEventListener('input', function() {
             const templateText = inputArea.value;
             const resultText = substitutePlaceholders(templateText);
