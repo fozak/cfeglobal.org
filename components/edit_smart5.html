@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,27 +11,27 @@
             padding: 10px;
             margin-top: 20px;
             min-height: 50px;
-            white-space: pre-wrap; /* Preserve whitespace */
+            white-space: pre-wrap;
+            /* Preserve whitespace */
         }
+
         #inputArea {
             border: 1px solid #ccc;
             padding: 10px;
             width: 100%;
             min-height: 100px;
-            box-sizing: border-box; /* Include padding in width */
+            box-sizing: border-box;
+            /* Include padding in width */
             margin-top: 10px;
         }
-        .highlight {
-            background-color: lightgray; /* Highlight color */
-            padding: 2px 4px; /* Add some padding */
-            border-radius: 3px; /* Rounded corners */
-        }
+
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
         }
     </style>
 </head>
+
 <body>
     <h2>Dynamic Placeholder Substitution</h2>
     <textarea id="inputArea" placeholder="Type your template text here..."></textarea>
@@ -58,12 +59,12 @@
                 }
             }
 
-            // Optionally, initialize the input area with a sample template
-            // const sampleTemplate = `Welcome to our website, /title! Here’s what we do: /description.`;
-            // document.getElementById('inputArea').value = sampleTemplate;
+            // Initialize the input area with a sample template using the extracted data
+            const sampleTemplate = `Welcome to our website, /title! Here’s what we do: /description.`;
+            document.getElementById('inputArea').value = sampleTemplate;
 
-            // Render the template with placeholders
-            renderTemplateAsText(document.getElementById('inputArea').value);
+            // Render the template with placeholders if data is available
+            renderTemplateAsText(sampleTemplate);
         };
 
         // Function to escape HTML characters
@@ -78,28 +79,28 @@
             return template.replace(/\/([a-zA-Z0-9_]+)/g, (match, key) => {
                 const value = sessionStorage.getItem(key.trim());
                 console.log(`Substituting ${match}: ${value}`); // Debugging line
-                // Wrap the substituted value in a span with a highlight class
-                return value !== null ? `<span class="highlight">${value}</span>` : match;
+                return value !== null ? value : match;
             });
         }
 
         // Function to render the template as plain text
         function renderTemplateAsText(templateHtml) {
             const substitutedHtml = substitutePlaceholders(templateHtml);
-            const escapedHtml = escapeHtml(substitutedHtml); // Escape HTML to prevent XSS
+            const escapedHtml = escapeHtml(substitutedHtml);
             const outputDiv = document.getElementById('output');
-            outputDiv.innerHTML = escapedHtml; // Set the HTML of the output div
+            outputDiv.innerHTML = escapedHtml;
         }
 
         // Get the input area
         const inputArea = document.getElementById('inputArea');
 
         // Event listener for dynamic updates
-        inputArea.addEventListener('input', function() {
+        inputArea.addEventListener('input', function () {
             const templateText = inputArea.value;
             const resultText = substitutePlaceholders(templateText);
-            document.getElementById('output').innerHTML = resultText; // Directly set the HTML, no escaping here
+            document.getElementById('output').innerHTML = escapeHtml(resultText);
         });
     </script>
 </body>
+
 </html>
