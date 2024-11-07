@@ -67,16 +67,16 @@
             return template.replace(/\/([a-zA-Z0-9_]+)/g, (match, key) => {
                 const value = sessionStorage.getItem(key.trim());
                 console.log(`Substituting ${match}: ${value}`); // Debugging line
-                // Wrap the substituted value in a span with a highlight class
-                return value !== null ? `<span class="highlight">${value}</span>` : match;
+                // Instead of using a span, we highlight with brackets
+                return value !== null ? `[${value}]` : match;
             });
         }
 
         // Function to render the template as plain text
         function renderTemplateAsText(templateHtml) {
-            const substitutedHtml = substitutePlaceholders(templateHtml);
+            const substitutedText = substitutePlaceholders(templateHtml);
             const outputDiv = document.getElementById('output');
-            outputDiv.textContent = substitutedHtml; // Use textContent to avoid rendering HTML
+            outputDiv.textContent = substitutedText; // Use textContent to avoid rendering HTML
         }
 
         // Get the input area
