@@ -12,7 +12,7 @@
             min-height: 50px;
             white-space: pre-wrap; /* Preserve whitespace */
         }
-        #inputArea {
+        #inputArea, #addedText {
             border: 1px solid #ccc;
             padding: 10px;
             width: 100%;
@@ -34,6 +34,7 @@
 <body>
     <h2>Dynamic Placeholder Substitution</h2>
     <textarea id="inputArea" placeholder="Type your template text here..."></textarea>
+    <textarea id="addedText" placeholder="Type your added text here..."></textarea>
     <div id="output"></div>
 
     <script>
@@ -67,8 +68,7 @@
             return template.replace(/\/([a-zA-Z0-9_]+)/g, (match, key) => {
                 const value = sessionStorage.getItem(key.trim());
                 console.log(`Substituting ${match}: ${value}`); // Debugging line
-                // Instead of using a span, we highlight with brackets
-                return value !== null ? `${key}: ${value}` : match; //return value !== null ? `${value}` : match;
+                return value !== null ? `${key}: ${value}` : match;
             });
         }
 
@@ -79,14 +79,21 @@
             outputDiv.textContent = substitutedText; // Use textContent to avoid rendering HTML
         }
 
-        // Get the input area
+        // Get the input areas
         const inputArea = document.getElementById('inputArea');
+        const addedTextArea = document.getElementById('addedText');
 
-        // Event listener for dynamic updates
+        // Event listener for dynamic updates in the main input area
         inputArea.addEventListener('input', function() {
             const templateText = inputArea.value;
             const resultText = substitutePlaceholders(templateText);
             document.getElementById('output').textContent = resultText; // Set as textContent to avoid rendering
+        });
+
+        // Event listener for the added text area
+        addedTextArea.addEventListener('input', function() {
+            const addedText = addedTextArea.value;
+            sessionStorage.setItem('added_text', addedText); // Save to sessionStorage
         });
     </script>
 </body>
