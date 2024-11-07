@@ -134,7 +134,7 @@
             const { apiKey, model } = getApiCredentials(); // Get credentials
             const prompt = document.getElementById('output').innerText; // Get user input from a text area
             console.log(prompt);
-            
+
             // Call the OpenAI API and get the response
             const responseContent = await callOpenAI(prompt, apiKey, model); // Pass prompt, API key, and model
 
@@ -151,8 +151,14 @@
             // Prepare the request body
             const requestBody = {
                 model: model, // Use the stored model
-                messages: [{ role: 'user', content: prompt }],
+                messages: [
+                    {
+                        role: "system",
+                        content: "You are a helpful assistant designed to output JSON.",
+                    },
+                    { role: 'user', content: prompt }],
                 max_tokens: 5000, // Adjust based on your needs
+                response_format: { type: "json_object" },
             };
 
             try {
