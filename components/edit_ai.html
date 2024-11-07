@@ -137,20 +137,31 @@
 
             // Call the OpenAI API and get the response
             const responseContent = await callOpenAI(prompt, apiKey, model); // Pass prompt, API key, and model
-            //saving to session storage
-            // Check if responseContent is a valid JSON object
-            if (typeof responseContent === 'object' && responseContent !== null) {
-                // Iterate through the keys of the responseContent object
-                for (const key in responseContent) {
-                    if (responseContent.hasOwnProperty(key)) {
-                        const sessionKey = `generated_${key}`; // Prefix the key
-                        const value = responseContent[key]; // Get the value
-                        sessionStorage.setItem(sessionKey, value); // Save to sessionStorage
-                        console.log(`Stored ${sessionKey} in sessionStorage with value:`, value);
-                    }
-                }
-            }
 
+            // Log the response content for debugging
+            console.log('Response Content:', responseContent);
+
+            // Check if responseContent is a valid JSON object
+            try {
+                // If responseContent is a string, parse it
+                const parsedResponse = typeof responseContent === 'string' ? JSON.parse(responseContent) : responseContent;
+
+                if (typeof parsedResponse === 'object' && parsedResponse !== null) {
+                    // Iterate through the keys of the parsedResponse object
+                    for (const key in parsedResponse) {
+                        if (parsedResponse.hasOwnProperty(key)) {
+                            const sessionKey = `generated_${key}`; // Prefix the key
+                            const value = parsedResponse[key]; // Get the value
+                            sessionStorage.setItem(sessionKey, value); // Save to sessionStorage
+                            console.log(`Stored ${sessionKey} in sessionStorage with value:`, value);
+                        }
+                    }
+                } else {
+                    console.error('Parsed response is not a valid object:', parsedResponse);
+                }
+            } catch (error) {
+                console.error('Error parsing responseContent:', error);
+            }
             const userInput = document.getElementById('inputArea').value; // Get user input from the textarea
 
             // Save the text from the textarea into sessionStorage as key "prompt"
