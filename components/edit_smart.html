@@ -76,9 +76,9 @@
 
         // Function to substitute placeholders in the template
         function substitutePlaceholders(template) {
-            return template.replace(/\/(\w+-\w+)\b/g, (match, key) => {
+            return template.replace(/\/([a-zA-Z0-9_]+)/g, (match, key) => {
                 const value = sessionStorage.getItem(key.trim());
-                console.log(`Substituting ${match}: ${value}`);
+                console.log(`Substituting ${match}: ${value}`); // Debugging line
                 return value !== null ? value : match;
             });
         }
