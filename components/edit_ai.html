@@ -215,6 +215,54 @@
 
         // Call the generatePost function when the button is clicked
         document.getElementById('generateButton').addEventListener('click', generatePost);
+
+        // saving to session storage
+        document.addEventListener('keydown', function (event) {
+            // Check if Ctrl + X is pressed
+            if (event.ctrlKey && event.key === 'x') {
+                // Call the function to handle the replacement
+                replaceEditContent();
+            }
+        });
+
+        function replaceEditContent() {
+            // Retrieve the edit_content from sessionStorage
+            const editContent = sessionStorage.getItem('edit_content');
+            if (!editContent) {
+                console.warn('No edit_content found in sessionStorage.');
+                return;
+            }
+
+            // Create an object to hold generated list
+            const generatedList = {};
+
+            // Iterate through all keys in sessionStorage
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                const value = sessionStorage.getItem(key);
+
+                // Check for keys starting with "generated_"
+                if (key.startsWith('generated_')) {
+                    // Store the key-value pair in the generatedList
+                    const variableName = key.replace('generated_', ''); // Remove prefix
+                    generatedList[variableName] = value; // Add to the object
+                }
+            }
+
+            // Replace variables in edit_content
+            let generatedContent = editContent;
+
+            for (const [variable, value] of Object.entries(generatedList)) {
+                // Replace placeholders in the edit content with actual values
+                const placeholder = `{${variable}}`;
+                generatedContent = generatedContent.replace(new RegExp(placeholder, 'g'), value);
+            }
+
+            // Log the updated content or handle it as needed
+            console.log('Generated edit content:', generatedContent);
+            // Save the updated content to sessionStorage under the new key 'generate_content'
+            sessionStorage.setItem('generate_content', generatedContent);
+        }
     </script>
 </body>
 
