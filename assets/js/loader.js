@@ -251,7 +251,7 @@ document.addEventListener('keydown', function (event) {
                 sessionStorage.setItem('edit_content', current_html);
 
                 // Redirect to the edit page
-                window.location.href = '/components/edit_html.html';
+                window.location.href = '/components/edit_ai.html';
             })
             .catch(error => {
                 console.error("Error fetching the template HTML:", error);

@@ -224,6 +224,7 @@
                 replaceEditContent();
             }
         });
+
         function replaceEditContent() {
             // Retrieve the edit_content from sessionStorage
             const editContent = sessionStorage.getItem('edit_content');
@@ -235,7 +236,7 @@
             // Create an object to hold generated list
             const generatedList = {};
 
-            // Iterate through all keys in sessionStorage to populate generatedList
+            // Iterate through all keys in sessionStorage
             for (let i = 0; i < sessionStorage.length; i++) {
                 const key = sessionStorage.key(i);
                 const value = sessionStorage.getItem(key);
@@ -248,25 +249,12 @@
                 }
             }
 
-            // Replace variables in edit_content using generatedList
+            // Replace variables in edit_content
             let generatedContent = editContent;
 
             for (const [variable, value] of Object.entries(generatedList)) {
                 // Replace placeholders in the edit content with actual values
                 const placeholder = `{${variable}}`;
-                generatedContent = generatedContent.replace(new RegExp(placeholder, 'g'), value);
-            }
-
-            // Iterate through all sessionStorage keys again to handle replacements for non-generated keys
-            for (let i = 0; i < sessionStorage.length; i++) {
-                const key = sessionStorage.key(i);
-                const value = sessionStorage.getItem(key);
-
-                // Skip keys already processed
-                if (key.startsWith('generated_')) continue;
-
-                // Replace placeholders in the edit content with actual values
-                const placeholder = `{${key}}`;
                 generatedContent = generatedContent.replace(new RegExp(placeholder, 'g'), value);
             }
 
