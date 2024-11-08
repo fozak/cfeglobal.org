@@ -277,7 +277,7 @@
             sessionStorage.setItem('generate_content', generatedContent);
 
             // Extract the slug from sessionStorage or editContent, assuming it's stored under 'slug'
-            const slug = sessionStorage.getItem('slug') || 'default-slug'; // Default slug if not found
+            const slug = sessionStorage.getItem('generated_slug') || 'default-slug'; // Default slug if not found
 
             // Create a blob from the generatedContent
             const blob = new Blob([generatedContent], { type: 'text/html' });
