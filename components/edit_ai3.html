@@ -272,30 +272,8 @@
 
             // Log the updated content or handle it as needed
             console.log('Generated edit content:', generatedContent);
-
             // Save the updated content to sessionStorage under the new key 'generate_content'
             sessionStorage.setItem('generate_content', generatedContent);
-
-            // Extract the slug from sessionStorage or editContent, assuming it's stored under 'slug'
-            const slug = sessionStorage.getItem('slug') || 'default-slug'; // Default slug if not found
-
-            // Create a blob from the generatedContent
-            const blob = new Blob([generatedContent], { type: 'text/html' });
-
-            // Create a link element
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = `${slug}.html`; // Filename based on the slug
-
-            // Append to the body (necessary for Firefox)
-            document.body.appendChild(link);
-
-            // Programmatically click the link to trigger the download
-            link.click();
-
-            // Clean up and remove the link from the document
-            document.body.removeChild(link);
-            URL.revokeObjectURL(link.href); // Free up memory
         }
     </script>
 </body>
