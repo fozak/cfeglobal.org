@@ -56,32 +56,30 @@
     }
 
     function loadComponents() {
+        const jsonData = JSON.parse(document.getElementById("data").textContent);
         const urlPath = window.location.pathname;
         const baseUrl = window.location.href;
         const segments = urlPath.split('/');
         const currentPage = segments[segments.length - 1];
         const divIds = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
+    
+        // Create divs for components
         divIds.forEach(id => {
             const div = document.createElement('div');
             div.id = id;
             document.body.appendChild(div);
         });
-
-        const jsonData = JSON.parse(document.getElementById("data").textContent);
-        console.log(jsonData);
-
-        // Prepare components to load
+    
         let components = [];
-        let heroHtml = ''; // Initialize heroHtml variable
-
-        // Load components regardless of the draft status when loadDraftComponents is true
+        let heroHtml = '';
+    
+        // Load components based on the current page context
         if (loadDraftComponents || (jsonData && jsonData.is_draft !== true)) {
             if (baseUrl.includes('/programs')) {
                 heroHtml = '/components/hero-programs.html';
                 components = [
                     '/components/header.html',
-                    ...(jsonData['post_html'] ? [jsonData['post_html']] : [heroHtml]),
+                    jsonData['post_html'], // Load post_html directly
                     '/components/list-programs.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
@@ -94,7 +92,7 @@
                 heroHtml = '/components/hero-people.html';
                 components = [
                     '/components/header.html',
-                    ...(jsonData['post_html'] ? [jsonData['post_html']] : [heroHtml]),
+                    jsonData['post_html'], // Load post_html directly
                     '/components/list-people.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
@@ -107,7 +105,7 @@
                 heroHtml = '/components/hero-blog.html';
                 components = [
                     '/components/header.html',
-                    ...(jsonData['post_html'] ? [jsonData['post_html']] : [heroHtml]),
+                    jsonData['post_html'], // Load post_html directly
                     '/components/blog-posts.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
@@ -120,7 +118,7 @@
                 heroHtml = '/components/hero-partners.html';
                 components = [
                     '/components/header.html',
-                    ...(jsonData['post_html'] ? [jsonData['post_html']] : [heroHtml]),
+                    jsonData['post_html'], // Load post_html directly
                     '/components/list-partners.html',
                     '/components/services-stats.html',
                     '/components/faces.html',
@@ -130,7 +128,6 @@
                     '/components/footer.html',
                 ];
             } else {
-                // Default components if none of the above match
                 components = [
                     '/components/header.html',
                     `/components/hero-${currentPage}.html`,
@@ -144,7 +141,6 @@
                 ];
             }
         } else {
-            // Fallback components if is_draft is true
             components = [
                 '/components/header.html',
                 '/components/hero-comingsoon.html',
@@ -157,20 +153,26 @@
                 '/components/footer.html',
             ];
         }
-
-        // Load the components
+    
+        // Load components
         const fetchPromises = components.map((component, index) => {
-            return fetch(component)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.text().then(data => {
-                        document.getElementById(divIds[index]).innerHTML = data;
+            if (component === jsonData['post_html']) {
+                // Directly load the content of post_html
+                document.getElementById(divIds[index]).innerHTML = jsonData['post_html'];
+                return Promise.resolve(); // Resolve immediately since no fetch is needed
+            } else {
+                return fetch(component)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+                        return response.text().then(data => {
+                            document.getElementById(divIds[index]).innerHTML = data;
+                        });
                     });
-                });
+            }
         });
-
+    
         Promise.all(fetchPromises)
             .then(() => {
                 console.log("All components loaded successfully.");
