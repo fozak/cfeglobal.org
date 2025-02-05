@@ -1,50 +1,77 @@
 (function() {
-    // Configuration object for component mappings and settings
     const CONFIG = {
-        // Base components that appear on every page
-        baseComponents: [
-            'header',
-            'services-stats',
-            'faces',
-            'services-types',
-            'portfolio',
-            'footer'
-        ],
-        
-        // Category-specific component configurations
         categoryConfigs: {
-            programs: {
-                hero: 'hero-programs',
-                specific: ['list-programs', 'featured-programs']
-            },
-            people: {
-                hero: 'hero-people',
-                specific: ['list-people', 'featured-people']
-            },
-            blog: {
-                hero: 'hero-blog',
-                specific: ['blog-posts', 'featured-blog']
-            },
-            partners: {
-                hero: 'hero-partners',
-                specific: ['list-partners', 'featured-partners']
-            },
-            default: {
-                hero: 'hero-default',
-                specific: ['featured-default', 'call-to-action']
-            }
+            programs: [
+                '/components/header.html',
+                '/components/hero-programs.html',
+                'post_html',
+                '/components/list-programs.html',
+                '/components/services-stats.html',
+                '/components/faces.html',
+                '/components/featured-programs.html',
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/footer.html'
+            ],
+            people: [
+                '/components/header.html',
+                '/components/hero-people.html',
+                'post_html',
+                '/components/list-people.html',
+                '/components/services-stats.html',
+                '/components/faces.html',
+                '/components/featured-people.html',
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/footer.html'
+            ],
+            blog: [
+                '/components/header.html',
+                '/components/hero-blog.html',
+                'post_html',
+                '/components/blog-posts.html',
+                '/components/services-stats.html',
+                '/components/faces.html',
+                '/components/featured-blog.html',
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/footer.html'
+            ],
+            partners: [
+                '/components/header.html',
+                '/components/hero-partners.html',
+                'post_html',
+                '/components/list-partners.html',
+                '/components/services-stats.html',
+                '/components/faces.html',
+                '/components/featured-partners.html',
+                '/components/services-types.html',
+                '/components/portfolio.html',
+                '/components/footer.html'
+            ]
         },
-        
-        // Coming soon configuration
-        comingSoon: {
-            hero: 'hero-comingsoon',
-            specific: ['featured-people', 'call-to-action']
-        },
-        
-        // Base path for components
-        basePath: '/components/',
-        
-        // GTM configuration
+        defaultComponents: [
+            '/components/header.html',
+            'hero', // placeholder for dynamic hero
+            '/components/services-stats.html',
+            '/components/faces.html',
+            'featured', // placeholder for dynamic featured
+            '/components/services-types.html',
+            '/components/portfolio.html',
+            '/components/call-to-action.html',
+            '/components/footer.html'
+        ],
+        comingSoonComponents: [
+            '/components/header.html',
+            '/components/hero-comingsoon.html',
+            '/components/services-stats.html',
+            '/components/faces.html',
+            '/components/featured-people.html',
+            '/components/services-types.html',
+            '/components/portfolio.html',
+            '/components/call-to-action.html',
+            '/components/footer.html'
+        ],
         gtm: {
             id: 'G-VK4JWHDC1Z',
             domain: 'googletagmanager.com'
@@ -56,8 +83,21 @@
             this.loaderScript = document.getElementById("loaderScript");
             this.loadDraftComponents = false;
             this.jsonData = this.getJsonData();
-            this.currentCategory = this.determineCurrentCategory();
-            this.divIds = Array.from({length: 15}, (_, i) => (i + 1).toString());
+            this.currentPage = this.getCurrentPage();
+            this.baseUrl = window.location.href;
+            this.divIds = Array.from(
+                { length: this.calculateMaxComponents() }, 
+                (_, i) => (i + 1).toString()
+            );
+        }
+
+        calculateMaxComponents() {
+            const lengths = [
+                ...Object.values(CONFIG.categoryConfigs).map(arr => arr.length),
+                CONFIG.defaultComponents.length,
+                CONFIG.comingSoonComponents.length
+            ];
+            return Math.max(...lengths);
         }
 
         getJsonData() {
@@ -69,10 +109,9 @@
             }
         }
 
-        determineCurrentCategory() {
-            const path = window.location.pathname;
-            return Object.keys(CONFIG.categoryConfigs)
-                .find(category => path.includes(`/${category}`)) || 'default';
+        getCurrentPage() {
+            const segments = window.location.pathname.split('/');
+            return segments[segments.length - 1];
         }
 
         async init() {
@@ -108,7 +147,7 @@
 
         async loadHeadTemplate() {
             try {
-                const response = await fetch(`${CONFIG.basePath}template-head.html`);
+                const response = await fetch('/components/template-head.html');
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const html = await response.text();
                 document.head.insertAdjacentHTML('afterbegin', html);
@@ -135,10 +174,56 @@
             });
         }
 
+        determineComponents() {
+            if (!this.loadDraftComponents && (!this.jsonData || this.jsonData.is_draft === true)) {
+                return CONFIG.comingSoonComponents;
+            }
+
+            // Check for category-specific components
+            for (const [category, components] of Object.entries(CONFIG.categoryConfigs)) {
+                if (this.baseUrl.includes(`/${category}`)) {
+                    return components.map(component => 
+                        component === 'post_html' ? this.jsonData?.post_html : component
+                    );
+                }
+            }
+
+            // Handle default components with dynamic parts
+            return CONFIG.defaultComponents.map(component => {
+                if (component === 'hero') {
+                    return `/components/hero-${this.currentPage}.html`;
+                }
+                if (component === 'featured') {
+                    return `/components/featured-${this.currentPage}.html`;
+                }
+                return component;
+            });
+        }
+
         async loadComponents() {
-            const components = this.generateComponentList();
-            const promises = components.map((component, index) => 
-                this.loadComponent(component, this.divIds[index]));
+            const components = this.determineComponents();
+            
+            const promises = components.map((component, index) => {
+                const div = document.getElementById(this.divIds[index]);
+                if (!div) return Promise.resolve();
+
+                if (typeof component === 'string' && component.startsWith('/')) {
+                    return fetch(component)
+                        .then(response => {
+                            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                            return response.text();
+                        })
+                        .then(html => {
+                            div.innerHTML = html;
+                        })
+                        .catch(error => {
+                            console.error(`Error loading component ${component}:`, error);
+                        });
+                } else if (component) {
+                    div.innerHTML = component;
+                    return Promise.resolve();
+                }
+            });
 
             try {
                 await Promise.all(promises);
@@ -146,50 +231,6 @@
                 this.populateMeta();
             } catch (error) {
                 console.error('Error loading components:', error);
-            }
-        }
-
-        generateComponentList() {
-            if (!this.shouldLoadContent()) {
-                return this.generateComingSoonList();
-            }
-
-            const config = CONFIG.categoryConfigs[this.currentCategory];
-            return [
-                ...CONFIG.baseComponents.map(comp => `${CONFIG.basePath}${comp}.html`),
-                `${CONFIG.basePath}${config.hero}.html`,
-                this.jsonData?.post_html,
-                ...config.specific.map(comp => `${CONFIG.basePath}${comp}.html`)
-            ].filter(Boolean);
-        }
-
-        generateComingSoonList() {
-            const { hero, specific } = CONFIG.comingSoon;
-            return [
-                ...CONFIG.baseComponents.map(comp => `${CONFIG.basePath}${comp}.html`),
-                `${CONFIG.basePath}${hero}.html`,
-                ...specific.map(comp => `${CONFIG.basePath}${comp}.html`)
-            ];
-        }
-
-        shouldLoadContent() {
-            return this.loadDraftComponents || (this.jsonData && this.jsonData.is_draft !== true);
-        }
-
-        async loadComponent(component, divId) {
-            const div = document.getElementById(divId);
-            if (!div) return;
-
-            if (typeof component === 'string' && component.startsWith('/')) {
-                try {
-                    const response = await fetch(component);
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    div.innerHTML = await response.text();
-                } catch (error) {
-                    console.error(`Error loading component ${component}:`, error);
-                }
-            } else if (component) {
-                div.innerHTML = component;
             }
         }
 
@@ -201,26 +242,27 @@
 
             const { title, description, keywords, domain, url, 'ld-script': ldScript } = this.jsonData;
             
-            document.title = title || '';
-            this.updateMetaTag('description', description);
-            this.updateMetaTag('keywords', keywords);
-            this.updateCanonicalLink(domain, url);
-            this.updateStructuredData(ldScript);
-        }
-
-        updateMetaTag(name, content) {
-            const meta = document.querySelector(`meta[name="${name}"]`);
-            if (meta && content) meta.setAttribute("content", content);
-        }
-
-        updateCanonicalLink(domain, url) {
-            const link = document.querySelector('link[rel="canonical"]');
-            if (link && domain && url) link.setAttribute("href", `https://${domain}/${url}`);
-        }
-
-        updateStructuredData(ldScript) {
-            const script = document.querySelector('script[type="application/ld+json"]');
-            if (script && ldScript) script.textContent = JSON.stringify(ldScript);
+            if (title) document.title = title;
+            
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription && description) {
+                metaDescription.setAttribute("content", description);
+            }
+            
+            const metaKeywords = document.querySelector('meta[name="keywords"]');
+            if (metaKeywords && keywords) {
+                metaKeywords.setAttribute("content", keywords);
+            }
+            
+            const canonicalLink = document.querySelector('link[rel="canonical"]');
+            if (canonicalLink && domain && url) {
+                canonicalLink.setAttribute("href", `https://${domain}/${url}`);
+            }
+            
+            const ldScriptElement = document.querySelector('script[type="application/ld+json"]');
+            if (ldScriptElement && ldScript) {
+                ldScriptElement.textContent = JSON.stringify(ldScript);
+            }
         }
     }
 
