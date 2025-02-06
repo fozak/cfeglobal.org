@@ -15,7 +15,7 @@
             ],
             people: [
                 '/components/header.html',
-                '/components/hero-people.html',
+                //'/components/hero-people.html',
                 'post_html',
                 '/components/list-people.html',
                 '/components/services-stats.html',
