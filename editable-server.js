@@ -8,29 +8,31 @@ const PORT = 3001;
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
-// Add logging to verify middleware execution
 app.use((req, res, next) => {
     console.log('Middleware triggered for path:', req.path);
     
+    // Skip if path already ends with .html
+    if (req.path.endsWith('.html')) {
+        console.log('Path ends with .html, skipping script injection');
+        next();
+        return;
+    }
+
     const originalSend = res.send;
     res.send = function (body) {
         console.log('res.send called');
         
         if (typeof body === 'string') {
-            console.log('Body is string, has </body>?', body.includes('</body>'));
-        }
-        
-        if (typeof body === 'string' && body.includes('</body>')) {
-            console.log('Injecting editing script');
+            console.log('Body is string, injecting script');
+            
             const editingScript = `
                 <script>
-                    // Wait for document to be fully loaded
                     document.addEventListener('DOMContentLoaded', () => {
-                        console.log('DOM Content Loaded'); // Browser console log
-                        // Listen for Ctrl+Q
+                        console.log('DOM Content Loaded');
                         document.addEventListener('keydown', function(e) {
-                            console.log('Key pressed:', e.key); // Browser console log
+                            console.log('Key pressed:', e.key);
                             if (e.ctrlKey && e.key === 'q') {
+                                console.log('Ctrl+Q pressed');
                                 e.preventDefault();
                                 makePageEditable();
                             }
@@ -38,7 +40,7 @@ app.use((req, res, next) => {
                     });
 
                     function makePageEditable() {
-                        console.log('Making page editable'); // Browser console log
+                        console.log('Making page editable');
                         document.body.contentEditable = 'true';
                         document.designMode = 'on';
                         
@@ -54,7 +56,7 @@ app.use((req, res, next) => {
                     }
 
                     function saveChanges() {
-                        console.log('Saving changes'); // Browser console log
+                        console.log('Saving changes');
                         const currentPath = window.location.pathname;
                         
                         const saveButton = document.getElementById('saveButton');
@@ -88,9 +90,9 @@ app.use((req, res, next) => {
                         });
                     }
                 </script>
-            </body>`;
+            `;
             
-            body = body.replace('</body>', editingScript);
+            body = body + editingScript;
         }
         originalSend.call(this, body);
     };
@@ -99,7 +101,10 @@ app.use((req, res, next) => {
 
 app.post('/save', (req, res) => {
     console.log('Save endpoint hit:', req.body.path);
-    const filePath = path.join(__dirname, req.body.path + '.html');
+    // Add .html if not present
+    const filePath = path.join(__dirname, 
+        req.body.path.endsWith('.html') ? req.body.path : req.body.path + '.html'
+    );
     
     fs.writeFile(filePath, req.body.content, 'utf8', (err) => {
         if (err) {
@@ -112,10 +117,11 @@ app.post('/save', (req, res) => {
     });
 });
 
-// Make sure this comes AFTER the middleware
 app.get('*', (req, res) => {
     console.log('Get route hit:', req.path);
-    const filePath = path.join(__dirname, req.path + '.html');
+    const filePath = path.join(__dirname, 
+        req.path.endsWith('.html') ? req.path : req.path + '.html'
+    );
     
     fs.stat(filePath, (err, stats) => {
         if (!err && stats.isFile()) {
