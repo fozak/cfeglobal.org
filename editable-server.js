@@ -5,32 +5,43 @@ const fs = require('fs');
 const app = express();
 const PORT = 3001;
 
-// Add body parser middleware for handling POST requests
 app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
-// Middleware to inject the editing JavaScript into all HTML files
+// Add logging to verify middleware execution
 app.use((req, res, next) => {
+    console.log('Middleware triggered for path:', req.path);
+    
     const originalSend = res.send;
     res.send = function (body) {
-        // Only modify HTML responses
+        console.log('res.send called');
+        
+        if (typeof body === 'string') {
+            console.log('Body is string, has </body>?', body.includes('</body>'));
+        }
+        
         if (typeof body === 'string' && body.includes('</body>')) {
+            console.log('Injecting editing script');
             const editingScript = `
                 <script>
-                    // Listen for Ctrl+E
-                    document.addEventListener('keydown', function(e) {
-                        if (e.ctrlKey && e.key === 'e') {
-                            e.preventDefault();
-                            makePageEditable();
-                        }
+                    // Wait for document to be fully loaded
+                    document.addEventListener('DOMContentLoaded', () => {
+                        console.log('DOM Content Loaded'); // Browser console log
+                        // Listen for Ctrl+Q
+                        document.addEventListener('keydown', function(e) {
+                            console.log('Key pressed:', e.key); // Browser console log
+                            if (e.ctrlKey && e.key === 'q') {
+                                e.preventDefault();
+                                makePageEditable();
+                            }
+                        });
                     });
 
                     function makePageEditable() {
-                        // Make the body editable
+                        console.log('Making page editable'); // Browser console log
                         document.body.contentEditable = 'true';
-                        document.designMode = 'on';  // Added for better compatibility
+                        document.designMode = 'on';
                         
-                        // Create and add save button if it doesn't exist
                         if (!document.getElementById('saveButton')) {
                             const saveButton = document.createElement('button');
                             saveButton.id = 'saveButton';
@@ -43,20 +54,17 @@ app.use((req, res, next) => {
                     }
 
                     function saveChanges() {
+                        console.log('Saving changes'); // Browser console log
                         const currentPath = window.location.pathname;
                         
-                        // Remove the save button before getting HTML content
                         const saveButton = document.getElementById('saveButton');
                         saveButton.remove();
                         
-                        // Get the HTML content
                         const content = document.documentElement.outerHTML;
                         
-                        // Disable editing
                         document.body.contentEditable = 'false';
                         document.designMode = 'off';
 
-                        // Send the content to the server
                         fetch('/save', {
                             method: 'POST',
                             headers: {
@@ -89,21 +97,24 @@ app.use((req, res, next) => {
     next();
 });
 
-// Handle saving changes
 app.post('/save', (req, res) => {
+    console.log('Save endpoint hit:', req.body.path);
     const filePath = path.join(__dirname, req.body.path + '.html');
     
     fs.writeFile(filePath, req.body.content, 'utf8', (err) => {
         if (err) {
+            console.error('Save error:', err);
             res.json({ success: false, error: err.message });
         } else {
+            console.log('Save successful');
             res.json({ success: true });
         }
     });
 });
 
-// Serve HTML files without extension
+// Make sure this comes AFTER the middleware
 app.get('*', (req, res) => {
+    console.log('Get route hit:', req.path);
     const filePath = path.join(__dirname, req.path + '.html');
     
     fs.stat(filePath, (err, stats) => {
