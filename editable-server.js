@@ -11,13 +11,6 @@ app.use(express.static(path.join(__dirname)));
 app.use((req, res, next) => {
     console.log('Middleware triggered for path:', req.path);
     
-    // Skip if path already ends with .html
-    if (req.path.endsWith('.html')) {
-        console.log('Path ends with .html, skipping script injection');
-        next();
-        return;
-    }
-
     const originalSend = res.send;
     res.send = function (body) {
         console.log('res.send called');
@@ -27,68 +20,81 @@ app.use((req, res, next) => {
             
             const editingScript = `
                 <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                        console.log('DOM Content Loaded');
-                        document.addEventListener('keydown', function(e) {
-                            console.log('Key pressed:', e.key);
-                            if (e.ctrlKey && e.key === 'q') {
-                                console.log('Ctrl+Q pressed');
-                                e.preventDefault();
-                                makePageEditable();
-                            }
-                        });
-                    });
-
-                    function makePageEditable() {
-                        console.log('Making page editable');
-                        document.body.contentEditable = 'true';
-                        document.designMode = 'on';
+                    // Wait for 3 seconds before executing the script
+                    setTimeout(() => {
+                        console.log('Timeout reached, now executing the script');
                         
-                        if (!document.getElementById('saveButton')) {
-                            const saveButton = document.createElement('button');
-                            saveButton.id = 'saveButton';
-                            saveButton.innerHTML = 'Save Changes';
-                            saveButton.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;';
-                            
-                            saveButton.addEventListener('click', saveChanges);
-                            document.body.appendChild(saveButton);
+                        // Check if the DOM is already loaded
+                        if (document.readyState === 'loading') {
+                            document.addEventListener('DOMContentLoaded', initialize);
+                        } else {
+                            // DOM is already loaded
+                            initialize();
                         }
-                    }
 
-                    function saveChanges() {
-                        console.log('Saving changes');
-                        const currentPath = window.location.pathname;
-                        
-                        const saveButton = document.getElementById('saveButton');
-                        saveButton.remove();
-                        
-                        const content = document.documentElement.outerHTML;
-                        
-                        document.body.contentEditable = 'false';
-                        document.designMode = 'off';
+                        function initialize() {
+                            console.log('DOM Content Loaded');
+                            document.addEventListener('keydown', function(e) {
+                                console.log('Key pressed:', e.key);
+                                if (e.ctrlKey && e.key === 'q') {
+                                    console.log('Ctrl+Q pressed');
+                                    e.preventDefault();
+                                    makePageEditable();
+                                }
+                            });
+                        }
 
-                        fetch('/save', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify({
-                                path: currentPath,
-                                content: content
-                            })
-                        })
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data.success) {
-                                alert('Changes saved successfully!');
-                            } else {
-                                alert('Error saving changes: ' + data.error);
+                        function makePageEditable() {
+                            console.log('Making page editable');
+                            document.body.contentEditable = 'true';
+                            document.designMode = 'on';
+                            
+                            if (!document.getElementById('saveButton')) {
+                                const saveButton = document.createElement('button');
+                                saveButton.id = 'saveButton';
+                                saveButton.innerHTML = 'Save Changes';
+                                saveButton.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;';
+                                
+                                saveButton.addEventListener('click', saveChanges);
+                                document.body.appendChild(saveButton);
                             }
-                        })
-                        .catch(error => {
-                            alert('Error saving changes: ' + error);
-                        });
-                    }
+                        }
+
+                        function saveChanges() {
+                            console.log('Saving changes');
+                            const currentPath = window.location.pathname;
+                            
+                            const saveButton = document.getElementById('saveButton');
+                            saveButton.remove();
+                            
+                            const content = document.documentElement.outerHTML;
+                            
+                            document.body.contentEditable = 'false';
+                            document.designMode = 'off';
+
+                            fetch('/save', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    path: currentPath,
+                                    content: content
+                                })
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    alert('Changes saved successfully!');
+                                } else {
+                                    alert('Error saving changes: ' + data.error);
+                                }
+                            })
+                            .catch(error => {
+                                alert('Error saving changes: ' + error);
+                            });
+                        }
+                    }, 3000); // Delay of 3000 milliseconds
                 </script>
             `;
             
