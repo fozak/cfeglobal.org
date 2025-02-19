@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto-saving HTML Editor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        #editor {
+            margin-top: 50px;
+            min-height: calc(100vh - 70px);
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .button {
+            padding: 8px 16px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #status {
+            margin-left: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <button id="fileSelect" class="button">Select HTML File</button>
+        <span id="status">No file selected</span>
+    </div>
+    <div id="editor" contenteditable="true">
+        Select an HTML file to begin editing
+    </div>
+
+    <script>
+        let fileHandle = null;
+        const editor = document.getElementById('editor');
+        const status = document.getElementById('status');
+        let saveTimeout = null;
+        let observer = null;
+        let originalDocument = null;
+
+        // Initialize file selection
+        document.getElementById('fileSelect').addEventListener('click', async () => {
+            try {
+                fileHandle = await window.showOpenFilePicker({
+                    types: [{
+                        description: 'HTML Files',
+                        accept: {'text/html': ['.html']},
+                    }],
+                });
+                fileHandle = fileHandle[0]; // Get the first file handle
+                
+                // Load existing content
+                const file = await fileHandle.getFile();
+                const content = await file.text();
+                
+                // Parse the original document and store it
+                const parser = new DOMParser();
+                originalDocument = parser.parseFromString(content, 'text/html');
+                
+                // Make the content editable
+                editor.innerHTML = originalDocument.body.innerHTML;
+                
+                status.textContent = 'File loaded - Auto-saving enabled';
+                
+                // Initialize MutationObserver after loading content
+                initializeObserver();
+            } catch (err) {
+                console.error('Error accessing file:', err);
+                status.textContent = 'Error accessing file';
+            }
+        });
+
+        // Initialize MutationObserver for tracking changes
+        const initializeObserver = () => {
+            if (observer) {
+                observer.disconnect();
+            }
+
+            observer = new MutationObserver(() => {
+                if (saveTimeout) {
+                    clearTimeout(saveTimeout);
+                }
+                saveTimeout = setTimeout(saveContent, 1000);
+            });
+
+            observer.observe(editor, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+                attributes: true
+            });
+        };
+
+        // Save function
+        const saveContent = async () => {
+            if (!fileHandle || !originalDocument) return;
+
+            try {
+                const writable = await fileHandle.createWritable();
+                
+                // Update just the body content in the original document
+                originalDocument.body.innerHTML = editor.innerHTML;
+                
+                // Get the complete HTML content
+                const content = '<!DOCTYPE html>\n' + originalDocument.documentElement.outerHTML;
+                
+                await writable.write(content);
+                await writable.close();
+                
+                status.textContent = 'Saved at ' + new Date().toLocaleTimeString();
+            } catch (err) {
+                console.error('Error saving:', err);
+                status.textContent = 'Error saving content';
+            }
+        };
+    </script>
+</body>
+</html>

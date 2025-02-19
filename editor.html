@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <style>
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Main Page</h1>
+    <input type="file" id="fileInput" accept=".html" />
+    <button id="loadFile">Load Editable HTML</button>
+    <iframe id="contentFrame"></iframe>
+
+    <script>
+        document.getElementById('loadFile').onclick = function() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                // Read the content of the file as text
+                reader.onload = function(event) {
+                    const iframe = document.getElementById('contentFrame');
+                    const content = event.target.result;
+
+                    // Write the content to the iframe
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    doc.open();
+                    doc.write(content);
+                    doc.close();
+
+                    // Make the body editable
+                    doc.body.contentEditable = true; // Make the body editable
+                    doc.body.style.border = '1px dashed #000'; // Optional: Add a border for visibility
+                    doc.body.style.userSelect = 'text'; // Ensure text selection is enabled
+                };
+
+                // Read the file as text
+                reader.readAsText(file);
+            } else {
+                alert('Please select a file to load.');
+            }
+        };
+    </script>
+</body>
+</html>

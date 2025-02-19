@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load HTML Content</title>
+</head>
+<body>
+    <h1>Load an HTML File</h1>
+    <button id="loadButton">Load HTML File</button>
+    <script>
+        document.getElementById('loadButton').addEventListener('click', async () => {
+            // Open file picker
+            const [fileHandle] = await window.showOpenFilePicker();
+            const file = await fileHandle.getFile();
+            const htmlContent = await file.text();
+
+            // Replace entire document with the loaded HTML
+            document.open();
+            document.write(htmlContent);
+            document.close();
+        });
+    </script>
+</body>
+</html>
