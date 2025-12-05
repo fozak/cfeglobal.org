@@ -1,1 +1,1 @@
-console.log('Injected script loaded');
+console.log('Injected script loaded by BROWSER');
