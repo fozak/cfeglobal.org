@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Placeholder Substitution</title>
+    <style>
+        #output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            min-height: 50px;
+            white-space: pre-wrap; /* Preserve whitespace */
+        }
+        #inputArea {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            min-height: 100px;
+            box-sizing: border-box; /* Include padding in width */
+            margin-top: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Dynamic Placeholder Substitution</h2>
+    <textarea id="inputArea" placeholder="Type your template text here..."></textarea>
+    <div id="output"></div>
+
+    <script>
+        window.onload = function() {
+            const edit_content = sessionStorage.getItem('edit_content');
+
+            if (edit_content) {
+                // Create a temporary DOM element to parse the HTML string
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(edit_content, 'text/html');
+
+                // Extract the JSON data from the script tag with id "data"
+                const json_data_element = doc.getElementById('data');
+
+                if (json_data_element) {
+                    const jsonData = JSON.parse(json_data_element.textContent);
+
+                    // Store the variables in sessionStorage
+                    for (const key in jsonData) {
+                        if (jsonData.hasOwnProperty(key)) {
+                            sessionStorage.setItem(key, jsonData[key]);
+                        }
+                    }
+
+                    // Initialize the input area with a sample template using the extracted data
+                    const sampleTemplate = `Welcome to our website, ${jsonData.title}! Here’s what we do: ${jsonData.description}.`;
+                    document.getElementById('inputArea').value = sampleTemplate;
+
+                    // Render the template_html as plain text, not as HTML
+                    renderTemplateAsText(jsonData.template_html);
+                }
+            }
+        };
+
+        // Function to escape HTML characters
+        function escapeHtml(html) {
+            const text = document.createElement('textarea');
+            text.innerText = html;
+            return text.innerHTML;
+        }
+
+        // Function to substitute placeholders in the template HTML
+        function substitutePlaceholders(template) {
+            return template.replace(/\${(.*?)}/g, (match, key) => {
+                const value = sessionStorage.getItem(key.trim());
+                return value !== null ? value : match;
+            });
+        }
+
+        // Function to render the HTML template as plain text
+        function renderTemplateAsText(templateHtml) {
+            const substitutedHtml = substitutePlaceholders(templateHtml);
+            const escapedHtml = escapeHtml(substitutedHtml); // Escape HTML to display as text
+            const outputDiv = document.getElementById('output');
+
+            // Set the innerHTML of the output div to the escaped HTML
+            outputDiv.innerHTML = escapedHtml;
+        }
+
+        // Get the input area
+        const inputArea = document.getElementById('inputArea');
+
+        // Event listener for dynamic updates
+        inputArea.addEventListener('input', function() {
+            const templateText = inputArea.value;
+
+            // Substitute placeholders in the input template
+            const resultText = substitutePlaceholders(templateText);
+
+            // Escape HTML to display as text
+            document.getElementById('output').innerHTML = escapeHtml(resultText);
+        });
+    </script>
+</body>
+</html>

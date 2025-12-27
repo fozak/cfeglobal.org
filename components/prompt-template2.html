@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Editing Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            padding: 20px;
+        }
+        .editable {
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 4px;
+            display: inline-block;
+            width: 300px;
+        }
+        .editable:hover {
+            background-color: #f9f9f9;
+            cursor: text;
+        }
+        .editable:focus {
+            outline: none;
+            border-color: #007BFF;
+            background-color: #e9f5ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Draft Post Editor</h1>
+
+<p>Take this input as DRAFTPOST about Center for Entrepreneurship program: 
+    <span class="editable" contenteditable="true" id="parsedText">{parsed_text}</span>.
+</p>
+<p>If in Russian, translate to English. Using internet sources, create a 
+350-word POST emphasizing the Center for Entrepreneurship role and the 
+program in English in HTML, following these rules:</p>
+
+<ol>
+    <li>Focus on programs. Remove all references to Russia and Russian persons 
+        (e.g., Victor Sedov, Sergey Borisov, Konstantin, Mikhail).</li>
+    <li>Exclude Russian geographical names (e.g., Moscow, Russia, Россия, 
+        российских). Use 'The Center for Entrepreneurship' instead.</li>
+    <li>Check if the mentioned name is a person name. For person name in 
+        DRAFTPOST, add a link in the URL structure inside an <code>&lt;a&gt;</code> tag 
+        (e.g., <code>&lt;a href='/people/patricia-cloherty'&gt;Patricia M. Cloherty&lt;/a&gt;</code>).</li>
+    <li>For all company names in DRAFTPOST, add their website or Wikipedia 
+        links inside an <code>&lt;a&gt;</code> tag 
+        (e.g., <code>&lt;a href='https://en.wikipedia.org/wiki/Entrepreneurs%27_Organization'&gt;Entrepreneurs' Organization&lt;/a&gt;</code>).</li>
+    <li>Identify programs or topics from 
+        <span class="editable" contenteditable="true" id="topicList">{topic_list}</span>
+        in DRAFTPOST and link to them 
+        (e.g., <code>&lt;a href='/programs/global-entrepreneurship-week'&gt;Global Entrepreneurship Week&lt;/a&gt;</code>). 
+        Save the topic link in <code>json_data['parentlink']</code>.</li>
+    <li>Format it as a news post in HTML using this template: 
+        <span class="editable" contenteditable="true" id="templateDraft">{template_draft}</span>.</li>
+    <li>Generate a TITLE from DRAFTPOST without date, place it in the 
+        <code>&lt;h2 data-semantic='blog-title'&gt;</code> tag, and save it to <code>json['title']</code>.</li>
+    <li>Create a longer title and place it in 
+        <code>&lt;h4 data-semantic='blog-subtitle1'&gt;</code>. Insert the main post text into 
+        <code>&lt;p data-semantic='blog-main-text'&gt;</code>.</li>
+    <li>Generate 200 words of additional info for key programs and benefits and 
+        partners if any in DRAFTPOST (excluding 'The Center for Entrepreneurship'), 
+        and place it in <code>&lt;p data-semantic='blog-additional-text'&gt;</code>.</li>
+    <li>Create a subtitle for the additional text and place it in 
+        <code>&lt;h4 data-semantic='blog-subtitle2'&gt;</code>. Exclude all single quotes and save 
+        the entire POST to <code>json['post']</code>, without any new line symbols (e.g., \\n).</li>
+    <li>Generate an SEO description and save it to <code>json['description']</code>. Create 
+        SEO keywords and save them as a comma-separated string to <code>json['keywords']</code>.</li>
+</ol>
+
+<script>
+    // Optional: You can add JavaScript functions for additional functionality
+    document.querySelectorAll('.editable').forEach(element => {
+        element.addEventListener('blur', () => {
+            console.log(`Updated content for ${element.id}: ${element.innerText}`);
+        });
+    });
+</script>
+
+</body>
+</html>

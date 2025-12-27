@@ -1,0 +1,874 @@
+[33mcommit 68f8033dc00afe0a76fa5d4a477946c78a33bc37[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: fozak <i771468@gmail.com>
+Date:   Sat Dec 27 16:48:30 2025 -0500
+
+    big files
+
+ .../1.040-spring-2009.zip                          |   Bin [31m24768663[m -> [32m0[m bytes
+ .../mit11_350_s23_lec02.pptx                       |   Bin [31m22310007[m -> [32m0[m bytes
+ .../mit11_350_s23_lec03.pptx                       |   Bin [31m37673060[m -> [32m0[m bytes
+ .../mit11_350_s23_lec07.pptx                       |   Bin [31m21019929[m -> [32m0[m bytes
+ .../mit11_350_s23_lec08.pdf                        |   Bin [31m30401891[m -> [32m0[m bytes
+ .../mit11_350_s23_lec09.pptx                       |   Bin [31m35808523[m -> [32m0[m bytes
+ .../mit11_350_s23_lec11.pptx                       |   Bin [31m25914427[m -> [32m0[m bytes
+ .../mit11_350_s23_lec14.pptx                       |   Bin [31m25648436[m -> [32m0[m bytes
+ .../ocw_11350_lecture02_2023feb09_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture03_2023feb14_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture05_2023feb23_mp4/index.html   |  2499 [31m-[m
+ .../index.html                                     |  2499 [31m-[m
+ .../ocw_11350_lecture07_2023mar02_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture08_2023mar07_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture09_2023mar09_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture10_2023mar14_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture11_2023mar16_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture13_2023apr04_mp4/index.html   |  2499 [31m-[m
+ .../ocw_11350_lecture14_2023apr06_mp4/index.html   |  2499 [31m-[m
+ .../15.343-spring-2002.zip                         |   Bin [31m33357386[m -> [32m0[m bytes
+ .../ocw_15371_video_01_v2_360p_16_9.mp4            |   Bin [31m11414933[m -> [32m0[m bytes
+ .../ocw_15371_video_02_v2_360p_16_9.mp4            |   Bin [31m14440626[m -> [32m0[m bytes
+ .../ocw_15371_video_03_v2_360p_16_9.mp4            |   Bin [31m11092168[m -> [32m0[m bytes
+ .../ocw_15371_video_04_v2_360p_16_9.mp4            |   Bin [31m11398305[m -> [32m0[m bytes
+ .../ocw_15371_video_05_v2_360p_16_9.mp4            |   Bin [31m14452436[m -> [32m0[m bytes
+ .../ocw_15371_video_07_v2_360p_16_9.mp4            |   Bin [31m13216034[m -> [32m0[m bytes
+ .../resources/ocw_15371_intro_v2_mp4/index.html    |  2537 [31m-[m
+ .../resources/ocw_15371_video_01_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_02_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_03_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_04_v2_mp4/index.html |  2538 [31m-[m
+ .../resources/ocw_15371_video_05_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_06_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_07_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_08_v2_mp4/index.html |  2538 [31m-[m
+ .../resources/ocw_15371_video_09_v2_mp4/index.html |  2537 [31m-[m
+ .../resources/ocw_15371_video_10_v2_mp4/index.html |  2537 [31m-[m
+ .../15.783j-spring-2006.zip                        |   Bin [31m30281214[m -> [32m0[m bytes
+ .../15.992-spring-2008.zip                         |   Bin [31m13835524[m -> [32m0[m bytes
+ .../16.355j-fall-2005.zip                          |   Bin [31m18140581[m -> [32m0[m bytes
+ .../12904eb02b9e301f891c12c7b26226be_archive.pdf   | 68622 [31m-------------------[m
+ .../3b7576ab316edc1ccde83af27c4a780a_Balloons.mov  |   Bin [31m13082276[m -> [32m0[m bytes
+ .../mit20_201f13_l14_antibio.pdf                   |   Bin [31m13900004[m -> [32m0[m bytes
+ .../mit20_201f13_l2_drugdev1.pdf                   |   Bin [31m13198918[m -> [32m0[m bytes
+ .../mit20_201f13_r5_overdrug.pdf                   |   Bin [31m13017169[m -> [32m0[m bytes
+ .../21m283_video_12a_360p_16_9.mp4                 |   Bin [31m38501998[m -> [32m0[m bytes
+ .../21m283_video_12c_360p_16_9.mp4                 |   Bin [31m17698220[m -> [32m0[m bytes
+ .../21m283_video_22a_360p_16_9.mp4                 |   Bin [31m19522590[m -> [32m0[m bytes
+ .../21m283_video_32a_360p_16_9.mp4                 |   Bin [31m30839467[m -> [32m0[m bytes
+ .../21m283_video_4a_360p_16_9.mp4                  |   Bin [31m15062530[m -> [32m0[m bytes
+ .../21m283_video_4b_360p_16_9.mp4                  |   Bin [31m12233134[m -> [32m0[m bytes
+ .../21m283_video_6a_360p_16_9.mp4                  |   Bin [31m25823682[m -> [32m0[m bytes
+ .../21m283_video_6b_360p_16_9.mp4                  |   Bin [31m23172596[m -> [32m0[m bytes
+ .../21m283_video_7a_360p_16_9.mp4                  |   Bin [31m17876731[m -> [32m0[m bytes
+ .../21m283_video_7c_360p_16_9.mp4                  |   Bin [31m24216427[m -> [32m0[m bytes
+ .../21m283_video_9a_360p_16_9.mp4                  |   Bin [31m19208883[m -> [32m0[m bytes
+ .../21m283_video_9b_360p_16_9.mp4                  |   Bin [31m20648580[m -> [32m0[m bytes
+ .../21m283_video_9c_360p_16_9.mp4                  |   Bin [31m38885519[m -> [32m0[m bytes
+ .../21m383-s23-lecture-17-mar-22_360p_16_9.mp4     |   Bin [31m40299523[m -> [32m0[m bytes
+ .../21m383-s23-lecture-18-21_360p_16_9.mp4         |   Bin [31m29827691[m -> [32m0[m bytes
+ .../21m383-s23-video1a_tutorial_360p_16_9.mp4      |   Bin [31m20029981[m -> [32m0[m bytes
+ .../resources/21m283_video_10a_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_12a_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_12b_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_12c_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_12d_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_22a_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_22b_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_22c_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_26a_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_29a_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_32a_mp4/index.html      |  9545 [31m---[m
+ .../resources/21m283_video_3a_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_3b_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_3c_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_4a_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_4b_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_6a_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_6b_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_7a_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_7b_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_7c_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_7d_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_9a_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_9b_mp4/index.html       |  9545 [31m---[m
+ .../resources/21m283_video_9c_mp4/index.html       |  9545 [31m---[m
+ .../index.html                                     |  9545 [31m---[m
+ .../21m383-s23-lecture-10-mar-1_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-lecture-11-mar-3_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-lecture-13-mar-8_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-lecture-14-mar-10_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-15-mar-17_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-17-mar-22_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-18-21_mp4/index.html        |  9545 [31m---[m
+ .../21m383-s23-lecture-2-feb-10_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-lecture-23-apr-12_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-24-apr-14_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-25-apr-21_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-27-apr-26_mp4/index.html    |  9545 [31m---[m
+ .../21m383-s23-lecture-28-apr-28-v3_mp4/index.html |  9545 [31m---[m
+ .../21m383-s23-lecture-30-may-3_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-lecture-31-may-5_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-lecture-4-feb-15_mp4/index.html     |  9545 [31m---[m
+ .../index.html                                     |  9545 [31m---[m
+ .../index.html                                     |  9545 [31m---[m
+ .../21m383-s23-lecture-8-feb-24_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-video1a_tutorial_mp4/index.html     |  9545 [31m---[m
+ .../21m383-s23-video_0_intro_mp4/index.html        |  9545 [31m---[m
+ .../22.812j-spring-2004.zip                        |   Bin [31m27115858[m -> [32m0[m bytes
+ .../22.921-january-iap-2006.zip                    |   Bin [31m29885113[m -> [32m0[m bytes
+ ...1ba1ecd664adff3258cc99b01488b1_exam1_review.mp3 |   Bin [31m12209632[m -> [32m0[m bytes
+ .../4.297-fall-2000.zip                            |   Bin [31m11315981[m -> [32m0[m bytes
+ ...0a32eaa86a4df5122251657fe1_MIT4_401F18_lec6.pdf |   Bin [31m13855042[m -> [32m0[m bytes
+ .../gnulinux-6001tar.gz                            |   Bin [31m12145669[m -> [32m0[m bytes
+ .../win32-6001.exe                                 |   Bin [31m11410340[m -> [32m0[m bytes
+ .../ps3_code_sol.zip                               |   Bin [31m16413394[m -> [32m0[m bytes
+ .../ps4tar.gz                                      |   Bin [31m12996758[m -> [32m0[m bytes
+ .../mit6_007s11_lec10-1.pptx                       |   Bin [31m18665151[m -> [32m0[m bytes
+ .../mit6_007s11_lec11.pptx                         |   Bin [31m12829381[m -> [32m0[m bytes
+ .../mit6_007s11_lec12.pptx                         |   Bin [31m14127112[m -> [32m0[m bytes
+ .../mit6_007s11_lec13.pptx                         |   Bin [31m21024161[m -> [32m0[m bytes
+ .../mit6_007s11_lec15.pptx                         |   Bin [31m14600650[m -> [32m0[m bytes
+ .../mit6_007s11_lec16.pptx                         |   Bin [31m15220638[m -> [32m0[m bytes
+ .../mit6_007s11_lec19.pptx                         |   Bin [31m15539627[m -> [32m0[m bytes
+ .../mit6_007s11_lec20.pptx                         |   Bin [31m17804862[m -> [32m0[m bytes
+ .../mit6_007s11_lec21.pptx                         |   Bin [31m18706228[m -> [32m0[m bytes
+ .../mit6_007s11_lec22.pptx                         |   Bin [31m17068374[m -> [32m0[m bytes
+ .../mit6_007s11_lec23.pptx                         |   Bin [31m18585841[m -> [32m0[m bytes
+ .../mit6_007s11_lec24.pptx                         |   Bin [31m15636375[m -> [32m0[m bytes
+ .../mit6_007s11_lec25.pptx                         |   Bin [31m18017911[m -> [32m0[m bytes
+ .../mit6_007s11_lec26.pptx                         |   Bin [31m33878235[m -> [32m0[m bytes
+ .../mit6_007s11_lec27.ppt                          |   Bin [31m31094272[m -> [32m0[m bytes
+ .../mit6_007s11_lec30.ppt                          |   Bin [31m15812096[m -> [32m0[m bytes
+ .../mit6_007s11_lec31.pptx                         |   Bin [31m27452719[m -> [32m0[m bytes
+ .../mit6_007s11_lec32.pptx                         |   Bin [31m17398129[m -> [32m0[m bytes
+ .../mit6_007s11_lec34.ppt                          |   Bin [31m16313856[m -> [32m0[m bytes
+ .../mit6_007s11_lec36.ppt                          |   Bin [31m14853632[m -> [32m0[m bytes
+ .../mit6_007s11_lec37.ppt                          |   Bin [31m10718720[m -> [32m0[m bytes
+ .../mit6_007s11_lec38.ppt                          |   Bin [31m17498112[m -> [32m0[m bytes
+ .../mit6_007s11_lec44.pptx                         |   Bin [31m17900674[m -> [32m0[m bytes
+ .../mit6_007s11_lec45.pptx                         |   Bin [31m11072893[m -> [32m0[m bytes
+ .../mit6_007s11_lec50.pptx                         |   Bin [31m11463734[m -> [32m0[m bytes
+ .../mit6_170s13_64-takeout-2.pdf                   |   Bin [31m12618977[m -> [32m0[m bytes
+ .../mit6_622s23_lecture_01_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_02_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_03_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_04_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_05_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_06_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_07_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_08_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_09_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_10_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_11_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_12_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_13_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_14_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_15_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_16_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_17_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_18_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_19_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_20_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_21_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_22_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_23_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_24_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_25_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_26_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_27_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_28_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_29_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_30_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_31_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_32_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_33_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_34_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_35_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_36_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_37_mp4/index.html          |  2141 [31m-[m
+ .../mit6_622s23_lecture_38_mp4/index.html          |  2141 [31m-[m
+ .../resources/mit7_012f04_lec03_mp4/index.html     |  1996 [31m-[m
+ .../unit-10-utility-video-1_360p_16_9.mp4          |   Bin [31m10998886[m -> [32m0[m bytes
+ .../unit-10-utility-video-2_360p_16_9.mp4          |   Bin [31m13298499[m -> [32m0[m bytes
+ .../unit-10-utility-video-3_360p_16_9.mp4          |   Bin [31m13973203[m -> [32m0[m bytes
+ .../unit-10-utility-video-6_360p_16_9.mp4          |   Bin [31m11464806[m -> [32m0[m bytes
+ .../unit-11-lng-case-video-1_360p_16_9.mp4         |   Bin [31m17028053[m -> [32m0[m bytes
+ .../unit-11-lng-case-video-2_360p_16_9.mp4         |   Bin [31m17207831[m -> [32m0[m bytes
+ .../unit-11-lng-case-video-3_360p_16_9.mp4         |   Bin [31m20098453[m -> [32m0[m bytes
+ .../unit-11-lng-case-video-4_360p_16_9.mp4         |   Bin [31m11290621[m -> [32m0[m bytes
+ .../unit-2-forcast-wrong-video-2_360p_16_9.mp4     |   Bin [31m13106343[m -> [32m0[m bytes
+ ...t-2-forecast-always-wrong-video-1_360p_16_9.mp4 |   Bin [31m13502596[m -> [32m0[m bytes
+ .../unit-2-porcupine-graphic-video-3_360p_16_9.mp4 |   Bin [31m11016116[m -> [32m0[m bytes
+ .../unit-4-garage-case-video-4_360p_16_9.mp4       |   Bin [31m12098786[m -> [32m0[m bytes
+ .../unit-5-simulation-video-1_360p_16_9.mp4        |   Bin [31m15576394[m -> [32m0[m bytes
+ .../unit-5-simulation-video-3_360p_16_9.mp4        |   Bin [31m14549721[m -> [32m0[m bytes
+ .../unit-5-simulation-video-4_360p_16_9.mp4        |   Bin [31m11947511[m -> [32m0[m bytes
+ .../unit-5-simulation-video-6_360p_16_9.mp4        |   Bin [31m16210443[m -> [32m0[m bytes
+ .../unit-7-drivers-video-1_360p_16_9.mp4           |   Bin [31m10910191[m -> [32m0[m bytes
+ .../unit-7-drivers-video-2_360p_16_9.mp4           |   Bin [31m18061381[m -> [32m0[m bytes
+ .../unit-7-drivers-video-3_360p_16_9.mp4           |   Bin [31m16236434[m -> [32m0[m bytes
+ .../unit-7-drivers-video-4_360p_16_9.mp4           |   Bin [31m19033651[m -> [32m0[m bytes
+ .../unit-8-decision-analysis-video-1_360p_16_9.mp4 |   Bin [31m13719405[m -> [32m0[m bytes
+ .../unit-8-decision-analysis-video-2_360p_16_9.mp4 |   Bin [31m11136128[m -> [32m0[m bytes
+ .../unit-8-decision-analysis-video-4_360p_16_9.mp4 |   Bin [31m11220404[m -> [32m0[m bytes
+ .../unit-9-value-of-info-video-1_360p_16_9.mp4     |   Bin [31m12030073[m -> [32m0[m bytes
+ .../unit-9-value-of-info-video-4_360p_16_9.mp4     |   Bin [31m17742908[m -> [32m0[m bytes
+ .../assn7_teardrop.mov                             |   Bin [31m19846854[m -> [32m0[m bytes
+ .../mitres_9_003sum15_lec1-3.pdf                   |   Bin [31m18453450[m -> [32m0[m bytes
+ .../geothermal-session-2-2_360p_16_9.mp4           |   Bin [31m17240228[m -> [32m0[m bytes
+ .../geothermal-session-2-3_360p_16_9.mp4           |   Bin [31m24674363[m -> [32m0[m bytes
+ .../geothermal-session-3-3_360p_16_9.mp4           |   Bin [31m23407086[m -> [32m0[m bytes
+ .../geothermal-session-3-4-v2_360p_16_9.mp4        |   Bin [31m25555543[m -> [32m0[m bytes
+ .../geothermal-session-6-2_360p_16_9.mp4           |   Bin [31m27803758[m -> [32m0[m bytes
+ .../geothermal-session-8-2_360p_16_9.mp4           |   Bin [31m22062585[m -> [32m0[m bytes
+ .../geothermal-session-8-4_360p_16_9.mp4           |   Bin [31m26655664[m -> [32m0[m bytes
+ .../mitres_env_007_lec02_1.pptx                    |   Bin [31m23806486[m -> [32m0[m bytes
+ .../mitres_env_007_lec02_2.pptx                    |   Bin [31m22062743[m -> [32m0[m bytes
+ .../mitres_env_007_lec03_3.pptx                    |   Bin [31m23158011[m -> [32m0[m bytes
+ .../mitres_env_007_lec05_3.pptx                    |   Bin [31m17926462[m -> [32m0[m bytes
+ .../mitres_env_007_lec08_3.pptx                    |   Bin [31m18009671[m -> [32m0[m bytes
+ .../mitres_env_007_lec08_4.pptx                    |   Bin [31m12184294[m -> [32m0[m bytes
+ .../geothermal-introduction_mp4/index.html         |  2098 [31m-[m
+ .../geothermal-session-1-1_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-1-2_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-1-3_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-2-1_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-2-2_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-2-3_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-3-1_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-3-3_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-3-4-v2_mp4/index.html       |  2098 [31m-[m
+ .../geothermal-session-4-1-v2_mp4/index.html       |  2098 [31m-[m
+ .../geothermal-session-4-2_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-4-3_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-4-4_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-5-1-v3_mp4/index.html       |  2098 [31m-[m
+ .../geothermal-session-5-2-v2_mp4/index.html       |  2098 [31m-[m
+ .../geothermal-session-5-3-v2_mp4/index.html       |  2098 [31m-[m
+ .../geothermal-session-6-2_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-6-3-v2_mp4/index.html       |  2098 [31m-[m
+ .../geothermal-session-6-4_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-7-2_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-7-3_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-8-1_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-8-2_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-8-3_mp4/index.html          |  2098 [31m-[m
+ .../geothermal-session-8-4_mp4/index.html          |  2098 [31m-[m
+ .../res.sud-01-sping-2025.zip                      |   Bin [31m11098012[m -> [32m0[m bytes
+ .../index.html                                     |  1632 [31m-[m
+ .../index.html                                     |  1632 [31m-[m
+ node_modules/.bin/mime                             |    16 [31m-[m
+ node_modules/.bin/mime.cmd                         |    17 [31m-[m
+ node_modules/.bin/mime.ps1                         |    28 [31m-[m
+ node_modules/.package-lock.json                    |   824 [31m-[m
+ node_modules/accepts/HISTORY.md                    |   243 [31m-[m
+ node_modules/accepts/LICENSE                       |    23 [31m-[m
+ node_modules/accepts/README.md                     |   140 [31m-[m
+ node_modules/accepts/index.js                      |   238 [31m-[m
+ node_modules/accepts/package.json                  |    47 [31m-[m
+ node_modules/array-flatten/LICENSE                 |    21 [31m-[m
+ node_modules/array-flatten/README.md               |    43 [31m-[m
+ node_modules/array-flatten/array-flatten.js        |    64 [31m-[m
+ node_modules/array-flatten/package.json            |    39 [31m-[m
+ node_modules/body-parser/HISTORY.md                |   672 [31m-[m
+ node_modules/body-parser/LICENSE                   |    23 [31m-[m
+ node_modules/body-parser/README.md                 |   476 [31m-[m
+ node_modules/body-parser/SECURITY.md               |    25 [31m-[m
+ node_modules/body-parser/index.js                  |   156 [31m-[m
+ node_modules/body-parser/lib/read.js               |   205 [31m-[m
+ node_modules/body-parser/lib/types/json.js         |   247 [31m-[m
+ node_modules/body-parser/lib/types/raw.js          |   101 [31m-[m
+ node_modules/body-parser/lib/types/text.js         |   121 [31m-[m
+ node_modules/body-parser/lib/types/urlencoded.js   |   307 [31m-[m
+ node_modules/body-parser/package.json              |    56 [31m-[m
+ node_modules/bytes/History.md                      |    97 [31m-[m
+ node_modules/bytes/LICENSE                         |    23 [31m-[m
+ node_modules/bytes/Readme.md                       |   152 [31m-[m
+ node_modules/bytes/index.js                        |   170 [31m-[m
+ node_modules/bytes/package.json                    |    42 [31m-[m
+ node_modules/call-bind-apply-helpers/.eslintrc     |    17 [31m-[m
+ .../call-bind-apply-helpers/.github/FUNDING.yml    |    12 [31m-[m
+ node_modules/call-bind-apply-helpers/.nycrc        |     9 [31m-[m
+ node_modules/call-bind-apply-helpers/CHANGELOG.md  |    30 [31m-[m
+ node_modules/call-bind-apply-helpers/LICENSE       |    21 [31m-[m
+ node_modules/call-bind-apply-helpers/README.md     |    62 [31m-[m
+ .../call-bind-apply-helpers/actualApply.d.ts       |     1 [31m-[m
+ .../call-bind-apply-helpers/actualApply.js         |    10 [31m-[m
+ .../call-bind-apply-helpers/applyBind.d.ts         |    19 [31m-[m
+ node_modules/call-bind-apply-helpers/applyBind.js  |    10 [31m-[m
+ .../call-bind-apply-helpers/functionApply.d.ts     |     1 [31m-[m
+ .../call-bind-apply-helpers/functionApply.js       |     4 [31m-[m
+ .../call-bind-apply-helpers/functionCall.d.ts      |     1 [31m-[m
+ .../call-bind-apply-helpers/functionCall.js        |     4 [31m-[m
+ node_modules/call-bind-apply-helpers/index.d.ts    |    64 [31m-[m
+ node_modules/call-bind-apply-helpers/index.js      |    15 [31m-[m
+ node_modules/call-bind-apply-helpers/package.json  |    85 [31m-[m
+ .../call-bind-apply-helpers/reflectApply.d.ts      |     3 [31m-[m
+ .../call-bind-apply-helpers/reflectApply.js        |     4 [31m-[m
+ node_modules/call-bind-apply-helpers/test/index.js |    63 [31m-[m
+ node_modules/call-bind-apply-helpers/tsconfig.json |     9 [31m-[m
+ node_modules/call-bound/.eslintrc                  |    13 [31m-[m
+ node_modules/call-bound/.github/FUNDING.yml        |    12 [31m-[m
+ node_modules/call-bound/.nycrc                     |     9 [31m-[m
+ node_modules/call-bound/CHANGELOG.md               |    34 [31m-[m
+ node_modules/call-bound/LICENSE                    |    21 [31m-[m
+ node_modules/call-bound/README.md                  |    53 [31m-[m
+ node_modules/call-bound/index.d.ts                 |    13 [31m-[m
+ node_modules/call-bound/index.js                   |    18 [31m-[m
+ node_modules/call-bound/package.json               |    99 [31m-[m
+ node_modules/call-bound/test/index.js              |    54 [31m-[m
+ node_modules/call-bound/tsconfig.json              |     9 [31m-[m
+ node_modules/content-disposition/HISTORY.md        |    60 [31m-[m
+ node_modules/content-disposition/LICENSE           |    22 [31m-[m
+ node_modules/content-disposition/README.md         |   142 [31m-[m
+ node_modules/content-disposition/index.js          |   458 [31m-[m
+ node_modules/content-disposition/package.json      |    44 [31m-[m
+ node_modules/content-type/HISTORY.md               |    29 [31m-[m
+ node_modules/content-type/LICENSE                  |    22 [31m-[m
+ node_modules/content-type/README.md                |    94 [31m-[m
+ node_modules/content-type/index.js                 |   225 [31m-[m
+ node_modules/content-type/package.json             |    42 [31m-[m
+ node_modules/cookie-signature/.npmignore           |     4 [31m-[m
+ node_modules/cookie-signature/History.md           |    38 [31m-[m
+ node_modules/cookie-signature/Readme.md            |    42 [31m-[m
+ node_modules/cookie-signature/index.js             |    51 [31m-[m
+ node_modules/cookie-signature/package.json         |    18 [31m-[m
+ node_modules/cookie/LICENSE                        |    24 [31m-[m
+ node_modules/cookie/README.md                      |   317 [31m-[m
+ node_modules/cookie/SECURITY.md                    |    25 [31m-[m
+ node_modules/cookie/index.js                       |   334 [31m-[m
+ node_modules/cookie/package.json                   |    44 [31m-[m
+ node_modules/debug/.coveralls.yml                  |     1 [31m-[m
+ node_modules/debug/.eslintrc                       |    11 [31m-[m
+ node_modules/debug/.npmignore                      |     9 [31m-[m
+ node_modules/debug/.travis.yml                     |    14 [31m-[m
+ node_modules/debug/CHANGELOG.md                    |   362 [31m-[m
+ node_modules/debug/LICENSE                         |    19 [31m-[m
+ node_modules/debug/Makefile                        |    50 [31m-[m
+ node_modules/debug/README.md                       |   312 [31m-[m
+ node_modules/debug/component.json                  |    19 [31m-[m
+ node_modules/debug/karma.conf.js                   |    70 [31m-[m
+ node_modules/debug/node.js                         |     1 [31m-[m
+ node_modules/debug/package.json                    |    49 [31m-[m
+ node_modules/debug/src/browser.js                  |   185 [31m-[m
+ node_modules/debug/src/debug.js                    |   202 [31m-[m
+ node_modules/debug/src/index.js                    |    10 [31m-[m
+ node_modules/debug/src/inspector-log.js            |    15 [31m-[m
+ node_modules/debug/src/node.js                     |   248 [31m-[m
+ node_modules/depd/History.md                       |   103 [31m-[m
+ node_modules/depd/LICENSE                          |    22 [31m-[m
+ node_modules/depd/Readme.md                        |   280 [31m-[m
+ node_modules/depd/index.js                         |   538 [31m-[m
+ node_modules/depd/lib/browser/index.js             |    77 [31m-[m
+ node_modules/depd/package.json                     |    45 [31m-[m
+ node_modules/destroy/LICENSE                       |    23 [31m-[m
+ node_modules/destroy/README.md                     |    63 [31m-[m
+ node_modules/destroy/index.js                      |   209 [31m-[m
+ node_modules/destroy/package.json                  |    48 [31m-[m
+ node_modules/dunder-proto/.eslintrc                |     5 [31m-[m
+ node_modules/dunder-proto/.github/FUNDING.yml      |    12 [31m-[m
+ node_modules/dunder-proto/.nycrc                   |    13 [31m-[m
+ node_modules/dunder-proto/CHANGELOG.md             |    24 [31m-[m
+ node_modules/dunder-proto/LICENSE                  |    21 [31m-[m
+ node_modules/dunder-proto/README.md                |    54 [31m-[m
+ node_modules/dunder-proto/get.d.ts                 |     5 [31m-[m
+ node_modules/dunder-proto/get.js                   |    30 [31m-[m
+ node_modules/dunder-proto/package.json             |    76 [31m-[m
+ node_modules/dunder-proto/set.d.ts                 |     5 [31m-[m
+ node_modules/dunder-proto/set.js                   |    35 [31m-[m
+ node_modules/dunder-proto/test/get.js              |    34 [31m-[m
+ node_modules/dunder-proto/test/index.js            |     4 [31m-[m
+ node_modules/dunder-proto/test/set.js              |    50 [31m-[m
+ node_modules/dunder-proto/tsconfig.json            |     9 [31m-[m
+ node_modules/ee-first/LICENSE                      |    22 [31m-[m
+ node_modules/ee-first/README.md                    |    80 [31m-[m
+ node_modules/ee-first/index.js                     |    95 [31m-[m
+ node_modules/ee-first/package.json                 |    29 [31m-[m
+ node_modules/encodeurl/LICENSE                     |    22 [31m-[m
+ node_modules/encodeurl/README.md                   |   109 [31m-[m
+ node_modules/encodeurl/index.js                    |    60 [31m-[m
+ node_modules/encodeurl/package.json                |    40 [31m-[m
+ node_modules/es-define-property/.eslintrc          |    13 [31m-[m
+ .../es-define-property/.github/FUNDING.yml         |    12 [31m-[m
+ node_modules/es-define-property/.nycrc             |     9 [31m-[m
+ node_modules/es-define-property/CHANGELOG.md       |    29 [31m-[m
+ node_modules/es-define-property/LICENSE            |    21 [31m-[m
+ node_modules/es-define-property/README.md          |    49 [31m-[m
+ node_modules/es-define-property/index.d.ts         |     3 [31m-[m
+ node_modules/es-define-property/index.js           |    14 [31m-[m
+ node_modules/es-define-property/package.json       |    81 [31m-[m
+ node_modules/es-define-property/test/index.js      |    56 [31m-[m
+ node_modules/es-define-property/tsconfig.json      |    10 [31m-[m
+ node_modules/es-errors/.eslintrc                   |     5 [31m-[m
+ node_modules/es-errors/.github/FUNDING.yml         |    12 [31m-[m
+ node_modules/es-errors/CHANGELOG.md                |    40 [31m-[m
+ node_modules/es-errors/LICENSE                     |    21 [31m-[m
+ node_modules/es-errors/README.md                   |    55 [31m-[m
+ node_modules/es-errors/eval.d.ts                   |     3 [31m-[m
+ node_modules/es-errors/eval.js                     |     4 [31m-[m
+ node_modules/es-errors/index.d.ts                  |     3 [31m-[m
+ node_modules/es-errors/index.js                    |     4 [31m-[m
+ node_modules/es-errors/package.json                |    80 [31m-[m
+ node_modules/es-errors/range.d.ts                  |     3 [31m-[m
+ node_modules/es-errors/range.js                    |     4 [31m-[m
+ node_modules/es-errors/ref.d.ts                    |     3 [31m-[m
+ node_modules/es-errors/ref.js                      |     4 [31m-[m
+ node_modules/es-errors/syntax.d.ts                 |     3 [31m-[m
+ node_modules/es-errors/syntax.js                   |     4 [31m-[m
+ node_modules/es-errors/test/index.js               |    19 [31m-[m
+ node_modules/es-errors/tsconfig.json               |    49 [31m-[m
+ node_modules/es-errors/type.d.ts                   |     3 [31m-[m
+ node_modules/es-errors/type.js                     |     4 [31m-[m
+ node_modules/es-errors/uri.d.ts                    |     3 [31m-[m
+ node_modules/es-errors/uri.js                      |     4 [31m-[m
+ node_modules/es-object-atoms/.eslintrc             |    16 [31m-[m
+ node_modules/es-object-atoms/.github/FUNDING.yml   |    12 [31m-[m
+ node_modules/es-object-atoms/CHANGELOG.md          |    37 [31m-[m
+ node_modules/es-object-atoms/LICENSE               |    21 [31m-[m
+ node_modules/es-object-atoms/README.md             |    63 [31m-[m
+ .../es-object-atoms/RequireObjectCoercible.d.ts    |     3 [31m-[m
+ .../es-object-atoms/RequireObjectCoercible.js      |    11 [31m-[m
+ node_modules/es-object-atoms/ToObject.d.ts         |     7 [31m-[m
+ node_modules/es-object-atoms/ToObject.js           |    10 [31m-[m
+ node_modules/es-object-atoms/index.d.ts            |     3 [31m-[m
+ node_modules/es-object-atoms/index.js              |     4 [31m-[m
+ node_modules/es-object-atoms/isObject.d.ts         |     3 [31m-[m
+ node_modules/es-object-atoms/isObject.js           |     6 [31m-[m
+ node_modules/es-object-atoms/package.json          |    80 [31m-[m
+ node_modules/es-object-atoms/test/index.js         |    38 [31m-[m
+ node_modules/es-object-atoms/tsconfig.json         |     6 [31m-[m
+ node_modules/escape-html/LICENSE                   |    24 [31m-[m
+ node_modules/escape-html/Readme.md                 |    43 [31m-[m
+ node_modules/escape-html/index.js                  |    78 [31m-[m
+ node_modules/escape-html/package.json              |    24 [31m-[m
+ node_modules/etag/HISTORY.md                       |    83 [31m-[m
+ node_modules/etag/LICENSE                          |    22 [31m-[m
+ node_modules/etag/README.md                        |   159 [31m-[m
+ node_modules/etag/index.js                         |   131 [31m-[m
+ node_modules/etag/package.json                     |    47 [31m-[m
+ node_modules/express/History.md                    |  3656 [31m-[m
+ node_modules/express/LICENSE                       |    24 [31m-[m
+ node_modules/express/Readme.md                     |   260 [31m-[m
+ node_modules/express/index.js                      |    11 [31m-[m
+ node_modules/express/lib/application.js            |   661 [31m-[m
+ node_modules/express/lib/express.js                |   116 [31m-[m
+ node_modules/express/lib/middleware/init.js        |    43 [31m-[m
+ node_modules/express/lib/middleware/query.js       |    47 [31m-[m
+ node_modules/express/lib/request.js                |   525 [31m-[m
+ node_modules/express/lib/response.js               |  1179 [31m-[m
+ node_modules/express/lib/router/index.js           |   673 [31m-[m
+ node_modules/express/lib/router/layer.js           |   181 [31m-[m
+ node_modules/express/lib/router/route.js           |   230 [31m-[m
+ node_modules/express/lib/utils.js                  |   303 [31m-[m
+ node_modules/express/lib/view.js                   |   182 [31m-[m
+ node_modules/express/package.json                  |   102 [31m-[m
+ node_modules/finalhandler/HISTORY.md               |   210 [31m-[m
+ node_modules/finalhandler/LICENSE                  |    22 [31m-[m
+ node_modules/finalhandler/README.md                |   147 [31m-[m
+ node_modules/finalhandler/SECURITY.md              |    25 [31m-[m
+ node_modules/finalhandler/index.js                 |   341 [31m-[m
+ node_modules/finalhandler/package.json             |    47 [31m-[m
+ node_modules/forwarded/HISTORY.md                  |    21 [31m-[m
+ node_modules/forwarded/LICENSE                     |    22 [31m-[m
+ node_modules/forwarded/README.md                   |    57 [31m-[m
+ node_modules/forwarded/index.js                    |    90 [31m-[m
+ node_modules/forwarded/package.json                |    45 [31m-[m
+ node_modules/fresh/HISTORY.md                      |    70 [31m-[m
+ node_modules/fresh/LICENSE                         |    23 [31m-[m
+ node_modules/fresh/README.md                       |   119 [31m-[m
+ node_modules/fresh/index.js                        |   137 [31m-[m
+ node_modules/fresh/package.json                    |    46 [31m-[m
+ node_modules/function-bind/.eslintrc               |    21 [31m-[m
+ node_modules/function-bind/.github/FUNDING.yml     |    12 [31m-[m
+ node_modules/function-bind/.github/SECURITY.md     |     3 [31m-[m
+ node_modules/function-bind/.nycrc                  |    13 [31m-[m
+ node_modules/function-bind/CHANGELOG.md            |   136 [31m-[m
+ node_modules/function-bind/LICENSE                 |    20 [31m-[m
+ node_modules/function-bind/README.md               |    46 [31m-[m
+ node_modules/function-bind/implementation.js       |    84 [31m-[m
+ node_modules/function-bind/index.js                |     5 [31m-[m
+ node_modules/function-bind/package.json            |    87 [31m-[m
+ node_modules/function-bind/test/.eslintrc          |     9 [31m-[m
+ node_modules/function-bind/test/index.js           |   252 [31m-[m
+ node_modules/get-intrinsic/.eslintrc               |    38 [31m-[m
+ node_modules/get-intrinsic/.github/FUNDING.yml     |    12 [31m-[m
+ node_modules/get-intrinsic/.nycrc                  |     9 [31m-[m
+ node_modules/get-intrinsic/CHANGELOG.md            |   178 [31m-[m
+ node_modules/get-intrinsic/LICENSE                 |    21 [31m-[m
+ node_modules/get-intrinsic/README.md               |    71 [31m-[m
+ node_modules/get-intrinsic/index.js                |   377 [31m-[m
+ node_modules/get-intrinsic/package.json            |    97 [31m-[m
+ node_modules/get-intrinsic/test/GetIntrinsic.js    |   274 [31m-[m
+ node_modules/get-proto/.eslintrc                   |    10 [31m-[m
+ node_modules/get-proto/.github/FUNDING.yml         |    12 [31m-[m
+ node_modules/get-proto/.nycrc                      |     9 [31m-[m
+ node_modules/get-proto/CHANGELOG.md                |    21 [31m-[m
+ node_modules/get-proto/LICENSE                     |    21 [31m-[m
+ node_modules/get-proto/Object.getPrototypeOf.d.ts  |     5 [31m-[m
+ node_modules/get-proto/Object.getPrototypeOf.js    |     6 [31m-[m
+ node_modules/get-proto/README.md                   |    50 [31m-[m
+ node_modules/get-proto/Reflect.getPrototypeOf.d.ts |     3 [31m-[m
+ node_modules/get-proto/Reflect.getPrototypeOf.js   |     4 [31m-[m
+ node_modules/get-proto/index.d.ts                  |     5 [31m-[m
+ node_modules/get-proto/index.js                    |    27 [31m-[m
+ node_modules/get-proto/package.json                |    81 [31m-[m
+ node_modules/get-proto/test/index.js               |    68 [31m-[m
+ node_modules/get-proto/tsconfig.json               |     9 [31m-[m
+ node_modules/gopd/.eslintrc                        |    16 [31m-[m
+ node_modules/gopd/.github/FUNDING.yml              |    12 [31m-[m
+ node_modules/gopd/CHANGELOG.md                     |    45 [31m-[m
+ node_modules/gopd/LICENSE                          |    21 [31m-[m
+ node_modules/gopd/README.md                        |    40 [31m-[m
+ node_modules/gopd/gOPD.d.ts                        |     1 [31m-[m
+ node_modules/gopd/gOPD.js                          |     4 [31m-[m
+ node_modules/gopd/index.d.ts                       |     5 [31m-[m
+ node_modules/gopd/index.js                         |    15 [31m-[m
+ node_modules/gopd/package.json                     |    77 [31m-[m
+ node_modules/gopd/test/index.js                    |    36 [31m-[m
+ node_modules/gopd/tsconfig.json                    |     9 [31m-[m
+ node_modules/has-symbols/.eslintrc                 |    11 [31m-[m
+ node_modules/has-symbols/.github/FUNDING.yml       |    12 [31m-[m
+ node_modules/has-symbols/.nycrc                    |     9 [31m-[m
+ node_modules/has-symbols/CHANGELOG.md              |    91 [31m-[m
+ node_modules/has-symbols/LICENSE                   |    21 [31m-[m
+ node_modules/has-symbols/README.md                 |    46 [31m-[m
+ node_modules/has-symbols/index.d.ts                |     3 [31m-[m
+ node_modules/has-symbols/index.js                  |    14 [31m-[m
+ node_modules/has-symbols/package.json              |   111 [31m-[m
+ node_modules/has-symbols/shams.d.ts                |     3 [31m-[m
+ node_modules/has-symbols/shams.js                  |    45 [31m-[m
+ node_modules/has-symbols/test/index.js             |    22 [31m-[m
+ node_modules/has-symbols/test/shams/core-js.js     |    29 [31m-[m
+ .../test/shams/get-own-property-symbols.js         |    29 [31m-[m
+ node_modules/has-symbols/test/tests.js             |    58 [31m-[m
+ node_modules/has-symbols/tsconfig.json             |    10 [31m-[m
+ node_modules/hasown/.eslintrc                      |     5 [31m-[m
+ node_modules/hasown/.github/FUNDING.yml            |    12 [31m-[m
+ node_modules/hasown/.nycrc                         |    13 [31m-[m
+ node_modules/hasown/CHANGELOG.md                   |    40 [31m-[m
+ node_modules/hasown/LICENSE                        |    21 [31m-[m
+ node_modules/hasown/README.md                      |    40 [31m-[m
+ node_modules/hasown/index.d.ts                     |     3 [31m-[m
+ node_modules/hasown/index.js                       |     8 [31m-[m
+ node_modules/hasown/package.json                   |    92 [31m-[m
+ node_modules/hasown/tsconfig.json                  |     6 [31m-[m
+ node_modules/http-errors/HISTORY.md                |   180 [31m-[m
+ node_modules/http-errors/LICENSE                   |    23 [31m-[m
+ node_modules/http-errors/README.md                 |   169 [31m-[m
+ node_modules/http-errors/index.js                  |   289 [31m-[m
+ node_modules/http-errors/package.json              |    50 [31m-[m
+ node_modules/iconv-lite/Changelog.md               |   162 [31m-[m
+ node_modules/iconv-lite/LICENSE                    |    21 [31m-[m
+ node_modules/iconv-lite/README.md                  |   156 [31m-[m
+ node_modules/iconv-lite/encodings/dbcs-codec.js    |   555 [31m-[m
+ node_modules/iconv-lite/encodings/dbcs-data.js     |   176 [31m-[m
+ node_modules/iconv-lite/encodings/index.js         |    22 [31m-[m
+ node_modules/iconv-lite/encodings/internal.js      |   188 [31m-[m
+ node_modules/iconv-lite/encodings/sbcs-codec.js    |    72 [31m-[m
+ .../iconv-lite/encodings/sbcs-data-generated.js    |   451 [31m-[m
+ node_modules/iconv-lite/encodings/sbcs-data.js     |   174 [31m-[m
+ .../iconv-lite/encodings/tables/big5-added.json    |   122 [31m-[m
+ .../iconv-lite/encodings/tables/cp936.json         |   264 [31m-[m
+ .../iconv-lite/encodings/tables/cp949.json         |   273 [31m-[m
+ .../iconv-lite/encodings/tables/cp950.json         |   177 [31m-[m
+ .../iconv-lite/encodings/tables/eucjp.json         |   182 [31m-[m
+ .../encodings/tables/gb18030-ranges.json           |     1 [31m-[m
+ .../iconv-lite/encodings/tables/gbk-added.json     |    55 [31m-[m
+ .../iconv-lite/encodings/tables/shiftjis.json      |   125 [31m-[m
+ node_modules/iconv-lite/encodings/utf16.js         |   177 [31m-[m
+ node_modules/iconv-lite/encodings/utf7.js          |   290 [31m-[m
+ node_modules/iconv-lite/lib/bom-handling.js        |    52 [31m-[m
+ node_modules/iconv-lite/lib/extend-node.js         |   217 [31m-[m
+ node_modules/iconv-lite/lib/index.d.ts             |    24 [31m-[m
+ node_modules/iconv-lite/lib/index.js               |   153 [31m-[m
+ node_modules/iconv-lite/lib/streams.js             |   121 [31m-[m
+ node_modules/iconv-lite/package.json               |    46 [31m-[m
+ node_modules/inherits/LICENSE                      |    16 [31m-[m
+ node_modules/inherits/README.md                    |    42 [31m-[m
+ node_modules/inherits/inherits.js                  |     9 [31m-[m
+ node_modules/inherits/inherits_browser.js          |    27 [31m-[m
+ node_modules/inherits/package.json                 |    29 [31m-[m
+ node_modules/ipaddr.js/LICENSE                     |    19 [31m-[m
+ node_modules/ipaddr.js/README.md                   |   233 [31m-[m
+ node_modules/ipaddr.js/ipaddr.min.js               |     1 [31m-[m
+ node_modules/ipaddr.js/lib/ipaddr.js               |   673 [31m-[m
+ node_modules/ipaddr.js/lib/ipaddr.js.d.ts          |    68 [31m-[m
+ node_modules/ipaddr.js/package.json                |    35 [31m-[m
+ node_modules/math-intrinsics/.eslintrc             |    16 [31m-[m
+ node_modules/math-intrinsics/.github/FUNDING.yml   |    12 [31m-[m
+ node_modules/math-intrinsics/CHANGELOG.md          |    24 [31m-[m
+ node_modules/math-intrinsics/LICENSE               |    21 [31m-[m
+ node_modules/math-intrinsics/README.md             |    50 [31m-[m
+ node_modules/math-intrinsics/abs.d.ts              |     1 [31m-[m
+ node_modules/math-intrinsics/abs.js                |     4 [31m-[m
+ .../math-intrinsics/constants/maxArrayLength.d.ts  |     3 [31m-[m
+ .../math-intrinsics/constants/maxArrayLength.js    |     4 [31m-[m
+ .../math-intrinsics/constants/maxSafeInteger.d.ts  |     3 [31m-[m
+ .../math-intrinsics/constants/maxSafeInteger.js    |     5 [31m-[m
+ .../math-intrinsics/constants/maxValue.d.ts        |     3 [31m-[m
+ node_modules/math-intrinsics/constants/maxValue.js |     5 [31m-[m
+ node_modules/math-intrinsics/floor.d.ts            |     1 [31m-[m
+ node_modules/math-intrinsics/floor.js              |     4 [31m-[m
+ node_modules/math-intrinsics/isFinite.d.ts         |     3 [31m-[m
+ node_modules/math-intrinsics/isFinite.js           |    12 [31m-[m
+ node_modules/math-intrinsics/isInteger.d.ts        |     3 [31m-[m
+ node_modules/math-intrinsics/isInteger.js          |    16 [31m-[m
+ node_modules/math-intrinsics/isNaN.d.ts            |     1 [31m-[m
+ node_modules/math-intrinsics/isNaN.js              |     6 [31m-[m
+ node_modules/math-intrinsics/isNegativeZero.d.ts   |     3 [31m-[m
+ node_modules/math-intrinsics/isNegativeZero.js     |     6 [31m-[m
+ node_modules/math-intrinsics/max.d.ts              |     1 [31m-[m
+ node_modules/math-intrinsics/max.js                |     4 [31m-[m
+ node_modules/math-intrinsics/min.d.ts              |     1 [31m-[m
+ node_modules/math-intrinsics/min.js                |     4 [31m-[m
+ node_modules/math-intrinsics/mod.d.ts              |     3 [31m-[m
+ node_modules/math-intrinsics/mod.js                |     9 [31m-[m
+ node_modules/math-intrinsics/package.json          |    86 [31m-[m
+ node_modules/math-intrinsics/pow.d.ts              |     1 [31m-[m
+ node_modules/math-intrinsics/pow.js                |     4 [31m-[m
+ node_modules/math-intrinsics/round.d.ts            |     1 [31m-[m
+ node_modules/math-intrinsics/round.js              |     4 [31m-[m
+ node_modules/math-intrinsics/sign.d.ts             |     3 [31m-[m
+ node_modules/math-intrinsics/sign.js               |    11 [31m-[m
+ node_modules/math-intrinsics/test/index.js         |   192 [31m-[m
+ node_modules/math-intrinsics/tsconfig.json         |     3 [31m-[m
+ node_modules/media-typer/HISTORY.md                |    22 [31m-[m
+ node_modules/media-typer/LICENSE                   |    22 [31m-[m
+ node_modules/media-typer/README.md                 |    81 [31m-[m
+ node_modules/media-typer/index.js                  |   270 [31m-[m
+ node_modules/media-typer/package.json              |    26 [31m-[m
+ node_modules/merge-descriptors/HISTORY.md          |    21 [31m-[m
+ node_modules/merge-descriptors/LICENSE             |    23 [31m-[m
+ node_modules/merge-descriptors/README.md           |    49 [31m-[m
+ node_modules/merge-descriptors/index.js            |    60 [31m-[m
+ node_modules/merge-descriptors/package.json        |    39 [31m-[m
+ node_modules/methods/HISTORY.md                    |    29 [31m-[m
+ node_modules/methods/LICENSE                       |    24 [31m-[m
+ node_modules/methods/README.md                     |    51 [31m-[m
+ node_modules/methods/index.js                      |    69 [31m-[m
+ node_modules/methods/package.json                  |    36 [31m-[m
+ node_modules/mime-db/HISTORY.md                    |   507 [31m-[m
+ node_modules/mime-db/LICENSE                       |    23 [31m-[m
+ node_modules/mime-db/README.md                     |   100 [31m-[m
+ node_modules/mime-db/db.json                       |  8519 [31m---[m
+ node_modules/mime-db/index.js                      |    12 [31m-[m
+ node_modules/mime-db/package.json                  |    60 [31m-[m
+ node_modules/mime-types/HISTORY.md                 |   397 [31m-[m
+ node_modules/mime-types/LICENSE                    |    23 [31m-[m
+ node_modules/mime-types/README.md                  |   113 [31m-[m
+ node_modules/mime-types/index.js                   |   188 [31m-[m
+ node_modules/mime-types/package.json               |    44 [31m-[m
+ node_modules/mime/.npmignore                       |     0
+ node_modules/mime/CHANGELOG.md                     |   164 [31m-[m
+ node_modules/mime/LICENSE                          |    21 [31m-[m
+ node_modules/mime/README.md                        |    90 [31m-[m
+ node_modules/mime/cli.js                           |     8 [31m-[m
+ node_modules/mime/mime.js                          |   108 [31m-[m
+ node_modules/mime/package.json                     |    44 [31m-[m
+ node_modules/mime/src/build.js                     |    53 [31m-[m
+ node_modules/mime/src/test.js                      |    60 [31m-[m
+ node_modules/mime/types.json                       |     1 [31m-[m
+ node_modules/ms/index.js                           |   152 [31m-[m
+ node_modules/ms/license.md                         |    21 [31m-[m
+ node_modules/ms/package.json                       |    37 [31m-[m
+ node_modules/ms/readme.md                          |    51 [31m-[m
+ node_modules/negotiator/HISTORY.md                 |   108 [31m-[m
+ node_modules/negotiator/LICENSE                    |    24 [31m-[m
+ node_modules/negotiator/README.md                  |   203 [31m-[m
+ node_modules/negotiator/index.js                   |    82 [31m-[m
+ node_modules/negotiator/lib/charset.js             |   169 [31m-[m
+ node_modules/negotiator/lib/encoding.js            |   184 [31m-[m
+ node_modules/negotiator/lib/language.js            |   179 [31m-[m
+ node_modules/negotiator/lib/mediaType.js           |   294 [31m-[m
+ node_modules/negotiator/package.json               |    42 [31m-[m
+ node_modules/object-inspect/.eslintrc              |    53 [31m-[m
+ node_modules/object-inspect/.github/FUNDING.yml    |    12 [31m-[m
+ node_modules/object-inspect/.nycrc                 |    13 [31m-[m
+ node_modules/object-inspect/CHANGELOG.md           |   424 [31m-[m
+ node_modules/object-inspect/LICENSE                |    21 [31m-[m
+ node_modules/object-inspect/example/all.js         |    23 [31m-[m
+ node_modules/object-inspect/example/circular.js    |     6 [31m-[m
+ node_modules/object-inspect/example/fn.js          |     5 [31m-[m
+ node_modules/object-inspect/example/inspect.js     |    10 [31m-[m
+ node_modules/object-inspect/index.js               |   544 [31m-[m
+ node_modules/object-inspect/package-support.json   |    20 [31m-[m
+ node_modules/object-inspect/package.json           |   105 [31m-[m
+ node_modules/object-inspect/readme.markdown        |    84 [31m-[m
+ node_modules/object-inspect/test-core-js.js        |    26 [31m-[m
+ node_modules/object-inspect/test/bigint.js         |    58 [31m-[m
+ node_modules/object-inspect/test/browser/dom.js    |    15 [31m-[m
+ node_modules/object-inspect/test/circular.js       |    16 [31m-[m
+ node_modules/object-inspect/test/deep.js           |    12 [31m-[m
+ node_modules/object-inspect/test/element.js        |    53 [31m-[m
+ node_modules/object-inspect/test/err.js            |    48 [31m-[m
+ node_modules/object-inspect/test/fakes.js          |    29 [31m-[m
+ node_modules/object-inspect/test/fn.js             |    76 [31m-[m
+ node_modules/object-inspect/test/global.js         |    17 [31m-[m
+ node_modules/object-inspect/test/has.js            |    15 [31m-[m
+ node_modules/object-inspect/test/holes.js          |    15 [31m-[m
+ node_modules/object-inspect/test/indent-option.js  |   271 [31m-[m
+ node_modules/object-inspect/test/inspect.js        |   139 [31m-[m
+ node_modules/object-inspect/test/lowbyte.js        |    12 [31m-[m
+ node_modules/object-inspect/test/number.js         |    58 [31m-[m
+ node_modules/object-inspect/test/quoteStyle.js     |    26 [31m-[m
+ node_modules/object-inspect/test/toStringTag.js    |    40 [31m-[m
+ node_modules/object-inspect/test/undef.js          |    12 [31m-[m
+ node_modules/object-inspect/test/values.js         |   261 [31m-[m
+ node_modules/object-inspect/util.inspect.js        |     1 [31m-[m
+ node_modules/on-finished/HISTORY.md                |    98 [31m-[m
+ node_modules/on-finished/LICENSE                   |    23 [31m-[m
+ node_modules/on-finished/README.md                 |   162 [31m-[m
+ node_modules/on-finished/index.js                  |   234 [31m-[m
+ node_modules/on-finished/package.json              |    39 [31m-[m
+ node_modules/parseurl/HISTORY.md                   |    58 [31m-[m
+ node_modules/parseurl/LICENSE                      |    24 [31m-[m
+ node_modules/parseurl/README.md                    |   133 [31m-[m
+ node_modules/parseurl/index.js                     |   158 [31m-[m
+ node_modules/parseurl/package.json                 |    40 [31m-[m
+ node_modules/path-to-regexp/LICENSE                |    21 [31m-[m
+ node_modules/path-to-regexp/Readme.md              |    35 [31m-[m
+ node_modules/path-to-regexp/index.js               |   156 [31m-[m
+ node_modules/path-to-regexp/package.json           |    30 [31m-[m
+ node_modules/proxy-addr/HISTORY.md                 |   161 [31m-[m
+ node_modules/proxy-addr/LICENSE                    |    22 [31m-[m
+ node_modules/proxy-addr/README.md                  |   139 [31m-[m
+ node_modules/proxy-addr/index.js                   |   327 [31m-[m
+ node_modules/proxy-addr/package.json               |    47 [31m-[m
+ node_modules/qs/.editorconfig                      |    46 [31m-[m
+ node_modules/qs/.eslintrc                          |    38 [31m-[m
+ node_modules/qs/.github/FUNDING.yml                |    12 [31m-[m
+ node_modules/qs/.nycrc                             |    13 [31m-[m
+ node_modules/qs/CHANGELOG.md                       |   600 [31m-[m
+ node_modules/qs/LICENSE.md                         |    29 [31m-[m
+ node_modules/qs/README.md                          |   709 [31m-[m
+ node_modules/qs/dist/qs.js                         |    90 [31m-[m
+ node_modules/qs/lib/formats.js                     |    23 [31m-[m
+ node_modules/qs/lib/index.js                       |    11 [31m-[m
+ node_modules/qs/lib/parse.js                       |   296 [31m-[m
+ node_modules/qs/lib/stringify.js                   |   351 [31m-[m
+ node_modules/qs/lib/utils.js                       |   265 [31m-[m
+ node_modules/qs/package.json                       |    91 [31m-[m
+ node_modules/qs/test/empty-keys-cases.js           |   267 [31m-[m
+ node_modules/qs/test/parse.js                      |  1170 [31m-[m
+ node_modules/qs/test/stringify.js                  |  1298 [31m-[m
+ node_modules/qs/test/utils.js                      |   136 [31m-[m
+ node_modules/range-parser/HISTORY.md               |    56 [31m-[m
+ node_modules/range-parser/LICENSE                  |    23 [31m-[m
+ node_modules/range-parser/README.md                |    84 [31m-[m
+ node_modules/range-parser/index.js                 |   162 [31m-[m
+ node_modules/range-parser/package.json             |    44 [31m-[m
+ node_modules/raw-body/HISTORY.md                   |   308 [31m-[m
+ node_modules/raw-body/LICENSE                      |    22 [31m-[m
+ node_modules/raw-body/README.md                    |   223 [31m-[m
+ node_modules/raw-body/SECURITY.md                  |    24 [31m-[m
+ node_modules/raw-body/index.d.ts                   |    87 [31m-[m
+ node_modules/raw-body/index.js                     |   336 [31m-[m
+ node_modules/raw-body/package.json                 |    49 [31m-[m
+ node_modules/safe-buffer/LICENSE                   |    21 [31m-[m
+ node_modules/safe-buffer/README.md                 |   584 [31m-[m
+ node_modules/safe-buffer/index.d.ts                |   187 [31m-[m
+ node_modules/safe-buffer/index.js                  |    65 [31m-[m
+ node_modules/safe-buffer/package.json              |    51 [31m-[m
+ node_modules/safer-buffer/LICENSE                  |    21 [31m-[m
+ node_modules/safer-buffer/Porting-Buffer.md        |   268 [31m-[m
+ node_modules/safer-buffer/Readme.md                |   156 [31m-[m
+ node_modules/safer-buffer/dangerous.js             |    58 [31m-[m
+ node_modules/safer-buffer/package.json             |    34 [31m-[m
+ node_modules/safer-buffer/safer.js                 |    77 [31m-[m
+ node_modules/safer-buffer/tests.js                 |   406 [31m-[m
+ node_modules/send/HISTORY.md                       |   526 [31m-[m
+ node_modules/send/LICENSE                          |    23 [31m-[m
+ node_modules/send/README.md                        |   327 [31m-[m
+ node_modules/send/SECURITY.md                      |    24 [31m-[m
+ node_modules/send/index.js                         |  1142 [31m-[m
+ node_modules/send/package.json                     |    62 [31m-[m
+ node_modules/serve-static/HISTORY.md               |   487 [31m-[m
+ node_modules/serve-static/LICENSE                  |    25 [31m-[m
+ node_modules/serve-static/README.md                |   257 [31m-[m
+ node_modules/serve-static/index.js                 |   209 [31m-[m
+ node_modules/serve-static/package.json             |    42 [31m-[m
+ node_modules/setprototypeof/LICENSE                |    13 [31m-[m
+ node_modules/setprototypeof/README.md              |    31 [31m-[m
+ node_modules/setprototypeof/index.d.ts             |     2 [31m-[m
+ node_modules/setprototypeof/index.js               |    17 [31m-[m
+ node_modules/setprototypeof/package.json           |    38 [31m-[m
+ node_modules/setprototypeof/test/index.js          |    24 [31m-[m
+ node_modules/side-channel-list/.editorconfig       |     9 [31m-[m
+ node_modules/side-channel-list/.eslintrc           |    11 [31m-[m
+ node_modules/side-channel-list/.github/FUNDING.yml |    12 [31m-[m
+ node_modules/side-channel-list/.nycrc              |    13 [31m-[m
+ node_modules/side-channel-list/CHANGELOG.md        |    15 [31m-[m
+ node_modules/side-channel-list/LICENSE             |    21 [31m-[m
+ node_modules/side-channel-list/README.md           |    62 [31m-[m
+ node_modules/side-channel-list/index.d.ts          |    13 [31m-[m
+ node_modules/side-channel-list/index.js            |   113 [31m-[m
+ node_modules/side-channel-list/list.d.ts           |    14 [31m-[m
+ node_modules/side-channel-list/package.json        |    77 [31m-[m
+ node_modules/side-channel-list/test/index.js       |   104 [31m-[m
+ node_modules/side-channel-list/tsconfig.json       |     9 [31m-[m
+ node_modules/side-channel-map/.editorconfig        |     9 [31m-[m
+ node_modules/side-channel-map/.eslintrc            |    11 [31m-[m
+ node_modules/side-channel-map/.github/FUNDING.yml  |    12 [31m-[m
+ node_modules/side-channel-map/.nycrc               |    13 [31m-[m
+ node_modules/side-channel-map/CHANGELOG.md         |    22 [31m-[m
+ node_modules/side-channel-map/LICENSE              |    21 [31m-[m
+ node_modules/side-channel-map/README.md            |    62 [31m-[m
+ node_modules/side-channel-map/index.d.ts           |    15 [31m-[m
+ node_modules/side-channel-map/index.js             |    68 [31m-[m
+ node_modules/side-channel-map/package.json         |    80 [31m-[m
+ node_modules/side-channel-map/test/index.js        |   114 [31m-[m
+ node_modules/side-channel-map/tsconfig.json        |     9 [31m-[m
+ node_modules/side-channel-weakmap/.editorconfig    |     9 [31m-[m
+ node_modules/side-channel-weakmap/.eslintrc        |    12 [31m-[m
+ .../side-channel-weakmap/.github/FUNDING.yml       |    12 [31m-[m
+ node_modules/side-channel-weakmap/.nycrc           |    13 [31m-[m
+ node_modules/side-channel-weakmap/CHANGELOG.md     |    28 [31m-[m
+ node_modules/side-channel-weakmap/LICENSE          |    21 [31m-[m
+ node_modules/side-channel-weakmap/README.md        |    62 [31m-[m
+ node_modules/side-channel-weakmap/index.d.ts       |    15 [31m-[m
+ node_modules/side-channel-weakmap/index.js         |    84 [31m-[m
+ node_modules/side-channel-weakmap/package.json     |    87 [31m-[m
+ node_modules/side-channel-weakmap/test/index.js    |   114 [31m-[m
+ node_modules/side-channel-weakmap/tsconfig.json    |     9 [31m-[m
+ node_modules/side-channel/.editorconfig            |     9 [31m-[m
+ node_modules/side-channel/.eslintrc                |    12 [31m-[m
+ node_modules/side-channel/.github/FUNDING.yml      |    12 [31m-[m
+ node_modules/side-channel/.nycrc                   |    13 [31m-[m
+ node_modules/side-channel/CHANGELOG.md             |   110 [31m-[m
+ node_modules/side-channel/LICENSE                  |    21 [31m-[m
+ node_modules/side-channel/README.md                |    61 [31m-[m
+ node_modules/side-channel/index.d.ts               |    14 [31m-[m
+ node_modules/side-channel/index.js                 |    43 [31m-[m
+ node_modules/side-channel/package.json             |    85 [31m-[m
+ node_modules/side-channel/test/index.js            |   104 [31m-[m
+ node_modules/side-channel/tsconfig.json            |     9 [31m-[m
+ node_modules/statuses/HISTORY.md                   |    82 [31m-[m
+ node_modules/statuses/LICENSE                      |    23 [31m-[m
+ node_modules/statuses/README.md                    |   136 [31m-[m
+ node_modules/statuses/codes.json                   |    65 [31m-[m
+ node_modules/statuses/index.js                     |   146 [31m-[m
+ node_modules/statuses/package.json                 |    49 [31m-[m
+ node_modules/toidentifier/HISTORY.md               |     9 [31m-[m
+ node_modules/toidentifier/LICENSE                  |    21 [31m-[m
+ node_modules/toidentifier/README.md                |    61 [31m-[m
+ node_modules/toidentifier/index.js                 |    32 [31m-[m
+ node_modules/toidentifier/package.json             |    38 [31m-[m
+ node_modules/type-is/HISTORY.md                    |   259 [31m-[m
+ node_modules/type-is/LICENSE                       |    23 [31m-[m
+ node_modules/type-is/README.md                     |   170 [31m-[m
+ node_modules/type-is/index.js                      |   266 [31m-[m
+ node_modules/type-is/package.json                  |    45 [31m-[m
+ node_modules/unpipe/HISTORY.md                     |     4 [31m-[m
+ node_modules/unpipe/LICENSE                        |    22 [31m-[m
+ node_modules/unpipe/README.md                      |    43 [31m-[m
+ node_modules/unpipe/index.js                       |    69 [31m-[m
+ node_modules/unpipe/package.json                   |    27 [31m-[m
+ node_modules/utils-merge/.npmignore                |     9 [31m-[m
+ node_modules/utils-merge/LICENSE                   |    20 [31m-[m
+ node_modules/utils-merge/README.md                 |    34 [31m-[m
+ node_modules/utils-merge/index.js                  |    23 [31m-[m
+ node_modules/utils-merge/package.json              |    40 [31m-[m
+ node_modules/vary/HISTORY.md                       |    39 [31m-[m
+ node_modules/vary/LICENSE                          |    22 [31m-[m
+ node_modules/vary/README.md                        |   101 [31m-[m
+ node_modules/vary/index.js                         |   149 [31m-[m
+ node_modules/vary/package.json                     |    43 [31m-[m
+ 867 files changed, 779314 deletions(-)

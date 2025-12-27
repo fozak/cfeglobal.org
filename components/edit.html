@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Page</title>
+    <script>
+        // On page load, retrieve the content from session storage
+        window.onload = function() {
+            // Get the full document content from session storage
+            const editContent = sessionStorage.getItem('editContent');
+            if (editContent) {
+                // Create a temporary HTML document
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(editContent, 'text/html');
+
+                // Update the current document's head and body
+                document.head.innerHTML = doc.head.innerHTML; // Replace head content
+                document.body.innerHTML = doc.body.innerHTML; // Replace body content
+            } else {
+                document.body.innerHTML = '<div>No content loaded.</div>';
+            }
+
+            // Debugging: Show what's loaded
+            console.log('Content Loaded:', editContent);
+        };
+    </script>
+</head>
+<body>
+    <div>Loading content...</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+https://ocw.mit.edu/search/?q=startup
+
+then // Extract all course URLs
+const urls = [...new Set(
+  Array.from(document.querySelectorAll('a[href^="/courses/"]'))
+    .map(link => `https://ocw.mit.edu${link.getAttribute('href')}`)
+)];
+
+// Create and download as txt file
+const blob = new Blob([urls.join('\n')], { type: 'text/plain' });
+const url = URL.createObjectURL(blob);
+const a = document.createElement('a');
+a.href = url;
+a.download = 'ocw-course-urls.txt';
+a.click();
+URL.revokeObjectURL(url);

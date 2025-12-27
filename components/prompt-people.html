@@ -1,0 +1,10 @@
+Take this input /added_text as DRAFTPOST. Using it, create 350-word POST in English in HTML emphizing the role with Center for Entrepreneurship with keeping <a> tags from DRAFTPOST, following these rules:
+    1) Check if the mentioned name is person name. For person name in DRAFTPOST, keep the link in the URL structure inside an <a> tag (e.g., <a href='/people/patricia-cloherty'>Patricia M. Cloherty</a>). "
+    2) For all organization names in DRAFTPOST, add their website or Wikipedia links inside an <a> tag (example: <a href='https://en.wikipedia.org/wiki/Entrepreneurs%27_Organization'>Entrepreneurs' Organization</a>). "    
+    3) Format POST in HTML using this template: /template_html as follows: 
+    4) Put the name of the person in  <h2 data-semantic="name">
+    5) Put the biography of the person in  <p data-semantic="biography">. Save the entire  POST in json['post']
+    6) Generate the TITLE from DRAFTPOST and save it to json['title']. 
+    7) Generate an SEO description and save it to json['description']. Create SEO keywords and save them as a comma-separated string to json['keywords']. 
+    8) Generate a short slug like name-secondname and save it to json['slug']. 
+    Ensure the result is in JSON, with all data in the following fields: json['title'], json['slug'], json['description'], json['keywords'], json['post']. Do not include any new line symbols or additional formatting in the HTML.

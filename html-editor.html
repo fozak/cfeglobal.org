@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Inline Editor</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: #f5f5f5;
+            border-bottom: 1px solid #ddd;
+            z-index: 1000;
+        }
+        #editor {
+            margin-top: 50px;
+            min-height: calc(100vh - 70px);
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .button {
+            padding: 8px 16px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <input type="file" id="fileInput" accept=".html">
+        <button id="saveButton" class="button" disabled>Save Changes</button>
+    </div>
+    <div id="editor" contenteditable="true">
+        Select an HTML file to begin editing
+    </div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const editor = document.getElementById('editor');
+        const saveButton = document.getElementById('saveButton');
+        let currentFile = null;
+
+        fileInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            
+            currentFile = file;
+            const reader = new FileReader();
+            
+            reader.onload = (e) => {
+                // Create a temporary container to extract the body content
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = e.target.result;
+                
+                // Get the body content
+                const bodyContent = tempContainer.querySelector('body');
+                if (bodyContent) {
+                    editor.innerHTML = bodyContent.innerHTML;
+                } else {
+                    editor.innerHTML = tempContainer.innerHTML;
+                }
+                
+                saveButton.disabled = false;
+            };
+            
+            reader.readAsText(file);
+        });
+
+        editor.addEventListener('input', () => {
+            if (currentFile) {
+                saveButton.disabled = false;
+            }
+        });
+
+        saveButton.addEventListener('click', () => {
+            if (!currentFile) return;
+
+            // Create a full HTML document
+            const htmlContent = `<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>${currentFile.name}</title>
+</head>
+<body>
+${editor.innerHTML}
+</body>
+</html>`;
+
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = currentFile.name;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

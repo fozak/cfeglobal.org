@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Minimalist HTML Editor</title>
+    <style>
+        #controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(240, 240, 240, 0.8);
+            padding: 8px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        #statusBadge {
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <button id="openFile">Select File</button>
+        <span id="statusBadge">No file selected</span>
+    </div>
+
+    <script>
+        let fileHandle = null;
+        let observer = null;
+        let saveTimeout = null;
+        const statusBadge = document.getElementById('statusBadge');
+        
+        document.getElementById('openFile').addEventListener('click', async () => {
+            try {
+                const handles = await window.showOpenFilePicker({
+                    types: [{
+                        description: 'HTML Files',
+                        accept: {'text/html': ['.html']},
+                    }],
+                });
+                fileHandle = handles[0];
+                const file = await fileHandle.getFile();
+                const htmlContent = await file.text();
+                
+                // Replace entire document with the loaded HTML
+                document.open();
+                document.write(htmlContent);
+                document.close();
+                
+                // Add back our controls
+                const controlsDiv = document.createElement('div');
+                controlsDiv.id = 'controls';
+                controlsDiv.innerHTML = `
+                    <button id="openFile">Select File</button>
+                    <span id="statusBadge">Editing</span>
+                `;
+                document.body.appendChild(controlsDiv);
+                
+                // Make everything editable
+                document.body.contentEditable = 'true';
+                
+                // Re-bind event listener
+                document.getElementById('openFile').addEventListener('click', () => {
+                    location.reload();
+                });
+                
+                // Setup auto-save
+                setupAutoSave();
+                
+            } catch (err) {
+                console.error('Error accessing file:', err);
+                statusBadge.textContent = 'Error accessing file';
+            }
+        });
+        
+        function setupAutoSave() {
+            const statusBadge = document.getElementById('statusBadge');
+            
+            // Setup mutation observer for auto save
+            observer = new MutationObserver(() => {
+                if (saveTimeout) {
+                    clearTimeout(saveTimeout);
+                }
+                statusBadge.textContent = 'Editing...';
+                saveTimeout = setTimeout(saveContent, 1000);
+            });
+            
+            observer.observe(document.documentElement, {
+                childList: true,
+                subtree: true,
+                characterData: true,
+                attributes: true
+            });
+        }
+        
+        async function saveContent() {
+            if (!fileHandle) return;
+            
+            try {
+                const writable = await fileHandle.createWritable();
+                
+                // Get current HTML content - controls div will be included
+                // but we'll remove it before saving
+                const tmpDiv = document.createElement('div');
+                tmpDiv.appendChild(document.documentElement.cloneNode(true));
+                
+                // Remove our controls
+                const controlsToRemove = tmpDiv.querySelector('#controls');
+                if (controlsToRemove) {
+                    controlsToRemove.remove();
+                }
+                
+                // Get clean HTML content
+                const saveContent = '<!DOCTYPE html>\n' + tmpDiv.innerHTML;
+                
+                await writable.write(saveContent);
+                await writable.close();
+                
+                const statusBadge = document.getElementById('statusBadge');
+                statusBadge.textContent = 'Saved';
+                setTimeout(() => {
+                    if (statusBadge.textContent === 'Saved') {
+                        statusBadge.textContent = 'Editing';
+                    }
+                }, 2000);
+            } catch (err) {
+                console.error('Error saving:', err);
+                const statusBadge = document.getElementById('statusBadge');
+                statusBadge.textContent = 'Save error';
+            }
+        }
+    </script>
+</body>
+</html>

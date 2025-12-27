@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found</title>
+    <script>
+        // Redirect www to non-www
+        if (window.location.hostname.startsWith('www.')) {
+            window.location.replace(window.location.href.replace('www.', ''));
+        } else {
+            // Redirect non-www to www (uncomment if needed)
+            // window.location.replace(window.location.href.replace(window.location.hostname, 'www.' + window.location.hostname));
+        }
+    </script>
+</head>
+<body>
+    <h1>Page Not Found</h1>
+    <p>The page you are looking for doesn't exist. Try another one</p>
+</body>
+</html>

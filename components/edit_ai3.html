@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Placeholder Substitution</title>
+    <style>
+        #output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+            min-height: 50px;
+            white-space: pre-wrap;
+            /* Preserve whitespace */
+        }
+
+        #inputArea,
+        #addedText {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 100%;
+            min-height: 100px;
+            box-sizing: border-box;
+            /* Include padding in width */
+            margin-top: 10px;
+        }
+
+        .highlight {
+            background-color: lightgray;
+            /* Highlight color */
+            padding: 2px 4px;
+            /* Add some padding */
+            border-radius: 3px;
+            /* Rounded corners */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Dynamic Placeholder Substitution</h2>
+    <textarea id="addedText" placeholder="Type your added text here..."></textarea>
+    <textarea id="inputArea" placeholder="Type your template text here..."></textarea>
+    <div id="output"></div>
+    <button id="generateButton">Generate Post</button>
+    <div id="ai_output" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px; margin-top: 10px;"></div>
+
+    <script>
+        window.onload = function () {
+            // Retrieve the content from sessionStorage (this should contain your actual data)
+            const edit_content = sessionStorage.getItem('edit_content');
+
+            if (edit_content) {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(edit_content, 'text/html');
+                const json_data_element = doc.getElementById('data');
+
+                if (json_data_element) {
+                    const jsonData = JSON.parse(json_data_element.textContent);
+
+                    // Store the variables in sessionStorage
+                    for (const key in jsonData) {
+                        if (jsonData.hasOwnProperty(key)) {
+                            sessionStorage.setItem(key, jsonData[key]);
+                        }
+                    }
+                }
+            }
+
+            // Render the template with placeholders
+            renderTemplateAsText(document.getElementById('inputArea').value);
+        };
+
+        // Function to substitute placeholders in the template
+        function substitutePlaceholders(template) {
+            return template.replace(/\/([a-zA-Z0-9_]+)/g, (match, key) => {
+                const value = sessionStorage.getItem(key.trim());
+                console.log(`Substituting ${match}: ${value}`); // Debugging line
+                return value !== null ? `${key}: ${value}` : match;
+            });
+        }
+
+        // Function to render the template as plain text
+        function renderTemplateAsText(templateHtml) {
+            const substitutedText = substitutePlaceholders(templateHtml);
+            const outputDiv = document.getElementById('output');
+            outputDiv.textContent = substitutedText; // Use textContent to avoid rendering HTML
+        }
+
+        // Get the input areas
+        const inputArea = document.getElementById('inputArea');
+        const addedTextArea = document.getElementById('addedText');
+
+        // Event listener for dynamic updates in the main input area
+        inputArea.addEventListener('input', function () {
+            const templateText = inputArea.value;
+            const resultText = substitutePlaceholders(templateText);
+            document.getElementById('output').textContent = resultText; // Set as textContent to avoid rendering
+        });
+
+        // Event listener for the added text area
+        addedTextArea.addEventListener('input', function () {
+            const addedText = addedTextArea.value;
+            sessionStorage.setItem('added_text', addedText); // Save to sessionStorage
+        });
+
+
+        // AI PART
+        function getApiCredentials() {
+            // Check if the API key and model are already in localStorage
+            let apiKey = localStorage.getItem('api_key');
+            let model = localStorage.getItem('model');
+
+            // If not present, ask for the API key and model
+            if (!apiKey || !model) {
+                apiKey = prompt("Please enter your OpenAI API Key:");
+                model = prompt("Please enter the model you want to use (e.g., gpt-4):");
+
+                // Store them in localStorage
+                localStorage.setItem('api_key', apiKey);
+                localStorage.setItem('model', model);
+            }
+
+            return { apiKey, model };
+        }
+
+        // Function to call OpenAI API and process the response
+        async function generatePost() {
+            const { apiKey, model } = getApiCredentials(); // Get credentials
+            const prompt = document.getElementById('output').innerText; // Get user input from a text area
+            console.log(prompt);
+
+            // Call the OpenAI API and get the response
+            const responseContent = await callOpenAI(prompt, apiKey, model); // Pass prompt, API key, and model
+
+            // Log the response content for debugging
+            console.log('Response Content:', responseContent);
+
+            // Check if responseContent is a valid JSON object
+            try {
+                // If responseContent is a string, parse it
+                const parsedResponse = typeof responseContent === 'string' ? JSON.parse(responseContent) : responseContent;
+
+                if (typeof parsedResponse === 'object' && parsedResponse !== null) {
+                    // Iterate through the keys of the parsedResponse object
+                    for (const key in parsedResponse) {
+                        if (parsedResponse.hasOwnProperty(key)) {
+                            const sessionKey = `generated_${key}`; // Prefix the key
+                            const value = parsedResponse[key]; // Get the value
+                            sessionStorage.setItem(sessionKey, value); // Save to sessionStorage
+                            console.log(`Stored ${sessionKey} in sessionStorage with value:`, value);
+                        }
+                    }
+                } else {
+                    console.error('Parsed response is not a valid object:', parsedResponse);
+                }
+            } catch (error) {
+                console.error('Error parsing responseContent:', error);
+            }
+            const userInput = document.getElementById('inputArea').value; // Get user input from the textarea
+
+            // Save the text from the textarea into sessionStorage as key "prompt"
+            sessionStorage.setItem('prompt', userInput);
+
+            // Display the overall AI response in the ai_output div
+            document.getElementById('ai_output').textContent = responseContent; // Show the response
+
+            // Here you might want to process the response further, if needed
+        }
+
+        // Function to call OpenAI API with credentials
+        async function callOpenAI(prompt, apiKey, model) {
+            const url = 'https://api.openai.com/v1/chat/completions'; // Change the endpoint as needed
+
+            // Prepare the request body
+            const requestBody = {
+                model: model, // Use the stored model
+                messages: [
+                    {
+                        role: "system",
+                        content: "You are a helpful assistant designed to output JSON.",
+                    },
+                    { role: 'user', content: prompt }],
+                max_tokens: 5000, // Adjust based on your needs
+                response_format: { type: "json_object" },
+            };
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`, // Use Bearer token authentication
+                    },
+                    body: JSON.stringify(requestBody),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log('Response from OpenAI:', data);
+                return data.choices[0].message.content; // Access the generated response
+            } catch (error) {
+                console.error('Error calling OpenAI API:', error);
+                return 'An error occurred while contacting the API.'; // Return error message
+            }
+        }
+
+        // Call the generatePost function when the button is clicked
+        document.getElementById('generateButton').addEventListener('click', generatePost);
+
+        // saving to session storage
+        document.addEventListener('keydown', function (event) {
+            // Check if Ctrl + X is pressed
+            if (event.ctrlKey && event.key === 'x') {
+                // Call the function to handle the replacement
+                replaceEditContent();
+            }
+        });
+        function replaceEditContent() {
+            // Retrieve the edit_content from sessionStorage
+            const editContent = sessionStorage.getItem('edit_content');
+            if (!editContent) {
+                console.warn('No edit_content found in sessionStorage.');
+                return;
+            }
+
+            // Create an object to hold generated list
+            const generatedList = {};
+
+            // Iterate through all keys in sessionStorage to populate generatedList
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                const value = sessionStorage.getItem(key);
+
+                // Check for keys starting with "generated_"
+                if (key.startsWith('generated_')) {
+                    // Store the key-value pair in the generatedList
+                    const variableName = key.replace('generated_', ''); // Remove prefix
+                    generatedList[variableName] = value; // Add to the object
+                }
+            }
+
+            // Replace variables in edit_content using generatedList
+            let generatedContent = editContent;
+
+            for (const [variable, value] of Object.entries(generatedList)) {
+                // Replace placeholders in the edit content with actual values
+                const placeholder = `{${variable}}`;
+                generatedContent = generatedContent.replace(new RegExp(placeholder, 'g'), value);
+            }
+
+            // Iterate through all sessionStorage keys again to handle replacements for non-generated keys
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                const value = sessionStorage.getItem(key);
+
+                // Skip keys already processed
+                if (key.startsWith('generated_')) continue;
+
+                // Replace placeholders in the edit content with actual values
+                const placeholder = `{${key}}`;
+                generatedContent = generatedContent.replace(new RegExp(placeholder, 'g'), value);
+            }
+
+            // Log the updated content or handle it as needed
+            console.log('Generated edit content:', generatedContent);
+            // Save the updated content to sessionStorage under the new key 'generate_content'
+            sessionStorage.setItem('generate_content', generatedContent);
+        }
+    </script>
+</body>
+
+</html>
