@@ -3,7 +3,7 @@ const path = require('path');
 
 
 
-// Function to remove <link rel="alternate"> tags from an HTML file
+// Function to remove  tags from an HTML file
 function removeAlternateLinkTags(filePath) {
     fs.readFile(filePath, 'utf8', (err, data) => {
         if (err) {
@@ -11,7 +11,7 @@ function removeAlternateLinkTags(filePath) {
             return;
         }
 
-        // Use regex to match <link rel="alternate"> tags
+        // Use regex to match  tags
         const regex = /<link[^>]*\brel=["']?alternate["']?[^>]*>/gi;
 
         // Replace matched tags with an empty string
