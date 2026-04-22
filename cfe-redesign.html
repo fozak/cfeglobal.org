@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Center for Entrepreneurship | High-Impact Programs & Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Refined, sophisticated palette */
+            --color-dark: #1a1a1a;
+            --color-light: #f9f8f6;
+            --color-accent: #d64045;
+            --color-accent-muted: #e8acb0;
+            --color-text-primary: #2c2c2c;
+            --color-text-secondary: #6b6b6b;
+            --color-border: #e8e6e1;
+            
+            /* Typography */
+            --font-display: 'Georgia', 'Garamond', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+            --spacing-2xl: 6rem;
+            
+            /* Animation */
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text-primary);
+            background: var(--color-light);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           HEADER & NAVIGATION
+           ============================================ */
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--color-light);
+            border-bottom: 1px solid var(--color-border);
+            backdrop-filter: blur(10px);
+            background-color: rgba(249, 248, 246, 0.95);
+        }
+
+        .header__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md) var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: var(--spacing-sm);
+            transition: var(--transition);
+        }
+
+        .header__logo:hover {
+            opacity: 0.7;
+        }
+
+        .header__logo-image {
+            height: 40px;
+            width: auto;
+        }
+
+        .header__logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            letter-spacing: 0.5px;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .header__logo-text {
+                display: block;
+            }
+        }
+
+        nav.header__nav {
+            display: none;
+            gap: var(--spacing-lg);
+            align-items: center;
+            flex: 1;
+            margin-left: var(--spacing-2xl);
+        }
+
+        @media (min-width: 768px) {
+            nav.header__nav {
+                display: flex;
+            }
+        }
+
+        .header__nav-list {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-lg);
+        }
+
+        .header__nav-link {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s ease;
+            font-weight: 500;
+        }
+
+        .header__nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header__nav-link:hover {
+            color: var(--color-dark);
+        }
+
+        .header__nav-link:hover:after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .header__nav-link.active {
+            color: var(--color-dark);
+        }
+
+        .header__nav-link.active:after {
+            transform: scaleX(1);
+        }
+
+        .header__actions {
+            display: none;
+            gap: var(--spacing-md);
+            align-items: center;
+            margin-left: auto;
+        }
+
+        @media (min-width: 768px) {
+            .header__actions {
+                display: flex;
+            }
+        }
+
+        .header__cta {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .header__cta:hover {
+            background: #c0353b;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile menu toggle */
+        .header__menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--spacing-sm);
+            margin-right: calc(-1 * var(--spacing-sm));
+        }
+
+        @media (min-width: 768px) {
+            .header__menu-toggle {
+                display: none;
+            }
+        }
+
+        .header__menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-dark);
+            transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        .header__menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(11px);
+        }
+
+        .header__menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .header__menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-11px);
+        }
+
+        /* Spacer for fixed header */
+        .header-spacer {
+            height: 70px;
+        }
+
+        /* ============================================
+           MAIN CONTENT
+           ============================================ */
+        
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        /* ============================================
+           BLOG POST / CONTENT SECTION
+           ============================================ */
+        
+        .post {
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .post__header {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 2px solid var(--color-border);
+        }
+
+        .post__title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: var(--color-dark);
+            margin-bottom: var(--spacing-md);
+        }
+
+        @media (max-width: 640px) {
+            .post__title {
+                font-size: 1.75rem;
+            }
+        }
+
+        .post__meta {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .post__content {
+            max-width: 800px;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .post__section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .post__section-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-dark);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .post__text {
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .post__text a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-accent-muted);
+            transition: var(--transition);
+        }
+
+        .post__text a:hover {
+            border-bottom-color: var(--color-accent);
+            color: #c0353b;
+        }
+
+        /* ============================================
+           CALL TO ACTION
+           ============================================ */
+        
+        .cta {
+            background: var(--color-dark);
+            color: white;
+            padding: var(--spacing-2xl) var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .cta__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta__title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+        }
+
+        .cta__description {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.95;
+        }
+
+        .cta__button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid var(--color-accent);
+        }
+
+        .cta__button:hover {
+            background: transparent;
+            color: white;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        
+        footer {
+            background: var(--color-dark);
+            color: var(--color-light);
+            padding: var(--spacing-2xl) var(--spacing-lg);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .footer__top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer__column {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .footer__logo-image {
+            height: 40px;
+            width: auto;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer__title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer__description {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .footer__links {
+            list-style: none;
+        }
+
+        .footer__link {
+            display: block;
+            color: var(--color-light);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: var(--transition);
+            padding: 0.4rem 0;
+            font-size: 0.95rem;
+        }
+
+        .footer__link:hover {
+            opacity: 1;
+            color: var(--color-accent);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .footer__social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+        }
+
+        .footer__bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer__links-bottom {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-lg);
+            flex-wrap: wrap;
+        }
+
+        .footer__links-bottom a {
+            color: var(--color-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__links-bottom a:hover {
+            color: var(--color-accent);
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .post {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .post__section {
+            animation: fadeInUp 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .post__section:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .post__section:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- ============================================
+         HEADER / NAVIGATION
+         ============================================ -->
+    <header role="banner">
+        <div class="header__container">
+            <a href="/" class="header__logo" aria-label="CFE Global Home">
+                <img src="/assets/images/logo/cfe-long.png" alt="CFE Global" class="header__logo-image">
+                <span class="header__logo-text">CFE Global</span>
+            </a>
+
+            <nav class="header__nav" aria-label="Main Navigation">
+                <ul class="header__nav-list">
+                    <li><a href="/" class="header__nav-link active">Home</a></li>
+                    <li><a href="/programs" class="header__nav-link">Programs</a></li>
+                    <li><a href="/goals" class="header__nav-link">Goals</a></li>
+                    <li><a href="/industries" class="header__nav-link">Industries</a></li>
+                    <li><a href="/about" class="header__nav-link">About</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="https://c.cfeglobal.org" class="header__cta">Connect</a>
+            </div>
+
+            <button class="header__menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="header-spacer"></div>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main role="main">
+        <article class="post">
+            <div class="container">
+                <header class="post__header">
+                    <h1 class="post__title">Entrepreneurs as Leaders in Business and Society</h1>
+                    <p class="post__meta">August 20, 2016</p>
+                </header>
+
+                <div class="post__content">
+                    <section class="post__section">
+                        <h2 class="post__section-title">Annual Conference Focuses on Business Leadership and Society Impact</h2>
+                        <p class="post__text">
+                            The Center for Entrepreneurship is holding its annual conference 'Entrepreneurs as Leaders in Business and Society'. 
+                            The event will provide entrepreneurs with a platform to discuss best practices in leading their company's growth, 
+                            including how to use information technology, personnel management, raising capital, and the role entrepreneurs play 
+                            in creating jobs, national wealth, and developing society. The event will be conducted in English with simultaneous interpretation.
+                        </p>
+                    </section>
+
+                    <section class="post__section">
+                        <h3 class="post__section-title">Event Agenda</h3>
+                        <div class="post__text">
+                            <p><strong>08:30 - 09:00:</strong> Registration and welcome coffee</p>
+                            <p><strong>09:00 - 09:40:</strong> Welcome Addresses</p>
+                            <p><strong>09:40 - 10:40:</strong> <strong>Leadership That Lasts: How Entrepreneurs Lead Growth Companies</strong><br>
+                            Dr. <a href="/people/ray-smilor">Ray Smilor</a><br>
+                            This master class will focus on the personal dimensions of leadership. It highlights three powerful attributes of 
+                            leadership — authenticity, trust, and optimism — those that inspire people to follow leaders.</p>
+                            <p><strong>10:40 - 11:00:</strong> Coffee Break and Networking</p>
+                            <p><strong>11:00 - 12:30:</strong> <strong>Information and Internet Technologies for Business Development</strong><br>
+                            Entrepreneurs and experts discuss new trends in the development of information and Internet technologies, how 
+                            information and mobile technology development will affect future consumer behavior, and using internet and social 
+                            networking tools to attract and retain customers.</p>
+                            <p><strong>12:30 - 13:45:</strong> Lunch</p>
+                            <p><strong>13:45 - 15:15:</strong> <strong>Break-Out Sessions</strong>
+                            <ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
+                                <li>Session One: Search for talent: attracting and keeping the best personnel</li>
+                                <li>Session Two: Raising capital for business growth</li>
+                            </ul>
+                            </p>
+                            <p><strong>15:15 - 15:45:</strong> Coffee Break</p>
+                            <p><strong>15:45 - 17:00:</strong> <strong>Entrepreneurs and Society</strong> — Moderated discussion on roles entrepreneurs 
+                            play in mentoring young entrepreneurs, developing socially responsible businesses, and improving the culture for entrepreneurship.</p>
+                            <p><strong>17:00 - 17:30:</strong> Entrepreneur as Leader in Business and Society Keynote</p>
+                            <p><strong>17:30 - 17:45:</strong> Closing Remarks</p>
+                            <p><strong>18:00 - 20:00:</strong> Entrepreneurship Development Awards and Networking Reception</p>
+                        </div>
+                    </section>
+
+                    <section class="post__section">
+                        <h3 class="post__section-title">Event Details</h3>
+                        <div class="post__text">
+                            <p><strong>Venue:</strong> Radisson Royal Hotel</p>
+                            <p><strong>Conference Times:</strong> 9:00 AM – 6:10 PM</p>
+                            <p><strong>Gala Reception:</strong> 6:10 PM – 8:00 PM</p>
+                            <p><strong>Participation Fee:</strong></p>
+                            <ul style="margin-left: var(--spacing-lg);">
+                                <li>For entrepreneurs: 6,000 RUB (including VAT)</li>
+                                <li>For participants from other cities: 4,800 RUB (including VAT)</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="post__section">
+                        <h3 class="post__section-title">Key Organizations Involved</h3>
+                        <p class="post__text">
+                            <a href="https://en.wikipedia.org/wiki/Ernst_%26_Young">Ernst &amp; Young</a> Entrepreneur of the Year Program 
+                            recognizes leaders who drive sustainable growth in their businesses. Their objective is to unite and engage with 
+                            the entrepreneurs driving successful businesses, celebrating their achievements across various categories.
+                        </p>
+                        <p class="post__text">
+                            Another notable organization is <a href="https://en.wikipedia.org/wiki/Cyprus_Investment_Promotion_Agency">Cyprus 
+                            Investment Promotion Agency (CIPA)</a>, which aims to enhance and promote Cyprus as an attractive international 
+                            investment destination. They provide support and necessary information to potential investors aiming to establish or expand their businesses.
+                        </p>
+                        <p class="post__text">
+                            The conference is supported by various strategic partners, sponsors, and information partners, ensuring that 
+                            entrepreneurs gain valuable insights and networking opportunities.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============================================
+             CALL TO ACTION
+             ============================================ -->
+        <section class="cta" role="region" aria-labelledby="cta-title">
+            <div class="cta__inner">
+                <h2 class="cta__title" id="cta-title">Grow your business with us!</h2>
+                <p class="cta__description">We'll customize a program for you.</p>
+                <a href="/programs" class="cta__button">Join free</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer role="contentinfo">
+        <div class="footer__top">
+            <div class="footer__column">
+                <img src="/assets/images/logo/cfe-long-4.png" alt="CFE Global" class="footer__logo-image">
+                <p class="footer__description">Center for Entrepreneurship: High impact entrepreneurship programs.</p>
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/company/cfeglobal/" class="footer__social-link" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/cfeglobal_org" class="footer__social-link" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 002.856-3.915 10 10 0 01-2.856.972c-1.338-1.429-3.53-2.348-5.861-2.348-4.44 0-8.037 3.582-8.037 8.006 0 .626.07 1.235.202 1.82C7.728 10.355 4.1 8.666 1.671 5.411c-.6.872-.94 1.9-.94 2.989 0 2.775 1.456 5.228 3.662 6.662-1.352-.041-2.625-.404-3.735-1.007v.1c0 3.86 2.84 7.075 6.587 7.81-.691.188-1.421.289-2.177.289-.532 0-1.05-.046-1.55-.135 1.046 3.24 4.077 5.596 7.644 5.673-2.818 2.217-6.37 3.541-10.228 3.541-.665 0-1.321-.038-1.966-.115 2.966 1.9 6.48 3.01 10.25 3.01 12.316 0 19.03-10.204 19.03-19.03 0-.29-.007-.58-.02-.87 1.305-.996 2.437-2.249 3.328-3.678z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/cfeglobal.org/" class="footer__social-link" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__column">
+                <h3 class="footer__title">Goals</h3>
+                <ul class="footer__links">
+                    <li><a href="/programs/grow-existing-business" class="footer__link">Grow existing business</a></li>
+                    <li><a href="/programs/launch-startup" class="footer__link">Launch startup</a></li>
+                    <li><a href="/programs/learn-entrepreneurship" class="footer__link">Learn entrepreneurship</a></li>
+                    <li><a href="/programs/support-entrepreneurship" class="footer__link">Support entrepreneurship</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h3 class="footer__title">Programs</h3>
+                <ul class="footer__links">
+                    <li><a href="/programs/acceleration-programs" class="footer__link">ScaleUp accelerator</a></li>
+                    <li><a href="/programs/startup-programs" class="footer__link">Startup programs</a></li>
+                    <li><a href="/programs/educational-programs" class="footer__link">Educational programs</a></li>
+                    <li><a href="/programs/ecosystem-programs" class="footer__link">Ecosystem programs</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h3 class="footer__title">About</h3>
+                <ul class="footer__links">
+                    <li><a href="/about" class="footer__link">About</a></li>
+                    <li><a href="/blog" class="footer__link">News</a></li>
+                    <li><a href="/programs/volunteer" class="footer__link">Volunteer</a></li>
+                    <li><a href="/contact" class="footer__link">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; CFE Global 2024. All rights reserved.</p>
+            <ul class="footer__links-bottom">
+                <li><a href="/privacypolicy">Privacy Policy</a></li>
+                <li><a href="/sitemap">Sitemap</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.header__menu-toggle');
+        const nav = document.querySelector('.header__nav');
+
+        menuToggle?.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav?.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.header__nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle?.classList.remove('active');
+                nav?.classList.remove('active');
+            });
+        });
+
+        // Active nav link tracking
+        function updateActiveLink() {
+            const currentPath = window.location.pathname;
+            document.querySelectorAll('.header__nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        updateActiveLink();
+        window.addEventListener('popstate', updateActiveLink);
+    </script>
+</body>
+</html>
